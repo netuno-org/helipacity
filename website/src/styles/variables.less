@@ -1,10 +1,12 @@
 
-@site-background: #ffffff;
+@site-background: @secondary-color;
 
-@primary-color: #1178FF;
-@secondary-color: #d1d1d1;
+@primary-color: rgb(255,98,0);
+@secondary-color: #ffffff;
+@tertiary-color: rgb(255,142,71);
+@fourth-color: rgb(255,251,214);
 
-@site-max-width: 1200px;
+@site-max-width: 1600px;
 @header-size: 100px;
 @logo-width: 360px;
 
@@ -15,19 +17,21 @@
 @page-shadow-color: lighten(@primary-color, 50%);
 @page-background: @site-background;
 
-@header-background: @site-background;
-@header-menu-color: @primary-color;
+@header-background:  @secondary-color;
+@header-menu-color: @secondary-color;
 @header-menu-color-hover: darken(@primary-color, 25%);
 @header-line-height-fix: 0;
 @header-line-height: @header-size;
-@header-size-mobile: @header-size;
-@header-mobile-width: 768px;
+@header-size-mobile: 50px;
+@header-mobile-width: 960px;
 @header-latop-width: 991px;
 @header-desktop-width: 1200px;
+@header-menu-burger-open-font-size: 2rem;
+@header-menu-burger-open-font-color: @primary-color;
 
 @mobile-menu-padding-vertical: 25px;
 @mobile-menu-padding-horizontal: 25px;
-@mobile-menu-background: @site-background;
+@mobile-menu-background: @fourth-color;
 
 @footer-color: inherit;
 @footer-background: darken(@site-background, 10%);
@@ -48,5 +52,5 @@
 @banner-secondary-text-shadow: rgba(0,0,0,0.25);
 
 @banner-sub-banner-bg: @site-background;
-@banner-sub-banner-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+@banner-sub-banner-box-shadow: none;
 @banner-sub-banner-color: rgba(0, 0, 0, 0.8);
