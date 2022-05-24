@@ -11,15 +11,18 @@ const { Footer } = Layout;
 
 function BaseFooter() {
   return (
-    <Footer>
-      <Row className="ant-layout-footer__wrapper" align="middle" gutter={[0, 10]}>
-        <Col xs={24} lg={8}>
+    <Footer  className="ant-layout-footer">  
+     <div className='ant-layout-footer__sobrepor'>    
+      <Row  justify="center" className="ant-layout-footer__wrapper"  >
+     
+        {/* <Col xs={24} lg={8}>
           <div className="logo" data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-cubic">
             <img alt="logo" src="/images/logo.png" />
           </div>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 8, offset: 8 }}>
-          <Row>
+        </Col> */}
+       
+        
+          {/* <Row>
             <Col><HomeOutlined /></Col>
             <Col>&nbsp;</Col>
             <Col>
@@ -35,32 +38,55 @@ function BaseFooter() {
             <Col>
               <p><MailOutlined /> <Configuration parameter="footer-email"/></p>
             </Col>
-          </Row>
-          <p className="social-links">
-            <a href="https://github.com/netuno-org" className="share-icons">
-              <FaGithub />
-            </a>
-            <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" className="share-icons">
-              <FaYoutube />
-            </a>
-            <a href="https://twitter.com/netuno_org" className="share-icons">
-              <FaTwitter />
-            </a>
-            <a href="https://www.linkedin.com/company/netuno-org/" className="share-icons">
-              <FaLinkedin />
-            </a>
-            <a href="https://discord.gg/4sfXG6YWFu" className="share-icons">
-              <FaDiscord />
-            </a>
-            <a href="https://www.facebook.com/netuno.org/" className="share-icons">
-              <FaFacebook />
-            </a>
-            <a href="https://www.instagram.com/netuno_org/" className="share-icons">
+          </Row> */}
+          {/* Comentada acima Localidade, Telefone e Endereço que estão vinculados :  Formulário->Configuração no back-office */}
+
+           
+            <Col span= {4.8} className="gutter-row">
+            <a href="https://www.instagram.com/netuno_org/" >
               <FaInstagram />
             </a>
-          </p>
-        </Col>
+            </Col>
+            <Col span= {4.8} className="gutter-row">
+            <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" >
+              <FaYoutube />
+            </a>
+            </Col  >
+            <Col  span= {4.8} className="gutter-row">
+            <a href="https://www.facebook.com/netuno.org/" >
+              <FaFacebook />
+            </a>
+            </Col>
+            <Col span= {4.8} className="gutter-row">
+            <a href="https://twitter.com/netuno_org" >
+              <FaTwitter />
+            </a>
+            </Col>
+            <Col span= {4.8} className="gutter-row">
+            <a href="https://www.linkedin.com/company/netuno-org/" >
+              <FaLinkedin />
+            </a>
+            </Col>
+           
+            {/* <a href="https://discord.gg/4sfXG6YWFu" className="share-icons">
+              <FaDiscord />
+            </a> */}
+                {/* <a href="https://github.com/netuno-org" className="share-icons">
+              <FaGithub />
+            </a> */}
+           
+           
+        
+     
+        
       </Row>
+     
+              <img className="footersvg" src="/images/strip.svg"></img>
+               </div>
+             
+     
+      
+      
     </Footer>
   );
 }

@@ -158,7 +158,7 @@ function BaseHeader() {
           <img alt="logo" src="/images/logo.png" />
         </Link>
       </div>
-      <img className="headersvg" src="/images/header.svg"></img>
+      <img className="headersvg" src="/images/strip.svg"></img>
 
       <div className="ant-layout-header__wrapper">
         <div
