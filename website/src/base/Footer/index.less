@@ -5,28 +5,35 @@
   padding: 0 !important;
   background: @footer-background !important;
   color: @footer-color !important;
+     
+  &__icons {     
+      background-color: aquamarine;
+      position: absolute;
+      margin: auto;
+    margin-top: -2.5%;
+      svg {
+        width: 3rem;
+       
+      } 
+      a {
+        color: white;
+        margin: 0.3em;
+      }
+     
+     }
 
-  &__sobrepor {
-    position: relative;
-    background-color: aqua;
+
+  .footersvg{            
+     transform: rotate(180deg);
+    //  z-index: -1000;
+    position: absolute;
+    width: 102vw;
+    left: 0;
+    height: auto;
+    margin-top: -2.5%;
+  
   }
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .gutter-row {
-      display: block;
-    }
-  }
-  .footersvg {
-    transform: rotate(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+   
   .logo {
     display: none;
     img {
@@ -123,15 +130,5 @@
       text-align: center;
     }
   }
-  .ant-row {
-    background-color: bisque;
-    svg {
-      width: 2em;
-    }
 
-    a {
-      color: white;
-      margin: 0.3em;
-    }
-  }
 }
