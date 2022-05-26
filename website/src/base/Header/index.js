@@ -9,6 +9,7 @@ import Cluar from "../../common/Cluar";
 import Builder from "../../common/Builder";
 import "./index.less";
 
+
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
@@ -156,10 +157,11 @@ function BaseHeader() {
           onClick={() => handleMenuClick("/")}
         >
           <img alt="logo" src="/images/logo.png" />
+          
         </Link>
       </div>
       <img className="headersvg" src="/images/header.svg"></img>
-
+      
       <div className="ant-layout-header__wrapper">
         <div
           className={classNames({

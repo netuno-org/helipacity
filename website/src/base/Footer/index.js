@@ -12,10 +12,12 @@ const { Footer } = Layout;
 function BaseFooter() {
   return (
     <Footer>
+       
       <Row className="ant-layout-footer__wrapper" align="middle" gutter={[0, 10]}>
         <Col xs={24} lg={8}>
           <div className="logo" data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-cubic">
             <img alt="logo" src="/images/logo.png" />
+            
           </div>
         </Col>
         <Col xs={{ span: 24 }} lg={{ span: 8, offset: 8 }}>
@@ -41,7 +43,7 @@ function BaseFooter() {
               <FaGithub />
             </a>
             <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" className="share-icons">
-              <FaYoutube />
+              
             </a>
             <a href="https://twitter.com/netuno_org" className="share-icons">
               <FaTwitter />
