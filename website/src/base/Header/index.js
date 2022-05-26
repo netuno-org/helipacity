@@ -160,13 +160,8 @@ function BaseHeader() {
           
         </Link>
       </div>
-<<<<<<< HEAD
       <img className="headersvg" src="/images/strip.svg"></img>
 
-=======
-      <img className="headersvg" src="/images/header.svg"></img>
-      
->>>>>>> cd4dd66 (Teste de ícones.)
       <div className="ant-layout-header__wrapper">
         <div
           className={classNames({
