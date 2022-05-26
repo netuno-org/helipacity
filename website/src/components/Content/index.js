@@ -24,17 +24,17 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <div dangerouslySetInnerHTML={{__html: content}}></div>
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
-            <Button type="primary" className="ant-btn">
+            <Button type="primary" className="button">
                 <FaMicrophone className="icons" />
                 <h4 className="text__button">Texto</h4>
               </Button>
               <br/>
-              <Button type="primary" className="ant-btn">
+              <Button type="primary" className="button">
                 <BsFillChatSquareTextFill className="icons" />
                 <h4 className="text__button">Texto</h4>
               </Button>
               <br/>
-              <Button type="primary" className="ant-btn">
+              <Button type="primary" className="button">
                 <FiHelpCircle className="icons" />
                 <h4 className="text__button">Texto</h4>
               </Button>
