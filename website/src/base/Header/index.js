@@ -195,7 +195,7 @@ function BaseHeader() {
         </div>
 
         <div className="menu-burger-button">
-          <MenuOutlined 
+          <Burger
             isOpen={burgerMenu}
             onClick={() => {
               setBurgerMenu(!burgerMenu);
