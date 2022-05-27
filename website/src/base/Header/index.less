@@ -51,17 +51,22 @@
 
   &.header-burger-open .menu {
     position: fixed;
-    background-color: @primary-color;
+    background-color: @tertiary-color;
     background-image: url(../../../public/images/Publico.svg);
-    background-size: 100%;
-    width: 70%;
-    height: 60%;
-    top:35vh;
-    left: 15vw;
+    background-size: 110%;
+   background-position: 0;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 35%;
+    top:15vh;    
+    left: 2vw;
     border-radius: 15px;
+    .log{display: none;}
     @media only screen and (max-width: @header-mobile-width) {
        top:15vh;
        background-size: 150%;
+       width: 80%;
+       left: 10vw;
      
        span{
         text-align: center;
@@ -88,6 +93,7 @@
     height: auto;
     margin-top: 0;
     opacity: 0.8;
+    z-index: 2;
     
   }
   // Obs: O arquivo strip.svg que esta na pasta website/public/images está com margin no top e right e left precisa ser reparado.
@@ -95,7 +101,7 @@
   .logo {
 
  
-    z-index: 1000;
+    z-index: 3;
 
     a {
       img {
@@ -107,7 +113,7 @@
         height: auto;
         margin-left: auto;
         margin-right: auto;
-      
+        
         width: @logo-width;
        
       }
@@ -120,6 +126,7 @@
         img {
           width: 40%;
           height: auto;
+         
         }
       }
     }
@@ -210,8 +217,10 @@
 
   .menu-burger-button {
     position: absolute;
+   
   
-
+  
+  
     width: auto;
     height: auto;
     top: 3vw;
@@ -225,22 +234,22 @@
         left: 3vw;
         top: -1em;
         width:calc(@header-size-mobile / 1 );
+       
         
         .burger-lines{
           height: 0.2rem!important;
-          width: 2.2rem!important
+          width: 2.2rem!important;
           
         }
         .burger-lines:after{
           width: 2.2rem!important;
           height: 0.2rem!important;
-        
-         
+     
         }
         .burger-lines:before{
          width: 2.2rem!important;
          height: 0.2rem!important;
-       
+        
          left: 0;
         
          
@@ -303,6 +312,7 @@
   .menu {
     display: block;
     position: fixed;
+    
     width: 100%;
     height: calc(100% - @header-size);
     top: calc(@header-size * 1.5);
