@@ -55,7 +55,7 @@ function BaseFooter() {
                     <FaGithub />
                   </a> */}
           </div>       
-          <img className="footersvg" src="/images/strip.svg"></img>  
+          <img className="footersvg" src="/images/stripfooter.svg"></img>  
           </div>
        </Footer>
   );
