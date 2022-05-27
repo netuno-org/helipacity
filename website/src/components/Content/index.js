@@ -14,29 +14,34 @@ function Content({section, type, title, content, image, image_title, image_alt, 
   if (image_max_width > 0) {
     imageStyle["maxWidth"] = `${image_max_width}px`;
   }
+  const titleParts = title.split(' ');
+  let titleStyled = title;
+  if (titleParts.length > 1) {
+    const titleIndex = Math.floor(Math.random() * titleParts.length);
+    titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
+    titleStyled = titleParts.join(' ');
+  }
   if (type === 'text') {
     layout = (
       <div className={section+'__text'}>
         <div className="text">
         <div className="bar"> </div>
-          <h1>{ title }</h1>
-          { title ? <div className="text__title-border"></div> : null }
-          <div dangerouslySetInnerHTML={{__html: content}}></div>
+        <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
-            <Button type="primary" className="button">
+            <Button type="primary" className="button1">
                 <FaMicrophone className="icons" />
-                <h4 className="text__button">Texto</h4>
+                <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
-              <Button type="primary" className="button">
+              <Button type="primary" className="button2">
                 <BsFillChatSquareTextFill className="icons" />
-                <h4 className="text__button">Texto</h4>
+                <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
-              <Button type="primary" className="button">
+              <Button type="primary" className="button3">
                 <FiHelpCircle className="icons" />
-                <h4 className="text__button">Texto</h4>
+                <h4 className="text__button1">Texto</h4>
               </Button>
           </div>
           <div className="bar2"> </div>
@@ -48,10 +53,11 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         <div className={section+'__text'}>
           <div className="text">
           <div className="bar3"> </div>
-            <h1>{ title }</h1>
-            <h3> Texto</h3>
+          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+          <h3> Texto</h3>
             { title ? <div className="text__title-border"></div> : null }
             <div dangerouslySetInnerHTML={{__html: content}}></div>
+            
           </div>
         </div>
       );
@@ -78,12 +84,12 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           </Col>
           <Col md={16}>
             <div className="text">
-              <h1 className="text__text2">{ title }</h1>
+            <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
               
               <div dangerouslySetInnerHTML={{__html: content}}></div>
-              <Button type="primary" className="button2">
+              <Button type="primary" className="button4">
                 
-                <h4 className="text__button">Saiba mais</h4>
+                <h4 className="text__button2">Saiba mais</h4>
                 </Button>
             </div>
           </Col>

@@ -10,8 +10,8 @@ module.exports = {
             modifyVars: {
               '@primary-color': '#ff6200',
               '@font-size-base': '16px',
-              '@border-radius-base': '20px',
-              '@height-base': '40px'
+              '@border-radius-base': '20px'
+              
             },
             javascriptEnabled: true,
           },
