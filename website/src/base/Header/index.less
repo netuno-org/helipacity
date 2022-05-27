@@ -34,8 +34,11 @@
     max-width: @site-max-width;
     display: flex;
     position: absolute;
+    
     .anticon {
+    
       svg {
+        
         width: 400%;
         color:white;
       }
@@ -47,14 +50,28 @@
   }
 
   &.header-burger-open .menu {
-  
+    position: fixed;
     background-color: @primary-color;
     background-image: url(../../../public/images/Publico.svg);
+    background-size: 100%;
     width: 70%;
-    height: 50%;
-    top:40vh;
+    height: 60%;
+    top:35vh;
     left: 15vw;
-    
+    border-radius: 15px;
+    @media only screen and (max-width: @header-mobile-width) {
+       top:15vh;
+       background-size: 150%;
+     
+       span{
+        text-align: center;
+        a {
+  
+          font-size: 1.5rem;
+         color:@primary-color;
+        }}
+       
+    }   
 
     span{
       text-align: center;
@@ -82,12 +99,15 @@
 
     a {
       img {
+        position: relative;
         display: flex;
         justify-content: center;
         text-align: center;
+        top:20px;
         height: auto;
         margin-left: auto;
         margin-right: auto;
+      
         width: @logo-width;
        
       }
@@ -98,7 +118,7 @@
 
       a {
         img {
-          max-width: 80px;
+          width: 40%;
           height: auto;
         }
       }
@@ -181,6 +201,13 @@
     }
   }
 
+  .ant-menu-title-content{
+    // background-color: red;
+    // >a:before{line-height: 200px;}
+   
+  
+  }
+
   .menu-burger-button {
     position: absolute;
   
@@ -194,26 +221,61 @@
     }
     @media only screen and (max-width: @header-mobile-width) {
       .burger {
+        height: calc(@header-size-mobile / 1 );
+        left: 3vw;
+        top: -1em;
+        width:calc(@header-size-mobile / 1 );
+        
+        .burger-lines{
+          height: 0.2rem!important;
+          width: 2.2rem!important
+          
+        }
+        .burger-lines:after{
+          width: 2.2rem!important;
+          height: 0.2rem!important;
         
          
-           max-width: 2em;
-           top: 0.8vw;
-           .burger-lines::after{
-             width: 1.5em;
-            
-           }
-           .burger-lines::before{
-            width: 1.5em;
-            
-          }
-     
-      
+        }
+        .burger-lines:before{
+         width: 2.2rem!important;
+         height: 0.2rem!important;
+       
+         left: 0;
+        
+         
+       }
+  
+        
+       
       }
-    }
+      }
 
     .burger {
-      height: calc(@header-size-mobile / 2);
+      height: calc(@header-size-mobile / 1 );
       left: 3vw;
+      width:calc(@header-size-mobile / 1 );
+      
+      .burger-lines{
+        height: 0.5rem;
+        width: 4rem;
+        
+      }
+      .burger-lines:after{
+        width: 4rem;
+        height: 0.5rem;
+        top:-1.5em;
+       
+      }
+      .burger-lines:before{
+       width: 4rem;
+       height: 0.5rem;
+       top:1.5em;
+       left: 0;
+      
+       
+     }
+
       
      
     }
@@ -230,6 +292,7 @@
     /* SAMPLE OF MENU CUSTOM LEVEL */
   }
 }
+
 
 .ant-menu-sub,
 .ant-menu-submenu-popup {
@@ -258,11 +321,7 @@
   }
 }
 
-.burger .burger-lines,
-.burger .burger-lines:after,
-.burger .burger-lines:before {
-  background-color: @header-menu-color !important;
-}
+
 
 .burger.burger-slip.open .burger-lines {
   background-color: initial !important;
