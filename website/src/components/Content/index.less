@@ -140,6 +140,7 @@
             color: @secondary-color;
             font-family: Poppins;
             font-size: 20px;
+            
             @media only screen and (max-width: @header-mobile-width) {
                 margin-top :-18%;
             }
@@ -157,10 +158,12 @@
         > div{
             >p{
                 margin-left: 220px;
+                font-family: Poppins;
                 @media only screen and (max-width: @header-mobile-width) {
                     margin-top :10%;
                     margin-left: 15px;
                     margin-right: 15px;
+                    
                 }
             }
         }
@@ -237,6 +240,7 @@
         clip-path: polygon(0 0, 84% 0, 78% 100%, 0% 100%);
         overflow:inherit;
         pointer-events: none;
+      
         @media only screen and (max-width: @header-mobile-width) {
           
             max-width: 250px;
@@ -286,6 +290,7 @@
         margin-left: 250px;
         clip-path: polygon(5% 0, 75% 0, 89% 100%, 23% 100%);
         pointer-events: none;
+        border-style: double !important;
         @media only screen and (max-width: @header-mobile-width) {
             margin-left: 70px;
         }
@@ -314,6 +319,12 @@
             font-size: 1.2em;
             padding: 0 20px;
             height: 90px;
+            .ant-btn-primary{
+
+                .button4{
+                    height: 100px;
+                }
+            }
         }
         
     .actions__item {
