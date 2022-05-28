@@ -65,10 +65,8 @@ function Content({section, type, title, content, image, image_title, image_alt, 
       layout = (
         <div className={section+'__text'}>
           <div className="text">
-            <h1>{ title }</h1>
+          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
             <h3> Somos...</h3>
-
-            { title ? <div className="text__title-border"></div> : null }
             <div dangerouslySetInnerHTML={{__html: content}}></div>
           </div>
         </div>
@@ -83,15 +81,17 @@ function Content({section, type, title, content, image, image_title, image_alt, 
             </div>
           </Col>
           <Col md={16}>
+         
             <div className="text">
             <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
               
               <div dangerouslySetInnerHTML={{__html: content}}></div>
+              </div>
               <Button type="primary" className="button4">
                 
                 <h4 className="text__button2">Saiba mais</h4>
-                </Button>
-            </div>
+              </Button>
+           
           </Col>
         </Row>
       </div>
@@ -103,7 +103,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <Col md={16}>
             <div className="text">
               <h1>{ title }</h1>
-              <div className="text__title-border"></div>
+              <div className="text__title"></div>
               <div dangerouslySetInnerHTML={{__html: content}}></div>
             </div>
           </Col>
