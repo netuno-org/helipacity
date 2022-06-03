@@ -22,7 +22,7 @@
     .headersvg{
       
       position: absolute;
-      background-color: red;    
+      
       top: 0px;
       opacity: 1 !important;
       
@@ -50,27 +50,27 @@
   }
 
   > *:not(.menu-burger-open) {
-    z-index: 3;
+    z-index: 1000;
   }
 
   &.header-burger-open .menu {
-    position: fixed;
+   display:block;
+    width: 100vw;
+    left: 0;
     background-color: @tertiary-color;
     background-image: url(../../../public/images/Publico.svg);
-    background-size: 110%;
-   background-position: 0;
-    background-repeat: no-repeat;
-    width: 30%;
-    height: 35%;
-    top:15vh;    
-    left: 2vw;
-    border-radius: 15px;
+    background-size: 100%; 
+  
+
+     
     .log{display: none;}
     @media only screen and (max-width: @header-mobile-width) {
-       top:15vh;
+    
        background-size: 150%;
-       width: 80%;
-       left: 10vw;
+       width: 100%;
+       height: 101%;
+       top:-1px;
+       
      
        span{
         text-align: center;
@@ -161,9 +161,8 @@
   .menu {
     width: 100%;
     line-height: @header-line-height !important;
-
-    @media only screen and (max-width: @header-mobile-width) {
-      display: none;
+     @media only screen and (max-width: @header-mobile-width) {
+      // display: none;
     }
 
     ul {
@@ -221,53 +220,45 @@
 
   .menu-burger-button {
     position: absolute;
-   
-  
-  
-  
     width: auto;
     height: auto;
     top: 3vw;
-    left: 3vw;
+    
+    
 
-    @media only screen and (min-width: @header-mobile-width) {
-    }
-    @media only screen and (max-width: @header-mobile-width) {
-      .burger {
-        height: calc(@header-size-mobile / 1 );
-        left: 3vw;
-        top: -1em;
-        width:calc(@header-size-mobile / 1 );
+      @media only screen and (min-width: @header-mobile-width) {
+      }
+      @media only screen and (max-width: @header-mobile-width) {
+    .burger {
+      font-size: 8px;
+      top: -1em;
+      background-color: green;
        
-        
         .burger-lines{
-          height: 0.2rem!important;
+          height: 0.3rem!important;
           width: 2.2rem!important;
+          
           
         }
         .burger-lines:after{
           width: 2.2rem!important;
-          height: 0.2rem!important;
+          height: 0.3rem!important;
+          
      
         }
         .burger-lines:before{
          width: 2.2rem!important;
-         height: 0.2rem!important;
+         height: 0.3rem!important;
         
-         left: 0;
-        
-         
-       }
-  
-        
-       
+     }
       }
+
       }
 
     .burger {
-      height: calc(@header-size-mobile / 1 );
-      left: 3vw;
-      width:calc(@header-size-mobile / 1 );
+      // height: calc(@header-size-mobile / 1 );
+      left: 5em;
+      // width:calc(@header-size-mobile / 1 );
       
       .burger-lines{
         height: 0.5rem;
@@ -287,9 +278,7 @@
        left: 0;
       
        
-     }
-
-      
+     }  
      
     }
   }
@@ -316,26 +305,13 @@
   .menu {
     display: block;
     position: fixed;
-    
-    width: 100%;
-    height: calc(100% - @header-size);
-    top: calc(@header-size * 1.5);
-    left: 0;
-    right: 0;
-    z-index: 9998;
-    background-color: none;
-    padding: @mobile-menu-padding-vertical @mobile-menu-padding-horizontal;
-    overflow: auto;
-    margin-top: 0;
-
-    @media only screen and (max-width: @header-mobile-width) {
+    height: 100%;
+   @media only screen and (max-width: @header-mobile-width) {
       height: calc(100% - @header-size-mobile);
       top: @header-size-mobile;
     }
   }
 }
-
-
 
 .burger.burger-slip.open .burger-lines {
   background-color: initial !important;

@@ -104,7 +104,9 @@ function BaseHeader() {
           **/
           return (
             <Menu.Item key={key}>
+        
               {page.navigable ? (
+                
                 <Link
                   to={`/${Cluar.currentLanguage().locale}${page.link}`}
                   onClick={() => handleMenuClick(key)}
@@ -114,6 +116,7 @@ function BaseHeader() {
               ) : (
                 <a>{page.title}</a>
               )}
+        
             </Menu.Item>
           );
         }
@@ -193,16 +196,18 @@ function BaseHeader() {
             openKeys={subMenuKeys}
           >
             {menu}
+          
           </Menu>
         </div>
 
-        <div className="menu-burger-button">
+        <div className="menu-burger-button"   >
           <Burger
             isOpen={burgerMenu}
             onClick={() => {
               setBurgerMenu(!burgerMenu);
             }}
           />
+          
         </div>
         {/* <Menu
           theme="light"
