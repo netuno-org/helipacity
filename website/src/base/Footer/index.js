@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout, Row, Col } from "antd";
-import { PhoneOutlined, HomeOutlined, MailOutlined } from "@ant-design/icons";
-import {FaHome,FaPhone,FaEnvelope,FaYoutube,FaGithub,FaFacebook,FaLinkedin,FaTwitter,FaInstagram,FaTelegram,} from "react-icons/fa";
-import { RiOpenSourceFill } from "react-icons/ri";
-import Configuration from "../../components/Configuration";
+import { Layout} from "antd";
+// import { PhoneOutlined, HomeOutlined, MailOutlined } from "@ant-design/icons";
+import {FaYoutube,FaFacebook,FaTwitter,FaInstagram,} from "react-icons/fa";
+// import { RiOpenSourceFill } from "react-icons/ri";
+// import Configuration from "../../components/Configuration";
 import "./index.less";
 
 const { Footer } = Layout;
@@ -55,7 +55,7 @@ function BaseFooter() {
                     <FaGithub />
                   </a> */}
           </div>       
-          <img className="footersvg" src="/images/stripfooter.svg"></img>  
+          <img className="footersvg" alt="Background Footer" src="/images/footer/footer-bg.svg"/>  
           </div>
        </Footer>
   );

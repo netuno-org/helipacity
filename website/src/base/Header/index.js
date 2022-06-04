@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+// import { MenuOutlined } from "@ant-design/icons";
 import Burger from "@animated-burgers/burger-slip";
 import "@animated-burgers/burger-slip/dist/styles.css";
 import classNames from "classnames";
@@ -73,7 +73,7 @@ function BaseHeader() {
                     {page.title}
                   </Link>
                 ) : (
-                  <a>{page.title}</a>
+                  <a href="/#">{page.title}</a>
                 )
               }
             >
@@ -114,7 +114,7 @@ function BaseHeader() {
                   {page.title}
                 </Link>
               ) : (
-                <a>{page.title}</a>
+                <a href="/#">{page.title}</a>
               )}
         
             </Menu.Item>
@@ -133,7 +133,7 @@ function BaseHeader() {
       ) {
         menu.push(buildMenu(page, 0));
       }
-      if (page.navigable == false) {
+      if (page.navigable === false) {
         continue;
       }
       subroutes.push(
@@ -155,15 +155,16 @@ function BaseHeader() {
   return (
     <Header  className={classNames({ "header-burger-open": burgerMenu })}>
       <div className="logo">
+      <img alt="logo" src="/images/logo.svg" />
         <Link
           to={`/${Cluar.currentLanguage().locale}/`}
           onClick={() => handleMenuClick("/")}
         >
-          <img alt="logo" src="/images/logo.png" />
+       
           
         </Link>
       </div>
-      <img  className="headersvg" src="/images/stripheader.svg"></img>
+      <img alt='some value'  className="headersvg" src="/images/header/header-bg.svg"></img>
 
       <div className="ant-layout-header__wrapper">
         <div

@@ -1,7 +1,7 @@
 @import "../../styles/variables.less";
 
 .ant-layout-header {
-   position: fixed;
+  position: fixed;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -13,83 +13,90 @@
   background: @header-background !important;
   box-shadow: none;
   padding: 0px;
-
   @media (max-width: @header-mobile-width) {
     padding: 0 px !important;
     height: @header-size-mobile !important;
     line-height: @header-size-mobile !important;
-
-    .headersvg{
-      
+    .headersvg {
       position: absolute;
-      
       top: 0px;
       opacity: 1 !important;
-      
     }
   }
   @media (min-width: @header-mobile-width) {
     background-color: none !important;
   }
-
   &__wrapper {
     width: 100%;
     max-width: @site-max-width;
     display: flex;
     position: absolute;
-    
     .anticon {
-    
-      svg {
- 
-        
+      >svg {
         width: 400%;
-        color:white;
+        color: white;
+        
       }
     }
   }
-
   > *:not(.menu-burger-open) {
     z-index: 1000;
   }
 
   &.header-burger-open .menu {
-   display:block;
+    display: block;
     width: 100vw;
     left: 0;
-    background-color: @tertiary-color;
-    background-image: url(../../../public/images/Publico.svg);
-    background-size: 100%; 
-  
-
-     
-    .log{display: none;}
-    @media only screen and (max-width: @header-mobile-width) {
-    
-       background-size: 150%;
-       width: 100%;
-       height: 101%;
-       top:-1px;
-       
-     
-       span{
-        text-align: center;
-        a {
-  
-          font-size: 1.5rem;
-         color:@primary-color;
-        }}
-       
-    }   
-
-    span{
+    background-size: 100%;
+    background-color:rgba(74, 21, 9, 0.98); 
+    .log {
+      display: none;
+    }
+    span {
+      height: 80px;
       text-align: center;
+      // background-color: aqua;
       a {
-
         color: @header-menu-burger-open-font-color;
         font-size: @header-menu-burger-open-font-size;
-      }}
-    
+      }
+    }
+  
+    .ant-menu-vertical > .ant-menu-item, .ant-menu-vertical-left > .ant-menu-item, .ant-menu-vertical-right > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+      height: 12vh;
+      top: 20px;
+      
+  }
+    .ant-menu-title-content {
+   
+     
+      height: 10vh;
+          >a:before{        
+        line-height: 120px;}
+        >a{
+          position: relative;
+          top:30px;
+         
+        }
+        
+    }
+    @media only screen and (max-width: @header-mobile-width) {
+      background-size: 150%;
+      width: 100%;
+      height: 101%;
+      top: -1px;
+      span {        
+        
+        a {
+          font-size: 3rem;
+          color: @secondary-color;
+       
+          top: 15px !important;
+          
+        }
+      }
+    }
+
   }
   .headersvg {
     position: absolute;
@@ -98,41 +105,33 @@
     margin-top: 0;
     opacity: 0.8;
     z-index: 2;
-    
   }
   // Obs: O arquivo strip.svg que esta na pasta website/public/images está com margin no top e right e left precisa ser reparado.
 
   .logo {
-
- 
     z-index: 3;
-
-    a {
+  
+ 
       img {
         position: relative;
         display: flex;
-        justify-content: center;
-        text-align: center;
-        top:20px;
-        height: auto;
+         width: @logo-width;
+        top: 0px;
         margin-left: auto;
         margin-right: auto;
-        
-        width: @logo-width;
-       
-      }
+    
+     
     }
 
     @media only screen and (max-width: @header-mobile-width) {
       max-width: 400px;
 
-      a {
+
         img {
           width: 40%;
           height: auto;
-         
         }
-      }
+   
     }
   }
 
@@ -161,8 +160,8 @@
   .menu {
     width: 100%;
     line-height: @header-line-height !important;
-     @media only screen and (max-width: @header-mobile-width) {
-      // display: none;
+    @media only screen and (max-width: @header-mobile-width) {
+      display: none;
     }
 
     ul {
@@ -211,108 +210,97 @@
     }
   }
 
-  .ant-menu-title-content{
-    // background-color: red;
-    // >a:before{line-height: 200px;}
-   
-  
-  }
+ 
 
   .menu-burger-button {
     position: absolute;
     width: auto;
     height: auto;
     top: 3vw;
-    
-    
-
-      @media only screen and (min-width: @header-mobile-width) {
-      }
-      @media only screen and (max-width: @header-mobile-width) {
-    .burger {
-      font-size: 8px;
-      top: -1em;
-      background-color: green;
-       
-        .burger-lines{
-          height: 0.3rem!important;
-          width: 2.2rem!important;
-          
-          
-        }
-        .burger-lines:after{
-          width: 2.2rem!important;
-          height: 0.3rem!important;
-          
-     
-        }
-        .burger-lines:before{
-         width: 2.2rem!important;
-         height: 0.3rem!important;
-        
-     }
-      }
-
-      }
-
+   
     .burger {
       // height: calc(@header-size-mobile / 1 );
       left: 5em;
       // width:calc(@header-size-mobile / 1 );
-      
-      .burger-lines{
+      .burger-lines {
         height: 0.5rem;
         width: 4rem;
-        
       }
-      .burger-lines:after{
+      .burger-lines:after {
         width: 4rem;
         height: 0.5rem;
-        top:-1.5em;
-       
+        top: -1.5em;
       }
-      .burger-lines:before{
-       width: 4rem;
-       height: 0.5rem;
-       top:1.5em;
-       left: 0;
-      
-       
-     }  
-     
+      .burger-lines:before {
+        width: 4rem;
+        height: 0.5rem;
+        top: 1.5em;
+        left: 0;
+      }
     }
   }
+    @media only screen and (min-width: @header-mobile-width) {
+    }
+    @media only screen and (max-width: @header-mobile-width) {
+      .burger {
+        font-size: 8px;
+        top: 0;
+        .burger-lines {
+          height: 0.3rem !important;
+          width: 2.2rem !important;
+        }
+        .burger-lines:after {
+          width: 2.2rem !important;
+          height: 0.3rem !important;
+        }
+        .burger-lines:before {
+          width: 2.2rem !important;
+          height: 0.3rem !important;
+        }
+      }
+    }
+ 
 
   .menu-burger {
     @media only screen and (min-width: @header-mobile-width) {
       display: none;
-      
     }
   }
-
   .menu-level-1 {
     /* SAMPLE OF MENU CUSTOM LEVEL */
   }
 }
-
-
 .ant-menu-sub,
 .ant-menu-submenu-popup {
   border-radius: 2px !important;
 }
-
 .header-burger-open {
+ 
   .menu {
     display: block;
     position: fixed;
     height: 100%;
-   @media only screen and (max-width: @header-mobile-width) {
+  
+    @media only screen and (max-width: @header-mobile-width) {
       height: calc(100% - @header-size-mobile);
       top: @header-size-mobile;
     }
   }
 }
-
 .burger.burger-slip.open .burger-lines {
   background-color: initial !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
