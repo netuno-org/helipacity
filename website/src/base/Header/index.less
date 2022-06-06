@@ -32,10 +32,9 @@
     display: flex;
     position: absolute;
     .anticon {
-      >svg {
+      > svg {
         width: 400%;
         color: white;
-        
       }
     }
   }
@@ -48,55 +47,52 @@
     width: 100vw;
     left: 0;
     background-size: 100%;
-    background-color:rgba(74, 21, 9, 0.98); 
+    background-color: rgba(74, 21, 9, 0.98);
     .log {
       display: none;
     }
     span {
       height: 80px;
       text-align: center;
-      // background-color: aqua;
       a {
         color: @header-menu-burger-open-font-color;
         font-size: @header-menu-burger-open-font-size;
       }
     }
-  
-    .ant-menu-vertical > .ant-menu-item, .ant-menu-vertical-left > .ant-menu-item, .ant-menu-vertical-right > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    .ant-menu-vertical > .ant-menu-item,
+    .ant-menu-vertical-left > .ant-menu-item,
+    .ant-menu-vertical-right > .ant-menu-item,
+    .ant-menu-inline > .ant-menu-item,
+    .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title,
+    .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title,
+    .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title,
+    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
       height: 12vh;
       top: 20px;
-      
-  }
+    }
     .ant-menu-title-content {
-   
-     
       height: 10vh;
-          >a:before{        
-        line-height: 120px;}
-        >a{
-          position: relative;
-          top:30px;
-         
-        }
-        
+      > a:before {
+        line-height: 120px;
+      }
+      > a {
+        position: relative;
+        top: 30px;
+      }
     }
     @media only screen and (max-width: @header-mobile-width) {
       background-size: 150%;
       width: 100%;
       height: 101%;
       top: -1px;
-      span {        
-        
+      span {
         a {
           font-size: 3rem;
           color: @secondary-color;
-       
           top: 15px !important;
-          
         }
       }
     }
-
   }
   .headersvg {
     position: absolute;
@@ -107,34 +103,24 @@
     z-index: 2;
   }
   // Obs: O arquivo strip.svg que esta na pasta website/public/images está com margin no top e right e left precisa ser reparado.
-
   .logo {
     z-index: 3;
-  
- 
-      img {
-        position: relative;
-        display: flex;
-         width: @logo-width;
-        top: 0px;
-        margin-left: auto;
-        margin-right: auto;
-    
-     
+    img {
+      position: relative;
+      display: flex;
+      width: @logo-width;
+      top: 0px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
     @media only screen and (max-width: @header-mobile-width) {
       max-width: 400px;
-
-
-        img {
-          width: 40%;
-          height: auto;
-        }
-   
+      img {
+        width: 40%;
+        height: auto;
+      }
     }
   }
-
   .menu-languages {
     line-height: @header-line-height !important;
     background-color: transparent;
@@ -142,28 +128,23 @@
     border-bottom: none;
     display: flex;
     width: 150px !important;
-
     .ant-menu-submenu-title:hover {
       color: @header-menu-color-hover !important;
     }
-
     li {
       margin-bottom: 20px !important;
       display: inline;
-
       &:hover {
         border-color: @header-menu-color-hover !important;
       }
     }
   }
-
   .menu {
     width: 100%;
     line-height: @header-line-height !important;
     @media only screen and (max-width: @header-mobile-width) {
       display: none;
     }
-
     ul {
       width: 100%;
       background-color: transparent;
@@ -210,14 +191,12 @@
     }
   }
 
- 
-
   .menu-burger-button {
     position: absolute;
     width: auto;
     height: auto;
     top: 3vw;
-   
+
     .burger {
       // height: calc(@header-size-mobile / 1 );
       left: 5em;
@@ -239,27 +218,26 @@
       }
     }
   }
-    @media only screen and (min-width: @header-mobile-width) {
-    }
-    @media only screen and (max-width: @header-mobile-width) {
-      .burger {
-        font-size: 8px;
-        top: 0;
-        .burger-lines {
-          height: 0.3rem !important;
-          width: 2.2rem !important;
-        }
-        .burger-lines:after {
-          width: 2.2rem !important;
-          height: 0.3rem !important;
-        }
-        .burger-lines:before {
-          width: 2.2rem !important;
-          height: 0.3rem !important;
-        }
+  @media only screen and (min-width: @header-mobile-width) {
+  }
+  @media only screen and (max-width: @header-mobile-width) {
+    .burger {
+      font-size: 8px;
+      top: 0;
+      .burger-lines {
+        height: 0.3rem !important;
+        width: 2.2rem !important;
+      }
+      .burger-lines:after {
+        width: 2.2rem !important;
+        height: 0.3rem !important;
+      }
+      .burger-lines:before {
+        width: 2.2rem !important;
+        height: 0.3rem !important;
       }
     }
- 
+  }
 
   .menu-burger {
     @media only screen and (min-width: @header-mobile-width) {
@@ -275,12 +253,11 @@
   border-radius: 2px !important;
 }
 .header-burger-open {
- 
   .menu {
     display: block;
     position: fixed;
     height: 100%;
-  
+
     @media only screen and (max-width: @header-mobile-width) {
       height: calc(100% - @header-size-mobile);
       top: @header-size-mobile;
@@ -290,17 +267,3 @@
 .burger.burger-slip.open .burger-lines {
   background-color: initial !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

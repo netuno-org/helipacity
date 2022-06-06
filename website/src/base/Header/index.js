@@ -156,16 +156,14 @@ function BaseHeader() {
   return (
     <Header  className={classNames({ "header-burger-open": burgerMenu })}>
       <div className="logo">
-      <img alt="logo" src="/images/logo.svg" />
+      <img alt="logotipo" src="/images/logo.svg" />
         <Link
           to={`/${Cluar.currentLanguage().locale}/`}
           onClick={() => handleMenuClick("/")}
-        >
-       
-          
-        </Link>
+        />
       </div>
-      <img alt='some value'  className="headersvg" src="/images/header/header-bg.svg"></img>
+      
+      <img alt="bg-header"  className="headersvg" src="/images/header/header-bg.svg"></img>
 
       <div className="ant-layout-header__wrapper">
         <div
@@ -229,5 +227,5 @@ function BaseHeader() {
 
 export default BaseHeader;
 
-// teste git
+
 
