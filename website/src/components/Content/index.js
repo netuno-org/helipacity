@@ -5,10 +5,13 @@ import { BsFillChatSquareTextFill } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
 import Actions from '../Actions';
 import { Button } from 'antd';
+import BaseDivider from '../../base/Divider'
+import Titlepage from '../../base/Titlepage';
 
 import './index.less';
 
 function Content({section, type, title, content, image, image_title, image_alt, image_max_width, actions}) {
+
   let layout = null;
   const imageStyle = {};
   if (image_max_width > 0) {
@@ -146,6 +149,23 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <img src={`/images/${section}/${image}`} alt={ image_alt } title={ image_title } style={ imageStyle }/>
         </div>
       </div>
+    );
+   
+  }else if (type === 'basedivider') {     // divisória amarela entre as páginas 
+   return (
+      <div>
+       <BaseDivider/>
+      </div>
+    );
+  } else if (type === 'titlepage') {
+    layout = (
+        <div className={section+'__text'}>
+        <div className='null'/>
+        <div className="text">
+        <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        <h3><div dangerouslySetInnerHTML={{__html: content}}></div> </h3>
+        </div>
+      </div> 
     );
   } else {
     layout = (
