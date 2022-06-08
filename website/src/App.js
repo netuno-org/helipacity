@@ -1,28 +1,23 @@
-import React from 'react';
-import { Layout } from 'antd';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
+import React from "react";
+import { Layout } from "antd";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import BaseDivider from "./base/Divider";
+import Analytics from "./common/Analytics";
+import Cluar from "./common/Cluar";
+import Builder from "./common/Builder";
+import BaseCookies from "./base/Cookies";
+import BaseHeader from "./base/Header";
+import BaseFooter from "./base/Footer";
+import NotFound from "./pages/NotFound";
 
-import Analytics from './common/Analytics';
-import Cluar from './common/Cluar';
-import Builder from './common/Builder';
-import BaseCookies from './base/Cookies';
-import BaseHeader from './base/Header';
-import BaseFooter from './base/Footer';
-import NotFound from './pages/NotFound';
-
-import './styles/App.less';
+import "./styles/App.less";
 
 const { Content } = Layout;
 
 function App() {
-  const storageLocale = window.localStorage.getItem('locale');
+  const storageLocale = window.localStorage.getItem("locale");
   if (storageLocale == null) {
-    window.localStorage.setItem('locale', Cluar.currentLanguage().locale);
+    window.localStorage.setItem("locale", Cluar.currentLanguage().locale);
   } else {
     Cluar.changeLanguage(storageLocale);
   }
@@ -35,7 +30,12 @@ function App() {
     const subroutes = [];
     for (const page of Cluar.pages()[language.code]) {
       subroutes.push(
-        <Route key={`/${language.locale}${page.link}`} path={`/${language.locale}${page.link}`} exact element={<Builder page={page} />} />
+        <Route
+          key={`/${language.locale}${page.link}`}
+          path={`/${language.locale}${page.link}`}
+          exact
+          element={<Builder page={page} />}
+        />
       );
     }
     routes.push(
@@ -47,13 +47,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      { Cluar.isGAEnabled() && <Route component={Analytics} />}
+      {Cluar.isGAEnabled() && <Route component={Analytics} />}
       <div className="page">
         <Layout>
           <BaseHeader />
+
           <Content>
             <Routes>
-              <Route path="/" exact element={<Navigate to={`/${Cluar.currentLanguage().locale}/`} />} />
+              <Route
+                path="/"
+                exact
+                element={
+                  <Navigate to={`/${Cluar.currentLanguage().locale}/`} />
+                }
+              />
               {routes}
               <Route element={<NotFound />} />
             </Routes>
