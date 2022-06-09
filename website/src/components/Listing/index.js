@@ -1,15 +1,21 @@
 import React from 'react';
 import { Row } from 'antd';
+import { Carousel } from 'react-responsive-carousel';
 
 import Item from './Item';
 
 import './index.less';
+ 
 
 function Listing({section, type, image, image_title, image_alt, title, content, items}) {
   const children = [];
-  for (const item of items) {
-    children.push(<Item key={item.uid} {...{type, ...item}} />);
-  }
+  items.map((item) =>{
+      
+      children.push(<Item key={item.uid} {...{type, ...item}} />);
+      return null;
+    });
+  
+  
 
   let listLayout = (
     <div>
@@ -34,8 +40,19 @@ function Listing({section, type, image, image_title, image_alt, title, content, 
         { children }
       </Row>
     );
-  }
-
+  } else if (type === 'carrossel') {
+    listLayout = (
+      <div>
+      <h1>{ title }</h1>
+      <div className="listing__title-border"></div>
+      <div dangerouslySetInnerHTML={{__html: content}}></div>
+      
+      <Carousel >
+        { children }
+      </Carousel>
+      </div>
+    );
+    }
   return (
     <section className="listing">
       { listLayout }

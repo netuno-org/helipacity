@@ -28,7 +28,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     layout = (
       <div className={section+'__text'}>
         <div className="text">
-        <div className="bar"> </div>
+        {/* <div className="bar"> </div> */}
         <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
