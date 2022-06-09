@@ -6,7 +6,7 @@ import { FiHelpCircle } from "react-icons/fi";
 import Actions from '../Actions';
 import { Button } from 'antd';
 import BaseDivider from '../../base/Divider'
-import Titlepage from '../../base/Titlepage';
+
 
 import './index.less';
 
