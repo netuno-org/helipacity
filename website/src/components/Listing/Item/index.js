@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "antd";
-
+import BaseDivider from "../../../base/Divider";
 import "./index.less";
 
 function Item({
@@ -29,8 +29,9 @@ function Item({
   } else if (type === "carrossel") {
     layout = (
       <div>
-        <div className="bar"> </div>
-        <Row>
+        
+        <Row className ="coluna_carrossel">
+        
           <Col span={12}>
             <p
               className="carroussel__legend"
@@ -39,7 +40,7 @@ function Item({
           </Col>
 
           <Col className="carroussel" span={12}>
-          <h1>{title}</h1>
+          
            <div className="div_imagem_carroussel">
            <img
               className="imagem_carroussel"
@@ -48,7 +49,19 @@ function Item({
               title={image_title}
             />
            </div>
-           <div className = "background_image"></div>
+           <div className = "background_image1"></div>
+           <div className = "background_image2"></div>
+           <div className = "background_image3"></div>
+           <div className = "background_image4"></div>
+           <div className = "background_image5"></div>
+           <div className = "background_image6"></div>
+           <div className = "background_image7"></div>
+           <div className = "background_image8"></div>
+           <div className = "background_image9"></div>
+           <div className = "background_image10"></div>
+           <div className = "background_image11"></div>
+
+           
             
             
           </Col>

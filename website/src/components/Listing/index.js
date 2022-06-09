@@ -1,63 +1,67 @@
-import React from 'react';
-import { Row } from 'antd';
-import { Carousel } from 'react-responsive-carousel';
+import React from "react";
+import { Row } from "antd";
+import { Carousel } from "react-responsive-carousel";
 
-import Item from './Item';
+import Item from "./Item";
 
-import './index.less';
- 
+import "./index.less";
+import BaseDivider from "../../base/Divider";
 
-function Listing({section, type, image, image_title, image_alt, title, content, items}) {
+function Listing({
+  section,
+  type,
+  image,
+  image_title,
+  image_alt,
+  title,
+  content,
+  items,
+}) {
   const children = [];
-  items.map((item) =>{
-      
-      children.push(<Item key={item.uid} {...{type, ...item}} />);
-      return null;
-    });
-  
-  
+  items.map((item) => {
+    children.push(<Item key={item.uid} {...{ type, ...item }} />);
+    return null;
+  });
+
+  const titleParts = title.split(" ");
+  let titleStyled = title;
+  if (titleParts.length > 1) {
+    const titleIndex = Math.floor(Math.random() * titleParts.length);
+    titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
+    titleStyled = titleParts.join(" ");
+  }
 
   let listLayout = (
     <div>
-      <h1>{ title }</h1>
+      <h1>{title}</h1>
       <div className="listing__title-border"></div>
-      <div dangerouslySetInnerHTML={{__html: content}}></div>
-      <ul className={`listing__${type}`}>
-        { children }
-      </ul>   
-    </div>   
+      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      <ul className={`listing__${type}`}>{children}</ul>
+    </div>
   );
 
-  if (type === 'YOUR-CUSTOM-TYPE-HERE') {
+  if (type === "YOUR-CUSTOM-TYPE-HERE") {
     listLayout = (
       <Row className={`listing__${type}`} justify="start">
-        { children }
+        {children}
       </Row>
     );
-  } else if (type === 'OTHER-CUSTOM-TYPE-HERE') {
-    listLayout = (
-      <Row className={`listing__${type}`}>
-        { children }
-      </Row>
-    );
-  } else if (type === 'carrossel') {
+  } else if (type === "OTHER-CUSTOM-TYPE-HERE") {
+    listLayout = <Row className={`listing__${type}`}>{children}</Row>;
+  } else if (type === "carrossel") {
     listLayout = (
       <div>
-      <h1>{ title }</h1>
-      <div className="listing__title-border"></div>
-      <div dangerouslySetInnerHTML={{__html: content}}></div>
-      
-      <Carousel >
-        { children }
-      </Carousel>
+        <BaseDivider />
+        <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        
+        <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+
+        <Carousel>{children}</Carousel>
+        <BaseDivider />
       </div>
     );
-    }
-  return (
-    <section className="listing">
-      { listLayout }
-    </section>
-  );
+  }
+  return <section className="listing">{listLayout}</section>;
 }
 
 export default Listing;
