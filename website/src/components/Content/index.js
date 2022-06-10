@@ -1,13 +1,10 @@
 import React from 'react';
-import { Row, Col } from 'antd';
-import { FaMicrophone } from "react-icons/fa";
 import { BsFillChatSquareTextFill } from "react-icons/bs";
+import { FaMicrophone } from "react-icons/fa";
 import { FiHelpCircle } from "react-icons/fi";
-import Actions from '../Actions';
-import { Button } from 'antd';
+import { Row, Col, Button } from 'antd';
 import BaseDivider from '../../base/Divider'
-
-
+import Actions from '../Actions';
 import './index.less';
 
 function Content({section, type, title, content, image, image_title, image_alt, image_max_width, actions}) {
@@ -24,7 +21,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
     titleStyled = titleParts.join(' ');
   }
-  if (type === 'text') {
+  if (type === 'text') {   
     layout = (
       <div className={section+'__text'}>
         <div className="text">
@@ -33,18 +30,18 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
             <Button type="primary" className="button1">
-                <FaMicrophone className="icons" />
-                <h4 className="text__button1">Texto</h4>
+              <FaMicrophone className="icons" />
+              <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
               <Button type="primary" className="button2">
-                <BsFillChatSquareTextFill className="icons" />
-                <h4 className="text__button1">Texto</h4>
+              <BsFillChatSquareTextFill className="icons" />
+              <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
               <Button type="primary" className="button3">
-                <FiHelpCircle className="icons" />
-                <h4 className="text__button1">Texto</h4>
+              <FiHelpCircle className="icons" />
+              <h4 className="text__button1">Texto</h4>
               </Button>
           </div>
           <div className="bar2"> </div>
@@ -60,7 +57,6 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <h3> Texto</h3>
             { title ? <div className="text__title-border"></div> : null }
             <div dangerouslySetInnerHTML={{__html: content}}></div>
-            
           </div>
         </div>
       );
@@ -84,17 +80,13 @@ function Content({section, type, title, content, image, image_title, image_alt, 
             </div>
           </Col>
           <Col md={16}>
-         
             <div className="text">
             <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
-              
               <div dangerouslySetInnerHTML={{__html: content}}></div>
               </div>
               <Button type="primary" className="button4">
-                
                 <h4 className="text__button2">Saiba mais</h4>
               </Button>
-           
           </Col>
         </Row>
       </div>
@@ -150,7 +142,6 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         </div>
       </div>
     );
-   
   }else if (type === 'basedivider') {     // divisória amarela entre as páginas 
    return (
       <div>
