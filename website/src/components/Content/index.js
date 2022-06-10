@@ -91,7 +91,6 @@ function Content({section, type, title, content, image, image_title, image_alt, 
               <div dangerouslySetInnerHTML={{__html: content}}></div>
               </div>
               <Button type="primary" className="button4">
-                
                 <h4 className="text__button2">Saiba mais</h4>
               </Button>
            
