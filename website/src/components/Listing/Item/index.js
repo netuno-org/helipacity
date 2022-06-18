@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "antd";
 import BaseDivider from "../../../base/Divider";
-import { Button } from 'antd';
+import { Button } from "antd";
 import "./index.less";
 
 function Item({
@@ -27,13 +27,32 @@ function Item({
         </a>
       </Col>
     );
+  } else if (type === "carrossel_principal") {
+    layout = (
+      <div className="backgroundTop">
+        <div className="div_imagem_principal">
+        <h1  className="carroussel__legend">{title}</h1>
+            <p className="carroussel__legendprincipal"
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></p>
+              <img className= "imagem_principal"
+                src={`/images/${section}/${image}`}
+                alt={image_alt}
+                title={image_title}
+              />
+            </div>
+        
+      </div>
+    );
   } else if (type === "carrossel") {
     layout = (
       <div>
-        <Row className="coluna_carrossel">
-          <Col span={12}>
+        <Row className="coluna_carrossel" >
+        
+          <Col span={12} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          
             <p
-              className="carroussel__legend"
+              className="carroussel__text"
               dangerouslySetInnerHTML={{ __html: content }}
             ></p>
           </Col>
@@ -46,26 +65,30 @@ function Item({
                 alt={image_alt}
                 title={image_title}
               />
-              <div className ="div_button_image">
+              <div className="div_button_image">
                 <Button type="primary" className="button_image">
                   <h4 className="text__button2">Nome da Pessoa</h4>
                 </Button>
               </div>
-              
+            </div>
+
+            <div className="background_big"></div>
+              <div className =" flexbulletvertical">
+                <div className="bullet bullet--1"></div>
+                <div className="bullet bullet--2"></div>
+                <div className="bullet bullet--3"></div>
+                <div className="bullet bullet--4"></div>
             </div>
             
-            <div className="background_big"></div>
-            <div className="bullet bullet--1"></div>
-            <div className="bullet bullet--2"></div>
-            <div className="bullet bullet--3"></div>
-            <div className="bullet bullet--4"></div>
             <div className="bullet bullet--5"></div>
-            <div className="bullet bullet--6"></div>
-            <div className="bullet bullet--7"></div>
-            <div className="bullet bullet--8"></div>
-            <div className="bullet bullet--9"></div>
-            <div className="bullet bullet--10"></div>
-            
+
+            <div className =" flexbullethorizontal">
+              <div className="bullet bullet--6"></div>
+              <div className="bullet bullet--7"></div>
+              <div className="bullet bullet--8"></div>
+              <div className="bullet bullet--9"></div>
+              <div className="bullet bullet--10"></div>
+            </div>
           </Col>
         </Row>
       </div>

@@ -48,6 +48,20 @@ function Listing({
     );
   } else if (type === "OTHER-CUSTOM-TYPE-HERE") {
     listLayout = <Row className={`listing__${type}`}>{children}</Row>;
+
+  } else if (type === "carrossel_principal") {
+    listLayout = (
+      <div>
+      
+        <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        
+        <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
+
+        <Carousel>{children}</Carousel>
+        
+      </div>
+    );
+  
   } else if (type === "carrossel") {
     listLayout = (
       <div>
