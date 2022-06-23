@@ -36,6 +36,7 @@
         top:150px;
         left:30px;   
         font-size: 39px;
+        
         }
 
            
@@ -78,7 +79,12 @@
 .carousel-slider{
     margin-top: 0;
     height: 900px;
-   
+    
+    @media only screen and (max-width: @header-mobile-width) { 
+        width: 70vh !important;
+
+
+    }
 }
 .axis-horizontal{
     height: 900px;
