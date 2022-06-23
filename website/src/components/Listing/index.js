@@ -51,28 +51,34 @@ function Listing({
 
   } else if (type === "carrossel_principal") {
     listLayout = (
-      <div>
-      
+      <Row>
+          <div>
+        
         <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
         
         <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
 
         <Carousel>{children}</Carousel>
         
-      </div>
+          </div>
+      </Row>
+      
     );
   
   } else if (type === "carrossel") {
     listLayout = (
-      <div>
-        <BaseDivider />
-        <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
-        
-        <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+      <Row>
+        <div>
+          <BaseDivider />
+          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+          
+          <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
 
-        <Carousel>{children}</Carousel>
-        <BaseDivider />
-      </div>
+          <Carousel>{children}</Carousel>
+          <BaseDivider />
+        </div>
+      </Row>
+     
     );
   }
   return <section className="listing">{listLayout}</section>;

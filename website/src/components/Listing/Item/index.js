@@ -49,7 +49,7 @@ function Item({
       <div>
         <Row className="coluna_carrossel" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
         
-          <Col span={12} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          <Col span={12} >
           
             <p
               className="carroussel__text"
@@ -57,7 +57,7 @@ function Item({
             ></p>
           </Col>
 
-          <Col className="carroussel" span={12} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          <Col className="carroussel" span={12}>
             <div className="div_imagem_carroussel">
               <img
                 className="imagem_carroussel"
