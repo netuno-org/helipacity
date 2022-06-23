@@ -21,7 +21,7 @@ function Item({
         <a href={link} alt={title}>
           <span>{title}</span>
           <div
-            className="listing__item__bgimage"
+            className="listing__item__bigmage"
             style={{ backgroundImage: `url('/images/${section}/${image}')` }}
           ></div>
         </a>
@@ -47,7 +47,7 @@ function Item({
   } else if (type === "carrossel") {
     layout = (
       <div>
-        <Row className="coluna_carrossel" >
+        <Row className="coluna_carrossel" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
         
           <Col span={12} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
           
@@ -57,7 +57,7 @@ function Item({
             ></p>
           </Col>
 
-          <Col className="carroussel" span={12}>
+          <Col className="carroussel" span={12} gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
             <div className="div_imagem_carroussel">
               <img
                 className="imagem_carroussel"
