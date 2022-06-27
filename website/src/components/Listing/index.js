@@ -51,7 +51,7 @@ function Listing({
 
   } else if (type === "carrossel_principal") {
     listLayout = (
-      <Row>
+      <Row xs ={{ span:24}}md ={{ span:12}}>
           <div>
         
         <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
