@@ -13,7 +13,7 @@ _form.createIfNotExists(
 	.set("control_group", false)
 	.set("control_user", false)
 	.set("description", "")
-	.set("displayname", "Par\u00E2metro")
+	.set("displayname", "Tipo")
 	.set("export_id", false)
 	.set("export_json", true)
 	.set("export_lastchange", false)
@@ -21,15 +21,15 @@ _form.createIfNotExists(
 	.set("export_xls", true)
 	.set("export_xml", true)
 	.set("firebase", "")
-	.set("name", "configuration_parameter")
-	.set("parent_uid", "67c60baf-b667-4341-9f41-7e5039f14b13")
+	.set("name", "content_type")
+	.set("parent_uid", "3ed92a11-c243-4bdb-a542-bb22abca638d")
 	.set("reorder", 0)
 	.set("report", false)
 	.set("show_id", true)
-	.set("uid", "5617ebed-9f41-4a31-a118-e616768b7465")
+	.set("uid", "a2097bd8-cfaa-4e02-a2e9-f1626864f60e")
 )
 _form.createComponentIfNotExists(
-	"5617ebed-9f41-4a31-a118-e616768b7465",
+	"a2097bd8-cfaa-4e02-a2e9-f1626864f60e",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -47,7 +47,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "ae1f8170-b974-4c15-88d6-bea616d978ed")
+	.set("uid", "3f2282a5-9760-4da8-b738-dd4ae937e7aa")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -60,7 +60,7 @@ _form.createComponentIfNotExists(
 	.set("y", 1)
 )
 _form.createComponentIfNotExists(
-	"5617ebed-9f41-4a31-a118-e616768b7465",
+	"a2097bd8-cfaa-4e02-a2e9-f1626864f60e",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -78,7 +78,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "15c8c657-afee-49cd-8380-aff633605369")
+	.set("uid", "b743ec3d-0fe4-4166-89fa-d1efa08b7590")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
