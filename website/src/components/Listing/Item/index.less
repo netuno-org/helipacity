@@ -12,7 +12,7 @@
     left: -300px;
     margin-top: 10px;
     font-size: 80px;
-    font-size: Poppins;
+    font-family: Poppins;
     background-color: none;
     color: @secondary-color;
     font-weight: bold;
@@ -21,9 +21,11 @@
       top: 500px;
       left: -150px;
       margin-top: 10px;
+      font-size: 10px;
     }
   }
   &__legendprincipal {
+    font-family: Poppins;
     position: relative;
     top: 800px;
     color: @secondary-color;
@@ -41,28 +43,30 @@
     margin-left: 50px;
 
     @media only screen and (max-width: @header-mobile-width) {
-      margin-top: 150px;
-      margin-left: 80px;
-      margin-top: 80px;
+      text-align: center;
+      padding: 0;
     }
+
+    
+    
   }
 }
+
+
 
 .div_imagem_carroussel {
   .imagem_carroussel {
     max-width: 50%;
     position: absolute;
-    right: 350px;
-    top: -10px;
+    right: 340px;
+    top: 15px;
     z-index: 0;
     border-radius: 0 0 0 50px;
     margin-top: 100px;
 
     @media only screen and (max-width: @header-mobile-width) {
-      position: absolute;
-      right: 370px;
-      top: 300px;
-      max-width: 60%;
+      right: 50px;
+      top: -40px;
     }
   }
 }
@@ -72,8 +76,9 @@
   top: 700px;
   left: 360px;
   @media only screen and (max-width: @header-mobile-width) {
-    top: 730px;
-    left: -150px;
+    top: 250px;
+    left: 100px;
+    z-index: 1;
   }
 }
 .button_image {
@@ -89,9 +94,9 @@
   color: @secondary-color !important;
   @media only screen and (max-width: @header-mobile-width) {
     height: 30px !important;
-     width: 150px;
-     top: 10px;
-     left: 80px;
+    width: 150px;
+    top: 10px;
+    left: 60px;
   }
 }
 .background_big {
@@ -109,10 +114,10 @@
   background: @tertiary-color;
   transform: rotate(45deg);
   @media only screen and (max-width: @header-mobile-width) {
-    top: 270px;
-    left: -80px;
-    width: 100px;
-    height: 200px;
+    top: -40px;
+    left: 180px;
+    width: 80px;
+    height: 150px;
   }
 }
 
@@ -123,6 +128,10 @@
   border-radius: 50%;
   margin: 3px;
   background: @tertiary-color;
+  @media only screen and (max-width: @header-mobile-width) {
+    width: 25px;
+    height: 25px;
+  }
 
   &--5 {
     left: 40px;
@@ -131,10 +140,10 @@
     top: 530px;
 
     @media only screen and (max-width: @header-mobile-width) {
-      left: -260px;
-}
+      top: 270px;
+      left: 70px;
+    }
   }
- 
 }
 .flexbulletvertical {
   display: flex;
@@ -147,13 +156,12 @@
   right: 10px;
   margin-bottom: 5px;
 
-
   @media only screen and (max-width: @header-mobile-width) {
-    right: 300px;
-
+    // right: 300px;
+    position: absolute;
+    top: 145px;
+    left: 40px;
   }
-
-
 }
 .flexbullethorizontal {
   display: flex;
@@ -162,7 +170,8 @@
   top: 510px;
   right: -80px;
   @media only screen and (max-width: @header-mobile-width) {
-    right: 220px;
+    right: -90px;
+    top: 270px;
   }
 }
 
@@ -177,15 +186,21 @@ a .coluna_carrossel {
   height: 100%;
   margin-top: none;
   @media only screen and (max-width: @header-mobile-width) {
-    width: @site-width;
-    
-}
+    // width: @site-width;
+  }
 }
 
-.ant-row{
+.ant-row {
   width: 100%;
 
->div{
-  width: 100%;
+  > div {
+    width: 100%;
+  }
 }
+.areaTotal_carroussel {
+  @media only screen and (max-width: @header-mobile-width) {
+    // width: @site-width;
+    // position: relative;
+    // top:250px;
+  }
 }

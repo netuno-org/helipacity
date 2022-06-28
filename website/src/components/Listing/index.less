@@ -24,7 +24,7 @@
   }
 
   > div > h1 {
-     width: 80%;  
+    width: 80%;
     position: relative;
     top: 150px;
     left: 90px;
@@ -35,7 +35,7 @@
     color: @primary-color;
     text-align: left;
     margin: 0;
-    background-color: aqua;
+
     @media only screen and (max-width: @header-mobile-width) {
       position: relative;
       top: 150px;
@@ -58,6 +58,11 @@
     margin-top: 50px;
   }
 }
+.text__title {
+  margin-left: 50px;
+  margin-top: 30px;
+  font-size: 50px;
+}
 .text__title--stroke {
   -webkit-text-stroke: 1px @primary-color;
   -webkit-text-fill-color: white;
@@ -71,41 +76,30 @@
   width: 100%;
   z-index: 1;
   @media only screen and (max-width: @header-mobile-width) {
-    margin-top:-100px;
-
-
-
-
+    // margin-top:-100px;
   }
 }
 .carousel-slider {
   margin-top: 0;
   height: 900px;
-   
-    width: @site-width!important;
+
+  width: @site-width!important;
   @media only screen and (max-width: @header-mobile-width) {
-    
     // width: 50% !important;
-    
   }
 }
 .axis-horizontal {
   height: 900px;
   margin-top: 0;
   @media only screen and (max-width: @header-mobile-width) {
-      width: @site-width!important;
-      padding: 0;
-    
+    width: @site-width!important;
+    padding: 0;
   }
 }
 .carousel.carousel-slider .control-arrow {
-    display: none;
+  display: none;
 }
-.slide{
-    
 
-}
-.carousel-slider{
-    
-    width: @site-width;
+.carousel-slider {
+  width: @site-width;
 }

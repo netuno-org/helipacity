@@ -28,7 +28,6 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     layout = (
       <div className={section+'__text'}>
         <div className="text">
-        {/* <div className="bar"> </div> */}
         <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
@@ -47,16 +46,14 @@ function Content({section, type, title, content, image, image_title, image_alt, 
                 <h4 className="text__button1">Texto</h4>
               </Button>
           </div>
-          <div className="bar2"> </div>
-        </div>
+         </div>
       </div>
     );
     } else if (type === 'text2') {
       layout = (
         <div className={section+'__text'}>
           <div className="text">
-          <div className="bar3"> </div>
-          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Texto</h3>
             { title ? <div className="text__title-border"></div> : null }
             <div dangerouslySetInnerHTML={{__html: content}}></div>

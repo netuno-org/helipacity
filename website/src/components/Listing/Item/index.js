@@ -47,9 +47,9 @@ function Item({
   } else if (type === "carrossel") {
     layout = (
       <div>
-        <Row className="coluna_carrossel" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
+        <Row className="coluna_carrossel" gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }} >
         
-          <Col span={12} >
+          <Col xs ={{ span:24}}md ={{ span:12}}  >
           
             <p
               className="carroussel__text"
@@ -57,8 +57,9 @@ function Item({
             ></p>
           </Col>
 
-          <Col className="carroussel" span={12}>
-            <div className="div_imagem_carroussel">
+          <Col className="carroussel"   xs ={{ span:24}}md ={{ span:12}}  >
+            <div className="areaTotal_carroussel">
+              <div className="div_imagem_carroussel">
               <img
                 className="imagem_carroussel"
                 src={`/images/${section}/${image}`}
@@ -89,9 +90,11 @@ function Item({
               <div className="bullet bullet--9"></div>
               <div className="bullet bullet--10"></div>
             </div>
+            </div>
           </Col>
         </Row>
       </div>
+      
     );
   } else {
     layout = (
