@@ -29,7 +29,7 @@ function Item({
     );
   } else if (type === "carrossel_principal") {
     layout = (
-      <div className="backgroundTop">
+      <div className="backgroundTop" >
         <div className="div_imagem_principal">
         <h1  className="carroussel__legend">{title}</h1>
             <p className="carroussel__legendprincipal"

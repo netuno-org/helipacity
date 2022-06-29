@@ -51,7 +51,7 @@ function Listing({
 
   } else if (type === "carrossel_principal") {
     listLayout = (
-      <Row xs ={{ span:24}}md ={{ span:12}}>
+      <Row className="listing__principal" xs ={{ span:24}}md ={{ span:12}} >
           <div>
         
         <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
@@ -67,7 +67,7 @@ function Listing({
   
   } else if (type === "carrossel") {
     listLayout = (
-      <Row>
+      <Row className="listing__segundo">
         <div>
           <BaseDivider />
           <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>

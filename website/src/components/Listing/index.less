@@ -22,6 +22,21 @@
       @secondary-color 100%
     );
   }
+  &__principal {
+    @media only screen and (max-width: 800px) {
+      height: 200px;
+    }
+    .carousel-root {
+      @media only screen and (max-width: 800px) {
+       
+      }
+    }
+    .control-dots {
+      @media only screen and (max-width: 800px) {
+        height: 700px;
+      }
+    }
+  }
 
   > div > h1 {
     width: 80%;
@@ -76,7 +91,6 @@
   width: 100%;
   z-index: 1;
   @media only screen and (max-width: @header-mobile-width) {
-    // margin-top:-100px;
   }
 }
 .carousel-slider {
