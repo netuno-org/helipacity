@@ -21,6 +21,7 @@ WHERE 1 = 1
             .set('contact', dbEstablishment.getString('contact'))
             .set('description', dbEstablishment.getString('description'))
             .set('link', dbEstablishment.getString('link'))
+            .set('image', dbEstablishment.getFile('image') )
             .set(
                 'commerce',
                     _val.map()
@@ -33,6 +34,5 @@ WHERE 1 = 1
 
 
 _out.json(list)
-
 
 

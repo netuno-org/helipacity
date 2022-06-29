@@ -44,10 +44,17 @@ const columns = [
     dataIndex: "link",
     key: "link",
     className: "link",
+    
+  },{
+    title: "Imagem",
+    dataIndex: "image",
+    key: "image",
+    className: "image",
+    
   },
 ];
 
-function EstablishmentTable() {
+function EstablishmentTable({}) {
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -66,6 +73,7 @@ function EstablishmentTable() {
     <div className="EstablishmentTable">
       <h1>Lista dos Comércios</h1>
       <Table dataSource={list} columns={columns} />
+      <img src="http://192.168.1.102:9000/services/establishment/image?uid=7df7121a-4314-48c2-9776-53612cedc28f"/>
     </div>
   );
 }
