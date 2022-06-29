@@ -5,12 +5,15 @@ import { BsFillChatSquareTextFill } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
 import Actions from '../Actions';
 import { Button } from 'antd';
-import BaseDivider from '../../base/Divider'
+import BaseDivider from '../../base/Divider';
+import {Select} from 'antd';
+
 
 
 import './index.less';
 
 function Content({section, type, title, content, image, image_title, image_alt, image_max_width, actions}) {
+
 
   let layout = null;
   const imageStyle = {};
@@ -95,6 +98,33 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         </Row>
       </div>
     );
+    } else if (type === 'text_events') {
+      layout = (
+        <div className={section+'__text'}>
+          <div className="text">
+            <h1 className="text__title__events text__title--stroke" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title__events " dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title__events text__title--stroke " dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            { title ? <div className="text__title-border"></div> : null }
+             <div className="text">
+            <p   dangerouslySetInnerHTML={{__html: content}}></p>
+            { title ? <div className="text__title-border"></div> : null }
+          </div>
+          </div>
+              <div className='eventsSelecty'> 
+        {       /* {JSON.stringify(list)} */}
+            <h1>Categoria dos Eventos</h1>
+            <Select className='select' >
+                {
+                    // list.map((item) => {
+                    //   return (<Select.Option value={item.code}>{item.name}</Select.Option>)
+                    // })
+                }
+                
+            </Select>
+  </div>
+        </div>
+      );
   } else if (type === 'image-right') {
     layout = (
       <div className="content__image-right">
@@ -121,8 +151,8 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <img src={`/images/${section}/${image}`} alt={ image_alt } title={ image_title } style={ imageStyle }/>
         </div>
         <div className="text">
-          <h1>{ title }</h1>
-          <div dangerouslySetInnerHTML={{__html: content}}></div>
+          <h1 className="title_imageTop">{ title }</h1>
+          <div className="content_imageTop" dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
       </div>
     );
