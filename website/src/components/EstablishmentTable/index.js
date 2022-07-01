@@ -1,62 +1,12 @@
-import _service from "@netuno/service-client";
 import React, { useEffect, useState } from "react";
-import { Table,Tag } from "antd";
+import _service from "@netuno/service-client";
+import { Card,Row,Col } from 'antd';
+import {InstagramOutlined } from '@ant-design/icons'
 import './index.less'
+const { Meta } = Card;
 
-const columns = [
-  {
-    title: "Categoria",
-    dataIndex: "commerce",
-    className: "commerce",
-    key: "commerce",
-    render: (commerce) => {
-        return <>
-        <Tag>{commerce.name}</Tag>
-        </>
-    },
-  },
-  {
-    title: "Nome",
-    dataIndex: "name",
-    key: "name",
-    className:"name"
-  },
-  {
-    title: "Descrição",
-    dataIndex: "description",
-    key: "description",
-    className: "description",
-  },
-  {
-    title: "Endereço",
-    dataIndex: "address",
-    key: "address",
-    className:"address",
-  },
-  {
-    title: "Contato",
-    dataIndex: "contact",
-    key: "contact",
-    className: "contact",
-  },
-  {
-    title: "Rede Social",
-    dataIndex: "link",
-    key: "link",
-    className: "link",
-    
-  },{
-    title: "Imagem",
-    dataIndex: "image",
-    key: "image",
-    className: "image",
-    
-  },
-];
-
-function EstablishmentTable({}) {
+function Cards({}) {
   const [list, setList] = useState([]);
-
   useEffect(() => {
     _service({
       url: "/establishment/list",
@@ -68,14 +18,39 @@ function EstablishmentTable({}) {
       },
     });
   }, []);
-
   return (
-    <div className="EstablishmentTable">
-      <h1>Lista dos Comércios</h1>
-      <Table dataSource={list} columns={columns} />
-      <img src="http://192.168.1.102:9000/services/establishment/image?uid=7df7121a-4314-48c2-9776-53612cedc28f"/>
-    </div>
+    <Row >
+      
+   
+          {
+            list.map ((item) => {
+              return(
+                     <Col  xs={{span: 24 }} sm={{span: 8}} md={{span: 8}} lg={{span: 6}} xl={{span: 4,offset: 1}} >
+                        <Card  hoverable 
+                          style={{ 
+                             width: 240,
+                                }}
+                          cover={<img  src={`http://192.168.1.102:9000/services/establishment/image?uid=${item.uid}`} />}
+                           >
+                            <div className="shadow">Shadow</div>
+                            <Meta title={item.name} description={item.description} />
+                            <p>{item.address}</p>
+                            
+                            <p>{item.contact}</p>
+                            <a href={item.link}><InstagramOutlined/></a>
+                        </Card>
+                     </Col>
+                  )
+          })
+          }
+      
+    </Row>
   );
 }
+export default Cards;
 
-export default EstablishmentTable;
+
+
+
+
+
