@@ -25,7 +25,7 @@ function Cards({}) {
           {
             list.map ((item) => {
               return(
-                     <Col  xs={{span: 24 }} sm={{span: 8}} md={{span: 8}} lg={{span: 6}} xl={{span: 4,offset: 1}} >
+                     <Col  xs={{span: 24 }} sm={{span: 8}} md={{span: 8}} lg={{span: 6}} xl={{span: 6,offset: 1}} >
                         <Card  hoverable 
                           style={{ 
                              width: 240,

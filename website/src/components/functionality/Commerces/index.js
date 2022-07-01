@@ -13,7 +13,7 @@ function Commerces({}) {
   
     return(
         <Row>
-              <div className='ContactCommerce'> <h1 >Em Breve.</h1></div>
+              {/* <div className='ContactCommerce'> <h1 >Em Breve.</h1></div> */}
           <CommerceSelect/>  
           <EstablishmentTable/> 
        
