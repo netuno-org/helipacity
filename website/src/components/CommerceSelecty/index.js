@@ -25,6 +25,7 @@ function CommerceSelect () {
   <div className='CommerceSelecty'> 
     {/* {JSON.stringify(list)} */}
         <h1>Categoria dos Comércios</h1>
+        <br></br>
         <Select className='select' >
             {
                 list.map((item) => {
