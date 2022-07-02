@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col,Pagination } from "antd";
 import { InstagramOutlined } from "@ant-design/icons";
 import "./index.less";
 
 const { Meta } = Card;
 
 function Cards({}) {
+  const [current, setCurrent] = useState(1);
+  const onChange = (page) => {
+    console.log(page);
+    setCurrent(page);
+  };
+
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
@@ -20,8 +26,10 @@ function Cards({}) {
     });
   }, []);
   return (
+  
     <Row>
       {list.map((item) => {
+      
         return (
           <Col
             xs={{ span: 24 }}
@@ -46,13 +54,19 @@ function Cards({}) {
               <p>{item.address}</p>
               <p>{item.contact}</p>
               <a href={item.link}>
+                
                 <InstagramOutlined />
               </a>
             </Card>
           </Col>
+            
         );
       })}
+      <Col>
+      <Pagination current={current} onChange={onChange} total={30} />
+      </Col>
     </Row>
+    
   );
 }
 export default Cards;

@@ -9,7 +9,7 @@ import Cards from "./EstablishmentCards";
 function Commerces({}) {
   return (
     <Row>
-      <div className="ContactCommerce">
+      <div className="embreve">
         {" "}
         <h1>Em Breve.</h1>
       </div>
