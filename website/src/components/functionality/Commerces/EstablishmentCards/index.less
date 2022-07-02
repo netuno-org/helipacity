@@ -1,0 +1,52 @@
+@import "../../../../styles/variables.less";
+
+.ant-layout-content {
+  width: 100%;
+  .ant-row {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .anticon {
+    color: white;
+  }
+  .ant-col {
+    margin: auto;
+  }
+  .ant-card {
+    clip-path: polygon(0 3.5%, 100% 0, 100% 100%, 0% 100%);
+    padding-top: 0;
+    border: 2px solid @primary-color;
+    border-radius: 0;
+    background-color: @primary-color;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    .shadow {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 0, 0, 0),
+        @primary-color
+      );
+      width: 100%;
+      z-index: 200;
+      color: transparent;
+    }
+    .ant-card-body {
+      position: relative;
+      top: -25px;
+      width: 100%;
+      padding: 0;
+    }
+    img {
+      clip-path: polygon(0 7%, 100% 1%, 100% 100%, 0% 100%);
+      border: 2px solid @primary-color;
+      border-radius: 0;
+      height: 200px;
+    }
+    P {
+      margin: 0;
+    }
+  }
+}
