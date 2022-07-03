@@ -188,6 +188,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         <div className={section+'__text'}>
         <div className='null'/>
         <div className="text">
+         
         <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
         <h3><div dangerouslySetInnerHTML={{__html: content}}></div> </h3>
         </div>

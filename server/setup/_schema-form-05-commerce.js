@@ -25,10 +25,10 @@ _form.createIfNotExists(
 	.set("reorder", 0)
 	.set("report", false)
 	.set("show_id", true)
-	.set("uid", "a5d2c7f4-fe16-493b-953d-17acbf6b55e7")
+	.set("uid", "6bc254d3-3d9d-4af8-9f6f-b6cdfe3420fc")
 )
 _form.createComponentIfNotExists(
-	"a5d2c7f4-fe16-493b-953d-17acbf6b55e7",
+	"6bc254d3-3d9d-4af8-9f6f-b6cdfe3420fc",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -46,7 +46,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "4e6ffc84-d9da-42b5-8d96-ca6fc0c29372")
+	.set("uid", "a213fe8d-b5c7-4d3d-a158-dceeaddb2749")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -59,7 +59,7 @@ _form.createComponentIfNotExists(
 	.set("y", 1)
 )
 _form.createComponentIfNotExists(
-	"a5d2c7f4-fe16-493b-953d-17acbf6b55e7",
+	"6bc254d3-3d9d-4af8-9f6f-b6cdfe3420fc",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -77,7 +77,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "35b86a83-4016-4a63-a711-fac000e8a5da")
+	.set("uid", "864859bd-c989-44f6-9ee6-f7e24bdc37a9")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)

@@ -8,12 +8,11 @@
     width: 100%;
     justify-content: space-between;
   }
-  .ant-pagination{
+  .ant-pagination {
     text-align: center;
-    svg{color: @primary-color;}
-  }
-  .anticon {
-    color: white;
+    svg {
+      color: @primary-color;
+    }
   }
   .ant-col {
     margin: auto;
@@ -27,7 +26,21 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
+    color: white;
+
+    .ant-card-meta-title {
+      font-size: 1.5rem;
+      color: white;
+      font-family: Poppins;
+      margin-bottom: 0;
+    }
+    .ant-card-meta-description {
+      color: white;
+    }
     .shadow {
+      position: relative;
+      top: -25px;
+
       background-image: linear-gradient(
         to bottom,
         rgba(255, 0, 0, 0),
@@ -38,10 +51,15 @@
       color: transparent;
     }
     .ant-card-body {
-      position: relative;
-      top: -25px;
       width: 100%;
       padding: 0;
+      p {
+        position: relative;
+        display: flex;
+        top: -30px;
+        text-align: center;
+        justify-content: center;
+      }
     }
     img {
       clip-path: polygon(0 7%, 100% 1%, 100% 100%, 0% 100%);
@@ -51,6 +69,72 @@
     }
     P {
       margin: 0;
+    }
+    .end {
+      display: flex;
+      justify-content: center;
+      .anticon {
+        color: white;
+        font-size: 1.2rem;
+        margin-top: 4%;
+      }
+      h5 {
+        position: relative;
+        top: 10px;
+
+        color: white;
+        margin: 0;
+      }
+    }
+    .whats {
+      display: flex;
+      justify-content: center;
+      .anticon {
+        color: rgb(52, 175, 35);
+        font-size: 1.2rem;
+        margin-top: 4%;
+      }
+      h4 {
+        font-family: Poppins;
+        color: white;
+        margin-top: 3%;
+        margin-left: 5px;
+      }
+    }
+    .insta {
+      display: flex;
+      justify-content: center;
+      .anticon {
+        color: white;
+        font-size: 2rem;
+        background: #f09433;
+        background: -moz-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        background: -webkit-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+  
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+        border-radius: 10px;
+        height: 2rem;
+      }
+      h4 {
+        font-family: Poppins;
+        color: white;
+        margin-top: 3%;
+        margin-left: 5px;
+      }
     }
   }
 }

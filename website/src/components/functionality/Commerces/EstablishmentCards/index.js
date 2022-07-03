@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
-import { Card, Row, Col,Pagination } from "antd";
-import { InstagramOutlined } from "@ant-design/icons";
+import { Card, Row, Col, Pagination } from "antd";
+import { InstagramOutlined, WhatsAppOutlined
+ } from "@ant-design/icons";
 import "./index.less";
 
 const { Meta } = Card;
 
-function Cards({}) {
+function Cards(removeError = {}) {
   const [current, setCurrent] = useState(1);
   const onChange = (page) => {
     console.log(page);
@@ -26,47 +27,50 @@ function Cards({}) {
     });
   }, []);
   return (
-  
     <Row>
       {list.map((item) => {
-      
         return (
           <Col
             xs={{ span: 24 }}
-            sm={{ span: 8 }}
+            sm={{ span: 12 }}
             md={{ span: 8 }}
             lg={{ span: 6 }}
-            xl={{ span: 6, offset: 1 }}
+            xl={{ span: 4 }}
           >
             <Card
               hoverable
               style={{
-                width: 240,
+                width: 250,
+                
               }}
               cover={
                 <img
                   src={`http://192.168.1.102:9000/services/establishment/image?uid=${item.uid}`}
+                  alt="Imagem dos Comercios"
                 />
               }
             >
               <div className="shadow">Shadow</div>
-              <Meta title={item.name} description={item.description} />
-              <p>{item.address}</p>
-              <p>{item.contact}</p>
+              <p><Meta title={item.name} description={item.description} /></p>
+              <div className="end"><h5>End:&nbsp;{item.address}</h5></div>
+              <div className="whats">
+                <WhatsAppOutlined/>
+                <h4>{item.contact}</h4>
+              </div>
               <a href={item.link}>
-                
+              <div className="insta">
                 <InstagramOutlined />
+                <h4>Instagran</h4>
+              </div>
               </a>
             </Card>
           </Col>
-            
         );
       })}
       <Col>
-      <Pagination current={current} onChange={onChange} total={30} />
+        <Pagination current={current} onChange={onChange} total={30} />
       </Col>
     </Row>
-    
   );
 }
 export default Cards;
