@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Row, Col, Form, Input, Button, notification } from "antd";
-import _service from "@netuno/service-client";
-import Cluar from "../../../common/Cluar";
+import React from "react";
+import { Row } from "antd";
+// import _service from "@netuno/service-client";
+
 import "./index.less";
 import CommerceSelect from "./CommerceSelecty";
 import Cards from "./EstablishmentCards";
 
-function Commerces({}) {
+function Commerces(RemoveError={}) {
   return (
     <Row>
       <div className="embreve">

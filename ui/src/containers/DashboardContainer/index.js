@@ -4,29 +4,24 @@ import ContactTable from "../ContactTable";
 import CommerceSelect from "../../components/CommerceSelecty";
 import CluarSync from "../../components/cluar/Sync";
 import EstablishmentTable from "../../components/EstablishmentTable";
-
 import "./index.less";
 
-
-
 const { Title } = Typography;
-
 const { TabPane } = Tabs;
 
 function DashboardContainer() {
   return (
-    <div>
-     
+    <div className="dashboard">
       <Title level={2}>Dashboard</Title>
-      <CommerceSelect/>
+      <CluarSync />
+      <CommerceSelect />
       <Tabs defaultActiveKey="1">
         <TabPane tab="Contactos" key="1">
           <p>Lista de contactos submetidos pelo formulário do website.</p>
           <ContactTable />
-          <EstablishmentTable/>
+          <EstablishmentTable />
         </TabPane>
       </Tabs>
-      <CluarSync />
     </div>
   );
 }

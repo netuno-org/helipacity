@@ -1,19 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-
 import { Table, Input, Button, notification } from 'antd';
-
 import { SearchOutlined } from '@ant-design/icons';
-
 import Highlighter from 'react-highlight-words';
-
 import _service from '@netuno/service-client';
 
 const { Column } = Table;
-
 const pageSize = 10;
-
 const columnsNames = [ 'name', 'email', 'subject', 'moment' ];
-
 const columnsTitles = {
     name: 'Nome',
     email: 'E-mail',

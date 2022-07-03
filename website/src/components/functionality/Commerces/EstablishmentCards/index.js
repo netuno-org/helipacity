@@ -8,11 +8,7 @@ import "./index.less";
 const { Meta } = Card;
 
 function Cards(removeError = {}) {
-  const [current, setCurrent] = useState(1);
-  const onChange = (page) => {
-    console.log(page);
-    setCurrent(page);
-  };
+  
 
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -68,7 +64,7 @@ function Cards(removeError = {}) {
         );
       })}
       <Col>
-        <Pagination current={current} onChange={onChange} total={30} />
+        <Pagination  defaultCurrent={1} total={30} />
       </Col>
     </Row>
   );
