@@ -9,7 +9,7 @@ import Content from '../components/Content';
 import Listing from '../components/Listing';
 import ContactForm from '../components/functionality/ContactForm';
 import ContactMap from '../components/functionality/ContactMap';
-import ContactCommerce from '../components/functionality/ContactCommerce';
+import Commerces from '../components/functionality/Commerces';
 
 function Builder({ page }) {
   useEffect(() => {
@@ -34,7 +34,7 @@ function Builder({ page }) {
       } else if (item.type === 'contact-map') {
         components.push(<ContactMap key={uid} {...item} />);
       }else if (item.type === 'contact-commerce') {
-        components.push(<ContactCommerce key={uid} {...item} />);
+        components.push(<Commerces key={uid} {...item} />);
       }
     }
   }

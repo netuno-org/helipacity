@@ -23,4 +23,5 @@ _db.insertIfNotExists(
         .set("locale", "en")
         .set("description", "English")
         .set("default", false)
+        .set("active", false)
 );
