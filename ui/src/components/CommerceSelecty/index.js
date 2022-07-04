@@ -5,14 +5,11 @@ import _service from '@netuno/service-client';
 
 function CommerceSelect () {
     const [list, setList] = useState ([]);
-
     useEffect (() => {
         _service({
             url: "/commerce/list",
             success: (response) => {
-               
                     setList (response.json);
-              
             },
             fail: (e) => {
                 console.log("Service Error", e);
@@ -20,7 +17,6 @@ function CommerceSelect () {
         });
 
     },[])
-
     return(
   <div className='CommerceSelecty'> 
     {/* {JSON.stringify(list)} */}
@@ -31,7 +27,6 @@ function CommerceSelect () {
                    return (<Select.Option value={item.code}>{item.name}</Select.Option>)
                 })
             }
-            
         </Select>
   </div>
         );
