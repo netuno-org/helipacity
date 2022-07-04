@@ -8,6 +8,8 @@ import { Button } from 'antd';
 import BaseDivider from '../../base/Divider';
 import {Select} from 'antd';
 import EventsSelect from '../EventsSelect';
+import _service from '@netuno/service-client';
+import ProductImage from '../ProductImage';
 
 
 import './index.less';
@@ -34,7 +36,7 @@ const options = [
   { value: 'forro', label: 'Forró' }
 ]
 
-
+ 
   
   if (type === 'text') {
     layout = (
@@ -126,6 +128,13 @@ const options = [
             
               <Select options={options}  style={{ width: 200 }}/>
              <EventsSelect></EventsSelect>
+             <ProductImage 
+             list
+             />
+
+             
+            
+  );
 
   </div>
         </div>
