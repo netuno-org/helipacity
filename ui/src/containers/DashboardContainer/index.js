@@ -4,7 +4,7 @@ import ContactTable from "../ContactTable";
 import CommerceSelect from "../../components/CommerceSelecty";
 import CluarSync from "../../components/cluar/Sync";
 import EstablishmentTable from "../../components/EstablishmentTable";
-
+import EventsSelect from "../../components/EventsSelect";
 import "./index.less";
 
 
@@ -24,6 +24,7 @@ function DashboardContainer() {
           <p>Lista de contactos submetidos pelo formulário do website.</p>
           <ContactTable />
           <EstablishmentTable/>
+          <EventsSelect/>
         </TabPane>
       </Tabs>
       <CluarSync />
