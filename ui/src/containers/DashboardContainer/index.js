@@ -18,6 +18,7 @@ function DashboardContainer() {
     <div>
      
       <Title level={2}>Dashboard</Title>
+      <CluarSync />
       <CommerceSelect/>
       <Tabs defaultActiveKey="1">
         <TabPane tab="Contactos" key="1">
@@ -27,7 +28,6 @@ function DashboardContainer() {
           <EventsSelect/>
         </TabPane>
       </Tabs>
-      <CluarSync />
     </div>
   );
 }
