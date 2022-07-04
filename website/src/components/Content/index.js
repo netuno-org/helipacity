@@ -7,7 +7,7 @@ import Actions from '../Actions';
 import { Button } from 'antd';
 import BaseDivider from '../../base/Divider';
 import {Select} from 'antd';
-
+import EventsSelect from '../EventsSelect';
 
 
 import './index.less';
@@ -27,6 +27,15 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
     titleStyled = titleParts.join(' ');
   }
+// Select
+const options = [
+  { value: 'funk', label: 'Funk' },
+  { value: 'samba', label: 'Samba' },
+  { value: 'forro', label: 'Forró' }
+]
+
+
+  
   if (type === 'text') {
     layout = (
       <div className={section+'__text'}>
@@ -112,16 +121,12 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           </div>
           </div>
               <div className='eventsSelecty'> 
-        {       /* {JSON.stringify(list)} */}
+              
             <h1>Categoria dos Eventos</h1>
-            <Select className='select' >
-                {
-                    // list.map((item) => {
-                    //   return (<Select.Option value={item.code}>{item.name}</Select.Option>)
-                    // })
-                }
-                
-            </Select>
+            
+              <Select options={options}  style={{ width: 200 }}/>
+             <EventsSelect></EventsSelect>
+
   </div>
         </div>
       );

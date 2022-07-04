@@ -21,14 +21,14 @@ _form.createIfNotExists(
 	.set("export_xls", true)
 	.set("export_xml", true)
 	.set("firebase", "")
-	.set("name", "establishment")
+	.set("name", "estabelecimento")
 	.set("reorder", 0)
 	.set("report", false)
 	.set("show_id", true)
-	.set("uid", "09122988-1b7c-4959-9653-42d47e47b848")
+	.set("uid", "05291504-c205-4d3b-b5dc-eab79a2fe704")
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -46,7 +46,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "03a123f5-cb08-4186-9761-c27486d94eba")
+	.set("uid", "5416c940-5c48-4c4d-beef-d895c2706a20")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -59,7 +59,7 @@ _form.createComponentIfNotExists(
 	.set("y", 5)
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -77,7 +77,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "select")
-	.set("uid", "b8b7d8ac-1945-418d-b08d-4fb13b174a13")
+	.set("uid", "b9eed534-6ae9-4cf3-9027-51a33ddbf98c")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -90,7 +90,7 @@ _form.createComponentIfNotExists(
 	.set("y", 1)
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -108,7 +108,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "739097a8-e4be-46dd-9a50-ff12a227a357")
+	.set("uid", "7a264f4b-d974-48fe-89f4-dc7734af1947")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -121,7 +121,7 @@ _form.createComponentIfNotExists(
 	.set("y", 4)
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -139,7 +139,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "2ec2c36f-536b-4d54-b255-107999d79895")
+	.set("uid", "a74e20f2-0d57-4984-ad50-d952c4542a8a")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -152,7 +152,7 @@ _form.createComponentIfNotExists(
 	.set("y", 3)
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -170,7 +170,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "ff6684c6-d511-460c-a416-e24478503ff6")
+	.set("uid", "3ea63621-1f62-4ab8-a4ca-fd4eecfb37d8")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
@@ -183,7 +183,7 @@ _form.createComponentIfNotExists(
 	.set("y", 6)
 )
 _form.createComponentIfNotExists(
-	"09122988-1b7c-4959-9653-42d47e47b848",
+	"05291504-c205-4d3b-b5dc-eab79a2fe704",
 	_val.init()
 	.set("colspan", 0)
 	.set("description", "")
@@ -201,7 +201,7 @@ _form.createComponentIfNotExists(
 	.set("tdheight", 0)
 	.set("tdwidth", 0)
 	.set("type", "text")
-	.set("uid", "755ea8c8-61d7-43bf-815c-0566f729f2dc")
+	.set("uid", "af458329-5841-4faa-86a3-99f5f74873d8")
 	.set("user_id", 0)
 	.set("whenedit", true)
 	.set("whenexport", true)
