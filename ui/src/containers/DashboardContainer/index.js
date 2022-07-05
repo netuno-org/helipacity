@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography, Tabs } from "antd";
 import ContactTable from "../ContactTable";
-import CommerceSelect from "../../components/CommerceSelecty";
+import CommerceSelect from "../../components/Commerces/CommerceSelecty";
 import CluarSync from "../../components/cluar/Sync";
-import EstablishmentTable from "../../components/EstablishmentTable";
+import EstablishmentTable from "../../components/Commerces/EstablishmentTable";
 import EventsSelect from "../../components/EventsSelect";
 import "./index.less";
 
