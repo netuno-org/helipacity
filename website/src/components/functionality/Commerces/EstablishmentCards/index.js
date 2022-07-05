@@ -8,12 +8,10 @@ import "./index.less";
 const { Meta } = Card;
 
 function Cards(removeError = {}) {
-  
-
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
-      url: "/establishment/list",
+      url: "commerce/establishment/list",
       success: (response) => {
         setList(response.json);
       },
@@ -41,7 +39,7 @@ function Cards(removeError = {}) {
               }}
               cover={
                 <img
-                  src={`http://192.168.1.102:9000/services/establishment/image?uid=${item.uid}`}
+                  src={`http://192.168.1.102:9000/services/commerce/establishment/image?uid=${item.uid}`}
                   alt="Imagem dos Comercios"
                 />
               }
@@ -64,7 +62,6 @@ function Cards(removeError = {}) {
         );
       })}
       <Col>
-        <Pagination  defaultCurrent={1} total={30} />
       </Col>
     </Row>
   );

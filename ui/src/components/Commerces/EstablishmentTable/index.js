@@ -47,7 +47,7 @@ function EstablishmentTable() {
 
   useEffect(() => {
     _service({
-      url: "/establishment/list",
+      url: "/commerce/establishment/list",
       success: (response) => {
         setList(response.json);
       },
