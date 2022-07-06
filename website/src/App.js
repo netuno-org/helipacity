@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import BaseDivider from "./base/Divider";
 import Analytics from "./common/Analytics";
 import Cluar from "./common/Cluar";
 import Builder from "./common/Builder";
