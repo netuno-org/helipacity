@@ -39,7 +39,7 @@ function Cards(removeError = {}) {
               }}
               cover={
                 <img
-                  src={`http://192.168.1.102:9000/services/commerce/establishment/image?uid=${item.uid}`}
+                  src={`http://localhost:9000/services/commerce/establishment/image?uid=${item.uid}`}
                   alt="Imagem dos Comercios"
                 />
               }
