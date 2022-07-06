@@ -7,7 +7,9 @@ import "./index.less";
 
 const { Meta } = Card;
 
+
 function Cards(removeError = {}) {
+  const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
@@ -39,7 +41,7 @@ function Cards(removeError = {}) {
               }}
               cover={
                 <img
-                  src={`http://localhost:9000/services/commerce/establishment/image?uid=${item.uid}`}
+                  src={`${servicePrefix}/commerce/establishment/image?uid=${item.uid}`}
                   alt="Imagem dos Comercios"
                 />
               }
