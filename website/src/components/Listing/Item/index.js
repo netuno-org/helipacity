@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "antd";
-import BaseDivider from "../../../base/Divider";
 import { Button } from "antd";
 import "./index.less";
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
-import { Card, Row, Col, Pagination } from "antd";
+import { Card, Row, Col } from "antd";
 import { InstagramOutlined, WhatsAppOutlined
  } from "@ant-design/icons";
 import "./index.less";
