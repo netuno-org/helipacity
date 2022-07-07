@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
 import { Button, notification } from 'antd';
-
 import _service from '@netuno/service-client';
+import "./index.less";
+
 
 function CluarSync() {
     const [ loading, setLoading ] = useState(false);

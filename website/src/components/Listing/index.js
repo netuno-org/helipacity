@@ -48,17 +48,37 @@ function Listing({
     );
   } else if (type === "OTHER-CUSTOM-TYPE-HERE") {
     listLayout = <Row className={`listing__${type}`}>{children}</Row>;
-  } else if (type === "carrossel") {
+
+  } else if (type === "carrossel_principal") {
     listLayout = (
-      <div>
-        <BaseDivider />
-        <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+      <Row className="listing__principal" xs ={{ span:24}}md ={{ span:12}} >
+          <div>
         
-        <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+        <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        
+        <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
 
         <Carousel>{children}</Carousel>
-        <BaseDivider />
-      </div>
+        
+          </div>
+      </Row>
+      
+    );
+  
+  } else if (type === "carrossel") {
+    listLayout = (
+      <Row className="listing__segundo">
+        <div>
+          <BaseDivider />
+          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+          
+          <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+
+          <Carousel>{children}</Carousel>
+          <BaseDivider />
+        </div>
+      </Row>
+     
     );
   }
   return <section className="listing">{listLayout}</section>;

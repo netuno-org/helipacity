@@ -15,7 +15,6 @@
   padding: 0px;
   @media (max-width: @header-mobile-width) {
     padding: 0 px !important;
-    height: @header-size-mobile !important;
     line-height: @header-size-mobile !important;
     .headersvg {
       position: absolute;
@@ -66,18 +65,19 @@
     .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title,
     .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title,
     .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title,
-    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
-      height: 12vh;
+    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {//Altura do componente menu
+      height: 14vh;
       top: 20px;
+      min-height: 50px;
+    
     }
-    .ant-menu-title-content {
-      height: 10vh;
+    .ant-menu-title-content { //Altura do componente do menu.
+      min-height: 5rem;
       > a:before {
-        line-height: 120px;
-      }
+            }
       > a {
         position: relative;
-        top: 30px;
+        top: 22%;
       }
     }
     @media only screen and (max-width: @header-mobile-width) {
@@ -86,7 +86,7 @@
       height: 101%;
       top: -1px;
       span {
-        a {
+        a {          
           font-size: 3rem;
           color: @secondary-color;
           top: 15px !important;
@@ -102,7 +102,6 @@
     opacity: 0.8;
     z-index: 2;
   }
-  // Obs: O arquivo strip.svg que esta na pasta website/public/images está com margin no top e right e left precisa ser reparado.
   .logo {
     z-index: 3;
     img {

@@ -1,13 +1,20 @@
 import React from 'react';
-import { BsFillChatSquareTextFill } from "react-icons/bs";
+import { Row, Col } from 'antd';
 import { FaMicrophone } from "react-icons/fa";
+import { BsFillChatSquareTextFill } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
-import { Row, Col, Button } from 'antd';
-import BaseDivider from '../../base/Divider'
 import Actions from '../Actions';
+import { Button } from 'antd';
+import BaseDivider from '../../base/Divider';
+import {Select} from 'antd';
+import EventsSelect from '../EventsSelect';
+// import ProductImage from '../ProductImage';
+
+
 import './index.less';
 
 function Content({section, type, title, content, image, image_title, image_alt, image_max_width, actions}) {
+
 
   let layout = null;
   const imageStyle = {};
@@ -21,42 +28,49 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
     titleStyled = titleParts.join(' ');
   }
-  if (type === 'text') {   
+// Select
+const options = [
+  { value: 'funk', label: 'Funk' },
+  { value: 'samba', label: 'Samba' },
+  { value: 'forro', label: 'Forró' }
+]
+
+ 
+  
+  if (type === 'text') {
     layout = (
       <div className={section+'__text'}>
         <div className="text">
-        {/* <div className="bar"> </div> */}
         <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Botões Informativos</h3>
           <div className ="text__divButton">
             <Button type="primary" className="button1">
-              <FaMicrophone className="icons" />
-              <h4 className="text__button1">Texto</h4>
+                <FaMicrophone className="icons" />
+                <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
               <Button type="primary" className="button2">
-              <BsFillChatSquareTextFill className="icons" />
-              <h4 className="text__button1">Texto</h4>
+                <BsFillChatSquareTextFill className="icons" />
+                <h4 className="text__button1">Texto</h4>
               </Button>
               <br/>
               <Button type="primary" className="button3">
-              <FiHelpCircle className="icons" />
-              <h4 className="text__button1">Texto</h4>
+                <FiHelpCircle className="icons" />
+                <h4 className="text__button1">Texto</h4>
               </Button>
           </div>
-          <div className="bar2"> </div>
-        </div>
+         </div>
       </div>
     );
     } else if (type === 'text2') {
       layout = (
         <div className={section+'__text'}>
           <div className="text">
-          <div className="bar3"> </div>
-          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           <h3> Texto</h3>
             { title ? <div className="text__title-border"></div> : null }
             <div dangerouslySetInnerHTML={{__html: content}}></div>
+            
           </div>
         </div>
       );
@@ -80,17 +94,50 @@ function Content({section, type, title, content, image, image_title, image_alt, 
             </div>
           </Col>
           <Col md={16}>
+         
             <div className="text">
             <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+              
               <div dangerouslySetInnerHTML={{__html: content}}></div>
               </div>
               <Button type="primary" className="button4">
                 <h4 className="text__button2">Saiba mais</h4>
               </Button>
+           
           </Col>
         </Row>
       </div>
     );
+    } else if (type === 'text_events') {
+      layout = (
+        <div className={section+'__text'}>
+          <div className="text">
+            <h1 className="text__title__events text__title--stroke" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title__events " dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            <h1 className="text__title__events text__title--stroke " dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+            { title ? <div className="text__title-border"></div> : null }
+             <div className="text">
+            <p   dangerouslySetInnerHTML={{__html: content}}></p>
+            { title ? <div className="text__title-border"></div> : null }
+          </div>
+          </div>
+              <div className='eventsSelecty'> 
+              
+            <h1>Categoria dos Eventos</h1>
+            
+              <Select options={options}  style={{ width: 200 }}/>
+             <EventsSelect></EventsSelect>
+             {/* <ProductImage 
+             list
+             /> */}
+
+             
+            
+  );
+
+  </div>
+        </div>
+      );
   } else if (type === 'image-right') {
     layout = (
       <div className="content__image-right">
@@ -117,8 +164,8 @@ function Content({section, type, title, content, image, image_title, image_alt, 
           <img src={`/images/${section}/${image}`} alt={ image_alt } title={ image_title } style={ imageStyle }/>
         </div>
         <div className="text">
-          <h1>{ title }</h1>
-          <div dangerouslySetInnerHTML={{__html: content}}></div>
+          <h1 className="title_imageTop">{ title }</h1>
+          <div className="content_imageTop" dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
       </div>
     );
@@ -142,6 +189,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         </div>
       </div>
     );
+   
   }else if (type === 'basedivider') {     // divisória amarela entre as páginas 
    return (
       <div>
@@ -153,6 +201,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
         <div className={section+'__text'}>
         <div className='null'/>
         <div className="text">
+         
         <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
         <h3><div dangerouslySetInnerHTML={{__html: content}}></div> </h3>
         </div>

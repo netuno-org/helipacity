@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Row } from "antd";
-import BaseDivider from "../../../base/Divider";
+import { Button } from "antd";
 import "./index.less";
+
 
 function Item({
   section,
@@ -20,53 +21,80 @@ function Item({
         <a href={link} alt={title}>
           <span>{title}</span>
           <div
-            className="listing__item__bgimage"
+            className="listing__item__bigmage"
             style={{ backgroundImage: `url('/images/${section}/${image}')` }}
           ></div>
         </a>
       </Col>
     );
+  } else if (type === "carrossel_principal") {
+    layout = (
+      <div className="backgroundTop" >
+        <div className="div_imagem_principal">
+        <h1  className="carroussel__legend">{title}</h1>
+            <p className="carroussel__legendprincipal"
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></p>
+              <img className= "imagem_principal"
+                src={`/images/${section}/${image}`}
+                alt={image_alt}
+                title={image_title}
+              />
+            </div>
+        
+      </div>
+    );
   } else if (type === "carrossel") {
     layout = (
       <div>
+        <Row className="coluna_carrossel" gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }} >
         
-        <Row className ="coluna_carrossel">
-        
-          <Col span={12}>
+          <Col xs ={{ span:24}}md ={{ span:12}}  >
+          
             <p
-              className="carroussel__legend"
+              className="carroussel__text"
               dangerouslySetInnerHTML={{ __html: content }}
             ></p>
           </Col>
 
-          <Col className="carroussel" span={12}>
-          
-           <div className="div_imagem_carroussel">
-           <img
-              className="imagem_carroussel"
-              src={`/images/${section}/${image}`}
-              alt={image_alt}
-              title={image_title}
-            />
-           </div>
-           <div className = "background_image1"></div>
-           <div className = "background_image2"></div>
-           <div className = "background_image3"></div>
-           <div className = "background_image4"></div>
-           <div className = "background_image5"></div>
-           <div className = "background_image6"></div>
-           <div className = "background_image7"></div>
-           <div className = "background_image8"></div>
-           <div className = "background_image9"></div>
-           <div className = "background_image10"></div>
-           <div className = "background_image11"></div>
+          <Col className="carroussel"   xs ={{ span:24}}md ={{ span:12}}  >
+            <div className="areaTotal_carroussel">
+              <div className="div_imagem_carroussel">
+              <img
+                className="imagem_carroussel"
+                src={`/images/${section}/${image}`}
+                alt={image_alt}
+                title={image_title}
+              />
+              <div className="div_button_image">
+                <Button type="primary" className="button_image">
+                  <h4 className="text__button2">Nome da Pessoa</h4>
+                </Button>
+              </div>
+            </div>
 
-           
+            <div className="background_big"></div>
+              <div className =" flexbulletvertical">
+                <div className="bullet bullet--1"></div>
+                <div className="bullet bullet--2"></div>
+                <div className="bullet bullet--3"></div>
+                <div className="bullet bullet--4"></div>
+            </div>
             
-            
+            <div className="bullet bullet--5"></div>
+
+            <div className =" flexbullethorizontal">
+              <div className="bullet bullet--6"></div>
+              <div className="bullet bullet--7"></div>
+              <div className="bullet bullet--8"></div>
+              <div className="bullet bullet--9"></div>
+              <div className="bullet bullet--10"></div>
+            </div>
+            </div>
           </Col>
         </Row>
       </div>
+      
     );
   } else {
     layout = (
