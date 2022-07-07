@@ -12,6 +12,6 @@ if (_service.path == 'samples/my-service') {
 }
 */
 
-if (_service.path.startsWith('commerce/' || _service.path.startsWith('contact/') {
+if (_service.path.startsWith('commerce/') || _service.path.startsWith('contact/')) {
     _service.allow()
 }
