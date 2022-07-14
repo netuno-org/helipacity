@@ -23,20 +23,20 @@ function Cards(removeError = {}) {
     });
   }, []);
   return (
-    <Row>
+    <Row className="cards">
       {list.map((item) => {
         return (
           <Col
             xs={{ span: 24 }}
             sm={{ span: 12 }}
             md={{ span: 8 }}
-            lg={{ span: 6 }}
-            xl={{ span: 4 }}
+            lg={{ span: 8 }}
+            xl={{ span: 8 }}
           >
             <Card
               hoverable
               style={{
-                width: 250,
+                width: 350,
                 
               }}
               cover={
