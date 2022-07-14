@@ -68,7 +68,7 @@ function Listing({
   } else if (type === "carrossel") {
     listLayout = (
       <Row className="listing__segundo">
-        <div>
+        <div className="listing__carroussel_secundario">
           <BaseDivider />
           <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           

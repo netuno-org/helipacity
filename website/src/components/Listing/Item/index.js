@@ -29,13 +29,15 @@ function Item({
     );
   } else if (type === "carrossel_principal") {
     layout = (
-      <div className="backgroundTop" >
-        <div className="div_imagem_principal">
-        <h1  className="carroussel__legend">{title}</h1>
+      <div >
+        <div className="carroussel__area_imagem_principal">
+          <div className ="carroussel__enquadramento">
+            <h1  className="carroussel__legend">{title}</h1>
             <p className="carroussel__legendprincipal"
               dangerouslySetInnerHTML={{ __html: content }}
             ></p>
-              <img className= "imagem_principal"
+          </div>
+                <img className= "imagem_principal"
                 src={`/images/${section}/${image}`}
                 alt={image_alt}
                 title={image_title}
@@ -46,8 +48,8 @@ function Item({
     );
   } else if (type === "carrossel") {
     layout = (
-      <div>
-        <Row className="coluna_carrossel" gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }} >
+      <div className="carroussel__areaTotalsegundo">
+        <Row className="carroussel__coluna" gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }} >
         
           <Col xs ={{ span:24}}md ={{ span:12}}  >
           
@@ -58,10 +60,10 @@ function Item({
           </Col>
 
           <Col className="carroussel"   xs ={{ span:24}}md ={{ span:12}}  >
-            <div className="areaTotal_carroussel">
-              <div className="div_imagem_carroussel">
+            <div className="carroussel__areaTotalsecundario">
+              <div className="carroussel__areaimagem">
               <img
-                className="imagem_carroussel"
+                className="carroussel__segundaimagem"
                 src={`/images/${section}/${image}`}
                 alt={image_alt}
                 title={image_title}

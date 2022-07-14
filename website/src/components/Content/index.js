@@ -8,7 +8,7 @@ import { Button } from 'antd';
 import BaseDivider from '../../base/Divider';
 import {Select} from 'antd';
 import EventsSelect from '../EventsSelect';
-// import ProductImage from '../ProductImage';
+import EventsImage from '../EventsImage';
 
 
 import './index.less';
@@ -124,12 +124,8 @@ const options = [
               <div className='eventsSelecty'> 
               
             <h1>Categoria dos Eventos</h1>
-            
-              <Select options={options}  style={{ width: 200 }}/>
-             <EventsSelect></EventsSelect>
-             {/* <ProductImage 
-             list
-             /> */}
+            <EventsSelect></EventsSelect>
+             <EventsImage />
 
              
             

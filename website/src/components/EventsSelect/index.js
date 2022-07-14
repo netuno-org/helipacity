@@ -6,7 +6,7 @@ function EventsSelect() {
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
-      url: "/category/list",
+      url: "/events/list",
       success: (response) => {
         setList(response.json);
       },
@@ -21,7 +21,7 @@ function EventsSelect() {
       <Select style={{ width: "300px" }}>
         {list.map((item) => {
           return (
-            <Select.Option value={item.codigo}>{item.categoria}</Select.Option>
+            <Select.Option value={item.codigo}>{item.nome}</Select.Option>
           );
         })}
       </Select>
