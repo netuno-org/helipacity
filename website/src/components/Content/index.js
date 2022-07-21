@@ -121,7 +121,7 @@ const options = [
             { title ? <div className="text__title-border"></div> : null }
           </div>
           </div>
-              <div className='eventsSelecty'> 
+              <div className='eventsSelect'> 
               
             <h1>Categoria dos Eventos</h1>
             <EventsSelect></EventsSelect>

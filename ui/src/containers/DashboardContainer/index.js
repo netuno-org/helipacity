@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Tabs } from "antd";
 import ContactTable from "../ContactTable";
-import CommerceSelect from "../../components/Commerces/CommerceSelecty";
+import CommerceSelect from "../../components/Commerces/CommerceSelect";
 import CluarSync from "../../components/cluar/Sync";
 import EstablishmentTable from "../../components/Commerces/EstablishmentTable";
 import EventsSelect from "../../components/EventsSelect";

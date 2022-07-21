@@ -1,7 +1,10 @@
 @import "../../styles/variables.less";
 
 .basedivider {
+  
   &__hr {
+    width: 80vw;
+    max-width: @site-max-width;
     margin: auto;
     margin-top: 20px;
     height: 2.5em;
@@ -17,7 +20,6 @@
       currentColor 75%
     );
     background-size: 10px 10px;
-    width: 80vw;
     border: 0;
     border-radius: 25px;
     @media only screen and (max-width: 800px) {

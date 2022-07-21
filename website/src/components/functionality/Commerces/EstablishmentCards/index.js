@@ -36,7 +36,7 @@ function Cards(removeError = {}) {
             <Card
               hoverable
               style={{
-                width: 350,
+                width: 300,
                 
               }}
               cover={

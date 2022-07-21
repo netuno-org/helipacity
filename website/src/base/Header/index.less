@@ -23,7 +23,9 @@
     }
   }
   @media (min-width: @header-mobile-width) {
-    background-color: none !important;
+    .headersvg {
+      top: -65px;
+    }
   }
   &__wrapper {
     width: 100%;
@@ -199,7 +201,7 @@
 
     .burger {
       // height: calc(@header-size-mobile / 1 );
-      left: 5em;
+      // left: 5em;
       // width:calc(@header-size-mobile / 1 );
       .burger-lines {
         height: 0.5rem;
@@ -224,6 +226,7 @@
     .burger {
       font-size: 8px;
       top: 0;
+      left: 5em;
       .burger-lines {
         height: 0.3rem !important;
         width: 2.2rem !important;

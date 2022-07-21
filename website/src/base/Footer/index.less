@@ -12,12 +12,12 @@
       display: flex;
       z-index: 110;
       position: relative;
-      width: 100%;
       margin-right: auto;
       margin-left: auto;
-      justify-content:space-evenly;
+      justify-content:space-between;
       width: 60%;
-      top:13vw;
+      max-width: @site-max-width;
+      top:14vw;
       a {
         color:@secondary-color;
          svg {
@@ -46,10 +46,17 @@
     z-index: 10;
     position: absolute;
     width: 100%;
-    height: auto;
-    left: 0;    
-    height: auto;
-    @media only screen and (max-width: @header-mobile-width) {  
+    left: 0;
+    @media only screen and (min-width: @header-mobile-width) {
+     
+       
+    } 
+    @media only screen and (min-width: 1000px) {
+      width: 100%;
+      margin-top: -5px;
+    } 
+    @media only screen and (max-width: @header-mobile-width) {
+     margin-top: 5px; 
     } 
   }
   .logo {
