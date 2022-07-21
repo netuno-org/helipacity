@@ -54,8 +54,23 @@ function BaseFooter() {
             {/* <a href="https://github.com/netuno-org" className="share-icons">
                     <FaGithub />
                   </a> */}
-          </div>       
-          <img className="footersvg" alt="Background Footer" src="/images/footer/footer-bg.svg"/>  
+          </div>
+          {/* <img className="footersvg"
+                alt="Background Footer"
+                src="/images/footer/footer-bg.svg"
+                srcSet="/images/footer/footer-bg1000px.svg 600w,
+                        /images/footer/footer-bg.svg 500w"
+                sizes="
+                (max-width: 500px) calc(100vw - 2rem), 
+                (max-width: 700px) calc(100vw - 6rem),
+                  calc(100vw - 9rem - 200px)
+                " />  */}
+                 <picture>
+                    <img className="footersvg" src='/images/footer/footer-bg.svg' />
+                    <source media='(min-width:1000px)' srcset='/images/footer/footer-bg1000px.svg'/>
+                 </picture>
+                       
+   
           </div>
        </Footer>
   );
