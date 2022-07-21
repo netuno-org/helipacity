@@ -66,8 +66,9 @@ function BaseFooter() {
                   calc(100vw - 9rem - 200px)
                 " />  */}
                  <picture>
+                    <source media='(min-width: 800px)' srcset='/images/footer/footer-bg1000px.svg'/>
                     <img className="footersvg" src='/images/footer/footer-bg.svg' />
-                    <source media='(min-width:1000px)' srcset='/images/footer/footer-bg1000px.svg'/>
+                    
                  </picture>
                        
    
