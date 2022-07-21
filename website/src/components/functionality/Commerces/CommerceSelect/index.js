@@ -18,7 +18,7 @@ function CommerceSelect() {
   }, []);
 
   return (
-    <div className="CommerceSelect">
+    <div className="filter">
       {/* {JSON.stringify(list)} */}
       <h1>Categoria dos Comércios</h1>
       <br></br>
