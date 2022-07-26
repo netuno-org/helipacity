@@ -42,7 +42,7 @@ const columns = [
   },
 ];
 
-function EstablishmentTable() {
+function CommerceList() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -58,11 +58,11 @@ function EstablishmentTable() {
   }, []);
 
   return (
-    <div className="EstablishmentTable">
+    <div className="commerce__list-ui">
       <h1>Lista dos Comércios</h1>
       <Table dataSource={list} columns={columns} />
     </div>
   );
 }
 
-export default EstablishmentTable;
+export default CommerceList;

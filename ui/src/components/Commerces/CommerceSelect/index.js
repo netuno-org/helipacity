@@ -15,10 +15,9 @@ function CommerceSelect () {
                 console.log("Service Error", e);
             }
         });
-
     },[])
     return(
-  <div className='CommerceSelect'> 
+  <div className='commerce__filter-ui'> 
     {/* {JSON.stringify(list)} */}
         <h1>Categoria dos Comércios</h1>
         <Select className='select' >

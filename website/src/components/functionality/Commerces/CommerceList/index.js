@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col, notification } from "antd";
 import { InstagramOutlined, WhatsAppOutlined
  } from "@ant-design/icons";
 import "./index.less";
@@ -18,7 +18,11 @@ function Cards(removeError = {}) {
         setList(response.json);
       },
       fail: (e) => {
-        console.log("Service Error", e);
+        console.error("Service Error", e);
+        notification.error({
+          message:"Falhou !!!",
+          description:"Não foi possível encontrar os comércios."
+        })
       },
     });
   }, []);
@@ -27,17 +31,16 @@ function Cards(removeError = {}) {
       {list.map((item) => {
         return (
           <Col
-            xs={{ span: 24 }}
-            sm={{ span: 12 }}
-            md={{ span: 8 }}
-            lg={{ span: 8 }}
-            xl={{ span: 8 }}
+            xs={24}
+            sm={12}
+            md={8}
+            lg={8}
+            xl={8}
           >
             <Card
               hoverable
               style={{
                 width: 300,
-                
               }}
               cover={
                 <img
