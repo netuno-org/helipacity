@@ -4,7 +4,7 @@ import { Row } from "antd";
 
 import "./index.less";
 import CommerceSelect from "./CommerceSelect";
-import Cards from "./EstablishmentCards";
+import Cards from "./CommerceList";
 
 function Commerces(RemoveError={}) {
   return (

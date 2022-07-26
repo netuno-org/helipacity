@@ -16,13 +16,12 @@ function CommerceSelect() {
       },
     });
   }, []);
-
+  
   return (
     <div className="filter">
       {/* {JSON.stringify(list)} */}
       <h1>Categoria dos Comércios</h1>
-      <br></br>
-      <Select className="select">
+      <Select>
         {list.map((item) => {
           return <Select.Option value={item.code}>{item.name}</Select.Option>;
         })}
