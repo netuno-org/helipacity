@@ -3,7 +3,6 @@ import { Col, Row } from "antd";
 import { Button } from "antd";
 import "./index.less";
 
-
 function Item({
   section,
   type,
@@ -29,74 +28,81 @@ function Item({
     );
   } else if (type === "carrossel_principal") {
     layout = (
-      <div >
-        <div className="carroussel__area_imagem_principal">
-          <div className ="carroussel__enquadramento">
-            <h1  className="carroussel__legend">{title}</h1>
-            <p className="carroussel__legendprincipal"
-              dangerouslySetInnerHTML={{ __html: content }}
-            ></p>
-          </div>
-                <img className= "imagem_principal"
+      <div>
+        <Row gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }}>
+          <div className="carroussel__area_imagem_principal">
+            <Col xs={{ span: 24 }} md={{ span: 24 }}>
+              <div className="carroussel__enquadramento">
+                <h1 className="carroussel__legend">{title}</h1>
+                <p
+                  className="carroussel__legendprincipal"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                ></p>
+              </div>
+            </Col>
+            <Col xs={{ span: 24 }} md={{ span: 24 }}>
+              <img
+                className="imagem_principal"
                 src={`/images/${section}/${image}`}
                 alt={image_alt}
                 title={image_title}
               />
-            </div>
-        
+            </Col>
+          </div>
+        </Row>
       </div>
     );
   } else if (type === "carrossel") {
     layout = (
       <div className="carroussel__areaTotalsegundo">
-        <Row className="carroussel__coluna" gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }} >
-        
-          <Col xs ={{ span:24}}md ={{ span:12}}  >
-          
+        <Row
+          className="carroussel__coluna"
+          gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }}
+        >
+          <Col xs={{ span: 24 }} md={{ span: 12 }}>
             <p
               className="carroussel__text"
               dangerouslySetInnerHTML={{ __html: content }}
             ></p>
           </Col>
 
-          <Col className="carroussel"   xs ={{ span:24}}md ={{ span:12}}  >
+          <Col className="carroussel" xs={{ span: 24 }} md={{ span: 12 }}>
             <div className="carroussel__areaTotalsecundario">
               <div className="carroussel__areaimagem">
-              <img
-                className="carroussel__segundaimagem"
-                src={`/images/${section}/${image}`}
-                alt={image_alt}
-                title={image_title}
-              />
-              <div className="div_button_image">
-                <Button type="primary" className="button_image">
-                  <h4 className="text__button2">Nome da Pessoa</h4>
-                </Button>
+                <img
+                  className="carroussel__segundaimagem"
+                  src={`/images/${section}/${image}`}
+                  alt={image_alt}
+                  title={image_title}
+                />
+                <div className="area_button_image">
+                  <Button type="primary" className="button_image">
+                    <h4 className="text__button2">Nome da Pessoa</h4>
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            <div className="background_big"></div>
-              <div className =" flexbulletvertical">
+              <div className="background_big"></div>
+              <div className=" flexbulletvertical">
                 <div className="bullet bullet--1"></div>
                 <div className="bullet bullet--2"></div>
                 <div className="bullet bullet--3"></div>
                 <div className="bullet bullet--4"></div>
-            </div>
-            
-            <div className="bullet bullet--5"></div>
+              </div>
 
-            <div className =" flexbullethorizontal">
-              <div className="bullet bullet--6"></div>
-              <div className="bullet bullet--7"></div>
-              <div className="bullet bullet--8"></div>
-              <div className="bullet bullet--9"></div>
-              <div className="bullet bullet--10"></div>
-            </div>
+              <div className="bullet bullet--5"></div>
+
+              <div className=" flexbullethorizontal">
+                <div className="bullet bullet--6"></div>
+                <div className="bullet bullet--7"></div>
+                <div className="bullet bullet--8"></div>
+                <div className="bullet bullet--9"></div>
+                <div className="bullet bullet--10"></div>
+              </div>
             </div>
           </Col>
         </Row>
       </div>
-      
     );
   } else {
     layout = (
