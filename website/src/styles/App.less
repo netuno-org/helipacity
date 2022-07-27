@@ -15,7 +15,14 @@ html,
 body {
     background-color: @site-background;
 }
-
+.ant-row {
+    width: @site-width;
+    display: flex;
+    justify-content: center;
+    > div {
+      width: 100%;
+    }
+  }
 .ant-layout {
     padding-top: @header-size;
     background-color: @page-background;

@@ -26,7 +26,9 @@ function Cards(removeError = {}) {
     });
   }, []);
   return (
-    <Row className="cards">
+    <Row className="commerce-cards"
+    gutter={[16,16]}
+    >
       {list.map((item) => {
         return (
           <Col
@@ -39,7 +41,7 @@ function Cards(removeError = {}) {
             <Card 
               hoverable
               style={{
-                width: 300,
+                
               }}
               cover={
                 <img
