@@ -1,10 +1,6 @@
 @import "../../styles/variables.less";
 
 .listing {
-  margin: auto;
-  max-width: 100vw;
-  padding: 0;
-  display: flex;
   @media only screen and (max-width: 800px) {
     padding: 20px 0;
     margin: 20px auto;
@@ -24,28 +20,30 @@
   }
   &__principal {
     @media only screen and (max-width: 800px) {
-      height: 200px;
     }
     .carousel-root {
       @media only screen and (max-width: 800px) {
-       
       }
     }
     .control-dots {
       @media only screen and (max-width: 800px) {
-        height: 700px;
       }
     }
-
-    
-    
   }
-  .listing__carroussel_secundario{
-    max-width: 1000px;
-    margin:0 auto;
-    
+  .listing__carroussel_secundario {
+    max-width: @site-max-width;
+    height: 600px;
+    ul.control-dots {
+      display: flex;
+      position: relative !important;
+      top: 450px;
+      justify-content: center;
+      @media only screen and (max-width: @header-mobile-width) {
+      }
+    }
+    .text__title {
+    }
   }
-
   > div > h1 {
     width: 80%;
     position: relative;
@@ -58,7 +56,6 @@
     color: @primary-color;
     text-align: left;
     margin: 0;
-
     @media only screen and (max-width: @header-mobile-width) {
       position: relative;
       top: 150px;
@@ -66,7 +63,6 @@
       font-size: 39px;
     }
   }
-
   > div > div {
     font-size: 1.2em;
   }
@@ -75,39 +71,20 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    height: 500px;
-  }
-  > divider {
-    margin-top: 50px;
   }
 }
 .text__title {
-  margin-left: 50px;
-  margin-top: 30px;
   font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .text__title--stroke {
   -webkit-text-stroke: 1px @primary-color;
   -webkit-text-fill-color: white;
 }
-
-
-.control-dots {
-  position: relative;
-  bottom: 0;
-  margin: 10px 0;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-  z-index: 1;
-  @media only screen and (max-width: @header-mobile-width) {
-  }
-}
 .carousel-slider {
   margin-top: 0;
   height: 900px;
-
-  
   @media only screen and (max-width: @header-mobile-width) {
     height: 1000px;
   }
@@ -123,7 +100,6 @@
 .carousel.carousel-slider .control-arrow {
   display: none;
 }
-
 .carousel-slider {
   width: @site-width;
 }

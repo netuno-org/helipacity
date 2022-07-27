@@ -40,8 +40,7 @@
     }
   }
   &__text {
-    margin-top: 150px;
-    margin-left: 50px;
+    margin-top: 40px;
 
     @media only screen and (max-width: @header-mobile-width) {
       text-align: center;
@@ -81,8 +80,8 @@
     .carroussel__segundaimagem{
       max-width: 50%;
     position: absolute;
-    right: 150px;
-    top: 300px;
+    right: 160px;
+    top: -70px;
     z-index: 0;
     border-radius: 0 0 0 50px;
     margin-top: 100px;
@@ -96,9 +95,6 @@
     }
   }
 }
-
-
-
 .area_button_image {
   position: absolute;
   top: 700px;
@@ -114,7 +110,10 @@
   height: 70px !important;
   width: 250px;
   text-align: center;
-  clip-path: polygon(5% 0, 75% 0, 89% 100%, 23% 100%);
+  top: -404px;
+  right: 50px;
+  clip-path: polygon(19% 0, 95% 10%, 81% 100%, 4% 90%);
+
   pointer-events: none;
   border-style: double !important;
   font-size: 15px !important;
@@ -131,12 +130,13 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  top: 250px;
+  top: -105px;
+  left: 33px;
   z-index: -1;
-  left: 90px;
   width: 300px;
   height: 400px;
-  border-radius: 50%;
+  clip-path: ellipse(39% 41% at 50% 50%);
+
   margin: 50px;
   background: @tertiary-color;
   transform: rotate(45deg);
@@ -164,7 +164,7 @@
     left: 40px;
     bottom: -430px;
     position: relative;
-    top: 530px;
+    top: 130px;
 
     @media only screen and (max-width: @header-mobile-width) {
       top: 220px;
@@ -179,7 +179,7 @@
   max-width: 50px;
   padding: none;
   position: relative;
-  top: 530px;
+  top: 140px;
   right: 10px;
   margin-bottom: 5px;
 
@@ -194,7 +194,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  top: 510px;
+  top: 105px;
   right: -80px;
   @media only screen and (max-width: @header-mobile-width) {
     right: -70px;
