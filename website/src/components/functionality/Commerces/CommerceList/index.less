@@ -1,24 +1,15 @@
 @import "../../../../styles/variables.less";
 
-.ant-layout-content {
-  width: 100%;
-  .ant-row {
-      .cards{
-          display: flex;
-          justify-content: center;
-          margin-right: auto;
-          margin-left: auto;
-          margin-top: 1rem;
-          width: @site-width;
-          max-width: @site-max-width;  
-      }
-    }
-  .ant-pagination {
-    text-align: center;
-    svg {
-      color: @primary-color;
-    }
-  }
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  width: @site-width;
+  max-width: @site-max-width;
+
+ 
   .ant-col {
     margin: auto;
   }
@@ -32,18 +23,17 @@
     margin-right: auto;
     margin-bottom: 1rem;
     color: white;
-    
+
     @media only screen and (min-width: @header-mobile-width) {
       margin-left: 0;
       margin-right: 0;
-       
     }
 
     .ant-card-meta-title {
       font-size: 1.5rem;
       color: white;
       font-family: Poppins;
-      margin-bottom: 0;
+      margin:0;
     }
     .ant-card-meta-description {
       color: white;
@@ -51,6 +41,7 @@
     .shadow {
       position: relative;
       top: -25px;
+     
 
       background-image: linear-gradient(
         to bottom,
@@ -63,12 +54,12 @@
     }
     .ant-card-body {
       width: 100%;
-  
+
       padding: 0;
       p {
         position: relative;
         display: flex;
-        top: -30px;
+        top: -10px;
         text-align: center;
         justify-content: center;
       }
@@ -102,15 +93,20 @@
       display: flex;
       justify-content: center;
       .anticon {
+        position: relative;
         color: rgb(52, 175, 35);
-        font-size: 1.2rem;
-        margin-top: 4%;
+        font-size: 2rem;
+        top: -5px;
+        .span {
+        }
       }
-      h4 {
+      a {
+      
         font-family: Poppins;
         color: white;
-        margin-top: 3%;
         margin-left: 5px;
+        margin-right: 10px;
+        margin-top: 0;
       }
     }
     .insta {
@@ -136,7 +132,7 @@
           #cc2366 75%,
           #bc1888 100%
         );
-  
+
         // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
         border-radius: 10px;
         height: 2rem;

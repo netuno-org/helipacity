@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
 import { Card, Row, Col, notification } from "antd";
-import { InstagramOutlined, WhatsAppOutlined
- } from "@ant-design/icons";
+import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
 import "./index.less";
 
 const { Meta } = Card;
@@ -37,7 +36,7 @@ function Cards(removeError = {}) {
             lg={8}
             xl={8}
           >
-            <Card
+            <Card 
               hoverable
               style={{
                 width: 300,
@@ -50,18 +49,19 @@ function Cards(removeError = {}) {
               }
             >
               <div className="shadow">Shadow</div>
-              <p><Meta title={item.name} description={item.description} /></p>
-              <div className="end"><h5>End:&nbsp;{item.address}</h5></div>
+              <p><Meta title={item.name}/></p>
+              {/* <p>{item. description}</p>
+              <div className="end"><h5>End:&nbsp;{item.address}</h5></div> */}
               <div className="whats">
-                <WhatsAppOutlined/>
-                <h4>{item.contact}</h4>
+                <a href={`https://web.whatsapp.com/send?phone=5511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
+                <a href={`tel:5511${item.contact}`}>{item.contact}</a>
               </div>
-              <a href={item.link}>
+              {/* <a href={item.link}>
               <div className="insta">
                 <InstagramOutlined />
                 <h4>Instagran</h4>
               </div>
-              </a>
+              </a> */}
             </Card>
           </Col>
         );
