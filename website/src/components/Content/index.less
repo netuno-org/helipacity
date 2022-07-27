@@ -1,28 +1,25 @@
 @import "../../styles/variables.less";
 
-.content {
 
+.content {
+    .button{
+        height: 60px;
+    }
     > div {
         width: 100%;
     }
-    
     > ul.actions {
         width: 300px;
         @media only screen and (max-width: 800px) {
             width: 100%;
         }
     }
-    
-    
-    
-    
-   
     .text__title--stroke{
         -webkit-text-stroke: 1px @primary-color;
         -webkit-text-fill-color: white;
     }
     .text {
-        
+    
         max-width: 1000px;
         margin: 0 auto;
         
@@ -46,6 +43,7 @@
             }
            
         }
+      
         > h3{
             font-size: 40px;
             font-weight: normal;
@@ -65,95 +63,92 @@
                 padding-top: 15%;
                 line-height: 1.5; 
             }
-        
-        }
-        > div {
-            font-size: 1.2em;
-            > ul {
-                margin-left: 40px !important;
-            }
-        }
-        &__text2{
-            margin-bottom: 150px;
-            
-        }
-        &__divButton{
-            display:flex;
-            flex-direction:row;
-            justify-content:center ;
-            align-items: center;
-            @media only screen and (max-width: @header-mobile-width) {
-                display:flex;
-                flex-direction:column;
-                justify-content:center ;
-                align-items: center;
-           
-            
-            }  
-        }
-        &__button1{
-            margin-top :-15%;
-            margin-left: -35px;
-            color: @secondary-color;
-            font-family: Poppins;
-            font-size: 20px;
-            
-            @media only screen and (max-width: @header-mobile-width) {
-                margin-top :-18%;
             }
             
-        }
-        &__button2{
-            margin-top :-2%;
-            margin-left: -20px;
-            color: @secondary-color;
-            font-family: Poppins;
-            font-size: 20px;
-            
-            
-        }
-        > div{
-            >p{
-                margin-top: 100px;
-                margin-left: 230px;
-                font-family: Poppins;
-            
-                @media only screen and (max-width: @header-mobile-width) {
-                    margin-top :10%;
-                    margin-left: 15px;
-                    margin-right: 15px;
-                    
+            > div {
+                font-size: 1.2em;
+                > ul {
+                    margin-left: 40px !important;
                 }
             }
-        }
-        &__eventsSelect{
-
-            text-align: center;
-            margin-top: 30px;
-            
-            
-            >select{ 
-                width: 700px !important;
-                background-color: ORANGE;
+            &__text2{
+                margin-bottom: 150px;
             }
-            >h1{
+            &__divButton{
                 
-                width: 250px;
-                background-color: @tertiary-color;
-                position: relative;
-                left:10px;
-                clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-            } 
-        }  
+                display:flex;
+                flex-direction:row;
+                justify-content:center ;
+                align-items: center;
+                
+                .ant-btn-primary {
+                    height: 60px;
+                    border-radius: 25px 0px 0px 25px;
+                    .icons{
+                        width: 35px;
+                        margin-top: 5px;
+                    }
+                }
+                @media only screen and (max-width: @header-mobile-width) {
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center ;
+                    align-items: center;
+                }  
+            }
+            &__button1{
+                margin-top :-17%;
+                margin-left: -5px;
+                color: @secondary-color;
+                font-family: Poppins;
+                font-size: 2rem;
+                @media only screen and (max-width: @header-mobile-width) {
+                    margin-top :-18%;
+                }
+            }
+            &__button2{
+                margin-top :-2%;
+                margin-left: -20px;
+                color: @secondary-color;
+                font-family: Poppins;
+                font-size: 20px;
+            }
+            > div{
+                >p{
+                    margin-top: 100px;
+                    margin-left: 230px;
+                    font-family: Poppins;
+                
+                    @media only screen and (max-width: @header-mobile-width) {
+                        margin-top :10%;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+            &__eventsSelect{
+                text-align: center;
+                margin-top: 30px;
+                
+                
+                >select{ 
+                    width: 700px !important;
+                    background-color: ORANGE;
+                }
+                >h1{
+                    
+                    width: 250px;
+                    background-color: @tertiary-color;
+                    position: relative;
+                    left:10px;
+                    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+                } 
+            }  
     }
     .text__title__events{
     position:relative;
     left:-550px;
     line-height:50px;
-   
-    
-       
-        
     }
     .title_imageTop{
         font-size: 20px !important;
@@ -180,21 +175,16 @@
     &__image-left img {
         width: 450px;
         display: block;
-        margin-left: 20px;
+        margin-left: auto;
         margin-right: auto;
         margin-top: 90px;
         border-radius: 0 40px 0px 40px !important;
-        
-        
         @media only screen and (max-width: @header-mobile-width) {
             font-size: 1em;
             line-height: 2.5;
             width: 90%;
              
             }
-
-
-
     }
     &__image-right{
         position:relative;
@@ -249,7 +239,6 @@
         clip-path: polygon(14% 1%, 100% 0%, 75% 100%, 0% 100%);
         background-color: @tertiary-color;
     }
-    
     &__text-service {
         > h1 {
             font-size: 2em;
@@ -263,21 +252,18 @@
             margin-bottom: 1em;
             background: rgb(255,255,255);
         }
-        
         }
-    
     }
     .button1{
         background-color: @tertiary-color;
         height: 74px;
         width: 400px;
         text-align: center;
-        margin-left: 70px;
-         clip-path: polygon(0 0, 75% 0, 84% 99%, 0 99%);
+        margin-left: 70px0;
+        clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
         overflow:inherit;
         pointer-events: none;
         @media only screen and (max-width: @header-mobile-width) {
-          
             max-width: 250px;
             margin:0;
             border:0;
@@ -285,11 +271,7 @@
             font-weight:bold;
             margin-top:10%;
             margin-left: 15%;
-            
           }
-        
-        
-        
     }
     .button2{
         background-color: @tertiary-color;
@@ -297,12 +279,10 @@
         width: 400px;
         text-align: center;
         margin-left: 70px;
-        clip-path: polygon(0 0, 84% 0, 78% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 91% 100%, 0% 100%);
         overflow:inherit;
         pointer-events: none;
-      
         @media only screen and (max-width: @header-mobile-width) {
-          
             max-width: 250px;
             margin:0;
             border:0;
@@ -312,19 +292,18 @@
             margin-left: 15%;
             
           }
-        
-        
-        
     }
     .button3{
         background-color: @tertiary-color;
         height: 74px;
         width: 400px;
-        text-align: center;
+        text-align: right;
         margin-left: 70px;
-        clip-path: polygon(0 0, 75% 0, 84% 99%, 0 99%);
+        clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
         overflow:inherit;
         pointer-events: none;
+       
+        
         @media only screen and (max-width: @header-mobile-width) {
           
             max-width: 250px;
@@ -336,10 +315,8 @@
             margin-left: 15%;
             
           }
-        
-        
-        
     }
+  
     .button4{
         background-color: @tertiary-color;
         height: 150px;
@@ -353,15 +330,11 @@
             margin-left: 70px;
         }
     }
-    
     .icons{
         position:relative;
         right:100px;
         width: 25px;
         top:3px;
-        
-        
-        
         @media only screen and (max-width: @header-mobile-width) {
            width: 10%;
            margin-top: 2%;
