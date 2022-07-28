@@ -27,7 +27,7 @@ function Cards(removeError = {}) {
   }, []);
   return (
     <Row className="commerce-cards"
-    gutter={[16,16]}
+    gutter={[20,20]}
     >
       {list.map((item) => {
         return (
@@ -55,7 +55,7 @@ function Cards(removeError = {}) {
               {/* <p>{item. description}</p>
               <div className="end"><h5>End:&nbsp;{item.address}</h5></div> */}
               <div className="whats">
-                <a href={`https://web.whatsapp.com/send?phone=5511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
+                <a href={`https://api.whatsapp.com/send?phone=5511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
                 <a href={`tel:5511${item.contact}`}>{item.contact}</a>
               </div>
               {/* <a href={item.link}>
