@@ -55,8 +55,8 @@ function Cards(removeError = {}) {
               {/* <p>{item. description}</p>
               <div className="end"><h5>End:&nbsp;{item.address}</h5></div> */}
               <div className="whats">
-                <a href={`https://api.whatsapp.com/send?phone=5511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
-                <a href={`tel:5511${item.contact}`}>{item.contact}</a>
+                <a href={`https://api.whatsapp.com/send?phone=005511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
+                <a href={`tel:005511${item.contact}`}>{item.contact}</a>
               </div>
               {/* <a href={item.link}>
               <div className="insta">
