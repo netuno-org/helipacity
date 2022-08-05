@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
-// import { MenuOutlined } from "@ant-design/icons";
 import Burger from "@animated-burgers/burger-slip";
 import "@animated-burgers/burger-slip/dist/styles.css";
 import classNames from "classnames";
 import { Route, Link } from "react-router-dom";
 import Cluar from "../../common/Cluar";
 import Builder from "../../common/Builder";
-import "./index.less";
 
+import "./index.less";
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -16,7 +15,6 @@ const { SubMenu } = Menu;
 function BaseHeader() {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [activeMenu, setActiveMenu] = useState("main");
-
   const handleMenuClick = (selectMenu) => {
     setBurgerMenu(false);
     if (selectMenu) {
@@ -24,7 +22,6 @@ function BaseHeader() {
     }
     window.scrollTo(0, 0);
   };
-
   const menuLanguages = [];
   const menu = [];
   const subMenuKeys = [];
@@ -83,30 +80,9 @@ function BaseHeader() {
             </SubMenu>
           );
         } else {
-          /**
-           * Sample of submenu items customization, only on level 1:
-           *
-          if (level == 1) {
-            return (
-              <Menu.Item key={key}>
-                { page.navigable ?
-                  <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
-                    <h2>{page.title}</h2>
-                    <p>{page.description}</p>
-                  </Link>
-                  : <a>
-                      <p className="sub-menu-item-title">{page.title}</p>
-                      <p className="sub-menu-item-description">{page.description}</p>
-                    </a> }
-              </Menu.Item>
-            );
-          }
-          **/
           return (
             <Menu.Item key={key}>
-        
               {page.navigable ? (
-                
                 <Link
                   to={`/${Cluar.currentLanguage().locale}${page.link}`}
                   onClick={() => handleMenuClick(key)}
@@ -116,7 +92,6 @@ function BaseHeader() {
               ) : (
                 <a href="/#">{page.title}</a>
               )}
-        
             </Menu.Item>
           );
         }
@@ -149,38 +124,29 @@ function BaseHeader() {
       <Route key={`/${language.locale}/`} path={`/${language.locale}/`}>
         {subroutes}
       </Route>
-
     );
   }
 
   return (
-    <Header  className={classNames({ "header-burger-open": burgerMenu })}>
+    <Header className={classNames({ "header-burger-open": burgerMenu })}>
       <div className="logo">
-      <img alt="logotipo" src="/images/logo.svg" />
+        <img alt="logotipo" src="/images/logo.svg" />
         <Link
           to={`/${Cluar.currentLanguage().locale}/`}
           onClick={() => handleMenuClick("/")}
         />
       </div>
-      
-      <img alt="bg-header"  className="headersvg" src="/images/header/header-bg.svg"></img>
-
+      <img
+        alt="bg-header"
+        className="headersvg"
+        src="/images/header/header-bg.svg"
+      ></img>
       <div className="ant-layout-header__wrapper">
         <div
           className={classNames({
             menu: true,
           })}
-        >
-          {/* <Menu
-            theme="light"
-            mode="horizontal"
-            defaultSelectedKeys={[activeMenu]}
-            selectedKeys={[activeMenu]}
-          >
-            {menu}
-          </Menu> */}
-        </div>
-
+        ></div>
         <div
           className={classNames({
             menu: true,
@@ -196,36 +162,19 @@ function BaseHeader() {
             openKeys={subMenuKeys}
           >
             {menu}
-          
           </Menu>
         </div>
-
-        <div className="menu-burger-button"   >
+        <div className="menu-burger-button">
           <Burger
             isOpen={burgerMenu}
             onClick={() => {
               setBurgerMenu(!burgerMenu);
             }}
           />
-          
         </div>
-        {/* <Menu
-          theme="light"
-          className="menu-languages"
-          mode={'horizontal'}
-          defaultSelectedKeys={[activeMenu]}
-          selectedKeys={[activeMenu]}>
-          <SubMenu key="langs" icon={<GlobalOutlined />} title={Cluar.currentLanguage().code}>
-            {menuLanguages}
-          </SubMenu>
-        </Menu> */}
-        {/* Descomentar códiogo acima para visializar menu de idiomas.*/}
       </div>
     </Header>
   );
 }
 
 export default BaseHeader;
-
-
-
