@@ -54,11 +54,24 @@ function Listing({
       <Row className="listing__principal" xs ={{ span:24}}md ={{ span:12}} >
           <div>
         
-        <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        {
+            titleStyled && <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
+        }
         
-        <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
+        {
+            content && <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
+        }
 
-        <Carousel>{children}</Carousel>
+        <Carousel
+            showThumbs={false}
+            showIndicators={false}
+            showArrows={true}
+            autoPlay
+            infiniteLoop
+            interval={3000}
+        >
+          {children}
+        </Carousel>
         
           </div>
       </Row>

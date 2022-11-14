@@ -7,35 +7,29 @@
   margin-top: 0;
 
   &__legend {
-    position: relative;
-    top: 200px;
-    left: -300px;
-    margin-top: 10px;
     font-size: 80px;
     font-family: Poppins;
     background-color: none;
     color: @secondary-color;
     font-weight: bold;
-    z-index: 1;
+    text-align: left;
+    padding: 0px 100px;
+    text-shadow: 2px 2px 4px #212121;
     @media only screen and (max-width: @header-mobile-width) {
-      position: relative;
-      top: 220px;
-      left: 10px;
-      margin-top: 10px;
+      padding: 0px 4px;
       font-size: 40px;
     }
   }
   &__legendprincipal {
     font-family: Poppins;
-    position: relative;
-    top: 200px;
     color: @secondary-color;
     font-size: 30px;
     font-weight: bold;
-    z-index: 1;
+    text-align: left;
+    padding: 0px 100px;
+    text-shadow: 2px 2px 4px #212121;
     @media only screen and (max-width: @header-mobile-width) {
-      position: relative;
-      top: 180px;
+      padding: 0px 4px;
       font-size: 20px;
     }
   }
@@ -95,6 +89,16 @@
     }
   }
 }
+
+.carousel__item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .area_button_image {
   position: absolute;
   top: 700px;
