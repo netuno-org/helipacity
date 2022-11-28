@@ -89,7 +89,7 @@ function Listing({
           
           <div className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
 
-          <Carousel>{children}</Carousel>
+          <Carousel showStatus={false}>{children}</Carousel>
           
           </div>
           <BaseDivider />
