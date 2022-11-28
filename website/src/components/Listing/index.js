@@ -51,7 +51,7 @@ function Listing({
 
   } else if (type === "carrossel_principal") {
     listLayout = (
-      <Row className="listing__principal" xs ={{ span:24}}md ={{ span:12}} >
+      <Row className="listing__principal" xs={{ span:24}} md={{ span:12}} >
           <div>
         
         {
@@ -59,10 +59,11 @@ function Listing({
         }
         
         {
-            content && <div  className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
+            content && <div className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
         }
 
         <Carousel
+            showStatus={false}
             showThumbs={false}
             showIndicators={false}
             showArrows={true}
@@ -86,7 +87,7 @@ function Listing({
           <div className="listing__carroussel_secundario">
           <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
           
-          <div  className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+          <div className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
 
           <Carousel>{children}</Carousel>
           
