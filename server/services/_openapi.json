@@ -1,0 +1,15 @@
+{
+    "info": {
+        "title": "Helipacity",
+        "description": "OpenAPI do Helipacity",
+        "version": "1.0"
+    },
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
