@@ -1,0 +1,46 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "uid": {
+                "type": "string"
+            },
+            "image": {
+                "type": "string"
+            },
+            "date_time": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "instagram": {
+                "type": "string"
+            },
+            "category": {
+                "type": "object",
+                "properties": {
+                    "uid": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "required": [
+            "uid",
+            "title",
+            "category",
+            "date_time",
+            "description",
+            "instagram",
+            "image"
+        ]
+    }
+}

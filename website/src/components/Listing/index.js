@@ -27,7 +27,9 @@ function Listing({
   let titleStyled = title;
   if (titleParts.length > 1) {
     const titleIndex = Math.floor(Math.random() * titleParts.length);
-    titleParts[titleIndex] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
+    titleParts[
+      titleIndex
+    ] = `<span class="text__title--stroke">${titleParts[titleIndex]}</span>`;
     titleStyled = titleParts.join(" ");
   }
 
@@ -48,21 +50,23 @@ function Listing({
     );
   } else if (type === "OTHER-CUSTOM-TYPE-HERE") {
     listLayout = <Row className={`listing__${type}`}>{children}</Row>;
-
   } else if (type === "carrossel_principal") {
     listLayout = (
-      <Row className="listing__principal" xs={{ span:24}} md={{ span:12}} >
-          <div>
-        
-        {
-            titleStyled && <h1 className="text__title_principal" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
-        }
-        
-        {
-            content && <div className="text_principal" dangerouslySetInnerHTML={{ __html: content }}></div>
-        }
-
-        <Carousel
+      <Row className="listing__principal" xs={{ span: 24 }} md={{ span: 12 }}>
+        <div>
+          {titleStyled && (
+            <h1
+              className="text__title_principal"
+              dangerouslySetInnerHTML={{ __html: titleStyled }}
+            ></h1>
+          )}
+          {content && (
+            <div
+              className="text_principal"
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></div>
+          )}
+          <Carousel
             showStatus={false}
             showThumbs={false}
             showIndicators={false}
@@ -70,32 +74,39 @@ function Listing({
             autoPlay
             infiniteLoop
             interval={3000}
-        >
-          {children}
-        </Carousel>
-        
-          </div>
+          >
+            {children}
+          </Carousel>
+        </div>
       </Row>
-      
     );
-  
   } else if (type === "carrossel") {
     listLayout = (
       <Row className="listing__segundo">
-        
-          <BaseDivider />
-          <div className="listing__carroussel_secundario">
-          <h1 className="text__title" dangerouslySetInnerHTML={{ __html: titleStyled }}></h1>
-          
-          <div className="text" dangerouslySetInnerHTML={{ __html: content }}></div>
+        <BaseDivider />
+        <div className="listing__carroussel_secundario">
+          <h1
+            className="text__title"
+            dangerouslySetInnerHTML={{ __html: titleStyled }}
+          ></h1>
+          <div
+            className="text"
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></div>
 
-          <Carousel showStatus={false}>{children}</Carousel>
-          
-          </div>
-          <BaseDivider />
-        
+          <Carousel
+            showStatus={false}
+            interval={3000}
+            showArrows={false}
+            autoPlay
+            showIndicators
+            infiniteLoop
+          >
+            {children}
+          </Carousel>
+        </div>
+        <BaseDivider />
       </Row>
-     
     );
   }
   return <section className="listing">{listLayout}</section>;
