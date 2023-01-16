@@ -27,7 +27,7 @@ function Cards() {
     });
   }, []);
   return (
-    <Row className="commerce-cards"
+    <Row className="commerce__cards"
     gutter={[20,20]}
     >
       {list.map((item) => {
