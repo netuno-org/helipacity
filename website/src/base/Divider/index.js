@@ -1,6 +1,7 @@
 import React from "react";
-import "./index.less";
 import { Row, Col } from "antd";
+
+import "./index.less";
 
 function BaseDivider() {
   return (

@@ -3,8 +3,8 @@ import { Row } from "antd";
 // import _service from "@netuno/service-client";
 
 import "./index.less";
-import CommerceSelect from "./CommerceSelecty";
-import Cards from "./EstablishmentCards";
+import CommerceSelect from "./CommerceSelect";
+import Cards from "./CommerceList";
 
 function Commerces(RemoveError={}) {
   return (

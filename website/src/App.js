@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Analytics from "./common/Analytics";
 import Cluar from "./common/Cluar";
 import Builder from "./common/Builder";
-import BaseCookies from "./base/Cookies";
+// import BaseCookies from "./base/Cookies";
 import BaseHeader from "./base/Header";
 import BaseFooter from "./base/Footer";
 import NotFound from "./pages/NotFound";
@@ -65,7 +65,7 @@ function App() {
             </Routes>
           </Content>
           <BaseFooter />
-          <BaseCookies />
+          {/* <BaseCookies /> */}
         </Layout>
       </div>
     </BrowserRouter>
