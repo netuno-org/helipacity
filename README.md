@@ -94,3 +94,10 @@ Depois execute no diretório `(helipacity app directory)/website/` o seguinte co
 `npm run start`
 
 Para iniciar o servidor de frontend.
+
+
+### Para rodar no container substituir na pasta _development.json linha 9 e 10 pelos seguintes endereços:
+
+     "services": {"api": "http://luis-mijias.dev.netuno.org:21290/services/"},
+     "url": "http://luis-mijias.dev.netuno.org:21230"
+     
