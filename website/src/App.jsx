@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "antd";
+import { ConfigProvider, Layout } from "antd";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Analytics from "./common/Analytics";
 import Cluar from "./common/Cluar";
@@ -45,30 +45,39 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      {Cluar.isGAEnabled() && <Route component={Analytics} />}
-      <div className="page">
-        <Layout>
-          <BaseHeader />
-
-          <Content>
-            <Routes>
-              <Route
-                path="/"
-                exact
-                element={
-                  <Navigate to={`/${Cluar.currentLanguage().locale}/`} />
-                }
-              />
-              {routes}
-              <Route element={<NotFound />} />
-            </Routes>
-          </Content>
-          <BaseFooter />
-          {/* <BaseCookies /> */}
-        </Layout>
-      </div>
-    </BrowserRouter>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#ff6200',
+          fontSize: 16,
+          borderRadius: 20
+        }
+      }}
+    >
+      <BrowserRouter>
+        {Cluar.isGAEnabled() && <Route component={Analytics} />}
+        <div className="page">
+          <Layout>
+            <BaseHeader />
+            <Content>
+              <Routes>
+                <Route
+                  path="/"
+                  exact
+                  element={
+                    <Navigate to={`/${Cluar.currentLanguage().locale}/`} />
+                  }
+                />
+                {routes}
+                <Route element={<NotFound />} />
+              </Routes>
+            </Content>
+            <BaseFooter />
+            {/* <BaseCookies /> */}
+          </Layout>
+        </div>
+      </BrowserRouter>
+    </ConfigProvider>
   );
 }
 
