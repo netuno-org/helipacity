@@ -28,28 +28,14 @@ function Item({
     );
   } else if (type === "carrossel_principal") {
     layout = (
-      <div>
-        <Row gutter={{ xs: 24, sm: 16, md: 24, lg: 32 }}>
-          <div className="carroussel__area_imagem_principal">
-            <Col xs={{ span: 24 }} md={{ span: 24 }}>
-              <div className="carroussel__enquadramento">
-                <h1 className="carroussel__legend">{title}</h1>
-                <p
-                  className="carroussel__legendprincipal"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                ></p>
-              </div>
-            </Col>
-            <Col xs={{ span: 24 }} md={{ span: 24 }}>
-              <img
-                className="imagem_principal"
-                src={`/images/${section}/${image}`}
-                alt={image_alt}
-                title={image_title}
-              />
-            </Col>
-          </div>
-        </Row>
+      <div className="carousel__item" style={{
+        backgroundImage: `url("/images/${section}/${image}")`,
+      }}>
+        <h1 className="carroussel__legend">{title}</h1>
+        <p
+            className="carroussel__legendprincipal"
+            dangerouslySetInnerHTML={{ __html: content }}
+        ></p>
       </div>
     );
   } else if (type === "carrossel") {

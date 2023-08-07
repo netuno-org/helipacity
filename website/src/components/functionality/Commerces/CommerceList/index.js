@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
 import { Card, Row, Col, notification } from "antd";
 import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
+
 import "./index.less";
 
 const { Meta } = Card;
 
 
-function Cards(removeError = {}) {
+function Cards() {
   const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -26,7 +27,7 @@ function Cards(removeError = {}) {
     });
   }, []);
   return (
-    <Row className="commerce-cards"
+    <Row className="commerce__cards"
     gutter={[20,20]}
     >
       {list.map((item) => {
@@ -52,18 +53,10 @@ function Cards(removeError = {}) {
             >
               <div className="shadow">Shadow</div>
               <p><Meta title={item.name}/></p>
-              {/* <p>{item. description}</p>
-              <div className="end"><h5>End:&nbsp;{item.address}</h5></div> */}
               <div className="whats">
                 <a href={`https://api.whatsapp.com/send?phone=005511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
                 <a href={`tel:005511${item.contact}`}>{item.contact}</a>
               </div>
-              {/* <a href={item.link}>
-              <div className="insta">
-                <InstagramOutlined />
-                <h4>Instagran</h4>
-              </div>
-              </a> */}
             </Card>
           </Col>
         );

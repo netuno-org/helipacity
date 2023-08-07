@@ -33,7 +33,7 @@
             text-align: center;
             margin-top: 50px;
             @media only screen and (max-width: @header-mobile-width) {
-                font-size: 2em;
+                font-size: 2.7em;
                 line-height: 1.5; 
             }
             .text__title__events{
@@ -182,9 +182,23 @@
                 top:8px;
                 border: 5px solid @secondary-color;
                 
+                @media only screen and (max-width: @header-mobile-width) {
+                    font-size: 1rem;
+                }
+            }
+            @media only screen and (max-width: @header-mobile-width) {
+                border-radius: 0px;
+                height: 50px;
+                width: 200px;
             }
             
         
+        }
+
+        > div {
+            p {
+                text-align: left !important;
+            }
         }
     }
     &__image-left img {
@@ -200,6 +214,7 @@
             width: 90%;
              
             }
+
     }
     &__image-right{
         position:relative;
@@ -343,7 +358,7 @@
         pointer-events: none;
         border-style: double !important;
         @media only screen and (max-width: @header-mobile-width) {
-            margin-left: 70px;
+            margin-left: 0px;
         }
     }
     .icons{
