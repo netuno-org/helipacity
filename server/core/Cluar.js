@@ -7,7 +7,7 @@ class Cluar {
         if (_env.is("dev")) {
             return "website/public"
         } else {
-            return "website/build"
+            return "website/dist"
         }
     }
     

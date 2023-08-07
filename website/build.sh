@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ -f "build/cluarData.js" ]; then
-    mv build/cluarData.js .cluarData.js
+if [ -f "dist/cluarData.js" ]; then
+    mv dist/cluarData.js .cluarData.js
 fi
 
-if [ -d "build/images" ]; then
-    rsync -av build/images/ public/images/
+if [ -d "dist/images" ]; then
+    rsync -av dist/images/ public/images/
 fi
 
 npm install --force
@@ -13,5 +13,5 @@ npm install --force
 npm run build
 
 if [ -f ".cluarData.js" ]; then
-    mv .cluarData.js build/cluarData.js
+    mv .cluarData.js dist/cluarData.js
 fi
