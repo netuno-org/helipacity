@@ -18,21 +18,39 @@ Portal da Favela Heliópolis que fica em São Paulo, Brasil.
 
 ### Sincronizar os Dados
 
-Para utilizar a base de dados com as imagens que estão online, faça estes passos para sincronizar:
+Pode ter o ambiente local de desenvolvimento com os mesmos dados que estão online em: https://www.helipacity.com
 
+> Vai remover os dados locais e utilizar os dados que estão online.
+
+Para utilizar a base de dados e as imagens que estão online, faça estes 6 passos para sincronizar:
+
+1. Parar a execução do Netuno local.
+
+2. Remova os dados locais nas seguintes pastas:
 ```
-rm -rf dbs
+rm dbs/*
 rm -rf storage/database/*
-wget https://helipacity.com/dbs-dev.tar.gz
+```
+
+3. Download dos arquivos compactados que contém os dados online:
+```
+wget https://helipacity.com/dbs.tar.gz
 wget https://helipacity.com/storage-database.tar.gz
-tar -xzf dbs-dev.tar.gz
-mv dbs-dev dbs
+```
+
+4. Extrair os arquivos compactados nas respectivas pastas de dados locais:
+```
+tar -xzf dbs.tar.gz dbs
 tar -xzf storage-database.tar.gz storage/database/
-rm dbs-dev.tar.gz
+```
+
+5. Remover os arquivos que não são mais desnecessários.
+```
+rm dbs.tar.gz
 rm storage-database.tar.gz
 ```
 
-> Vai remover os dados locais e utilizar os dados que estão online.
+6. Iniciar o Netuno com a app do Helipacity.
 
 ### Execução
 
