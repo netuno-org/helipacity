@@ -22,7 +22,7 @@ Pode ter o ambiente local de desenvolvimento com os mesmos dados que estão onli
 
 > Vai remover os dados locais e utilizar os dados que estão online.
 
-Para utilizar a base de dados e as imagens que estão online, faça estes 7 passos para sincronizar:
+Para utilizar a base de dados e as imagens que estão online, faça estes 9 passos para sincronizar:
 
 1. Parar a execução do Netuno local.
 
@@ -53,6 +53,10 @@ rm storage-database.tar.gz
 ```
 
 7. Iniciar o Netuno com a app do Helipacity.
+
+8. No backoffice clique no botão `Sincronizar com o website.` disponível no Dashboard.
+
+9. Abra link local do website e compare com a versão online.
 
 ### Execução
 
