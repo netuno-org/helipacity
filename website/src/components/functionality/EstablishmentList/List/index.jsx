@@ -7,13 +7,12 @@ import "./index.less";
 
 const { Meta } = Card;
 
-
-function Cards() {
+function EList() {
   const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
-      url: "commerce/establishment/list",
+      url: "/establishment/list",
       success: (response) => {
         setList(response.json);
       },
@@ -46,7 +45,7 @@ function Cards() {
               }}
               cover={
                 <img
-                  src={`${servicePrefix}/commerce/establishment/image?uid=${item.uid}`}
+                  src={`${servicePrefix}/establishment/image?uid=${item.uid}`}
                   alt="Imagem dos Comercios"
                 />
               }
@@ -66,4 +65,4 @@ function Cards() {
     </Row>
   );
 }
-export default Cards;
+export default EList;

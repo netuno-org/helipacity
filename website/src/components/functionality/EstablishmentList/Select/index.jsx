@@ -3,11 +3,11 @@ import { Select } from "antd";
 import "./index.less";
 import _service from "@netuno/service-client";
 
-function CommerceSelect() {
+function ESelect() {
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
-      url: "/commerce/list",
+      url: "/establishment/category/list",
       success: (response) => {
         setList(response.json);
       },
@@ -20,7 +20,6 @@ function CommerceSelect() {
   return (
     <div className="commerce__filter">
       {/* {JSON.stringify(list)} */}
-      <h1>Categoria dos Comércios</h1>
       <Select>
         {list.map((item) => {
           return <Select.Option value={item.code}>{item.name}</Select.Option>;
@@ -30,4 +29,4 @@ function CommerceSelect() {
   );
 }
 
-export default CommerceSelect;
+export default ESelect;

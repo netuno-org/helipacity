@@ -9,7 +9,7 @@ import Content from '../components/Content';
 import Listing from '../components/Listing';
 import ContactForm from '../components/functionality/ContactForm';
 import ContactMap from '../components/functionality/ContactMap';
-import Commerces from '../components/functionality/Commerces';
+import EstablishmentList from '../components/functionality/EstablishmentList';
 
 function Builder({ page }) {
   useEffect(() => {
@@ -33,8 +33,8 @@ function Builder({ page }) {
         components.push(<ContactForm key={uid} {...item} />);
       } else if (item.type === 'contact-map') {
         components.push(<ContactMap key={uid} {...item} />);
-      }else if (item.type === 'contact-commerce') {
-        components.push(<Commerces key={uid} {...item} />);
+      } else if (item.type === 'establishment-list') {
+        components.push(<EstablishmentList key={uid} {...item} />);
       }
     }
   }
