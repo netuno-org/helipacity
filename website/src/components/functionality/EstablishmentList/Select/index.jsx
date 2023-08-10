@@ -18,9 +18,9 @@ function ESelect() {
   }, []);
   
   return (
-    <div className="commerce__filter">
+    <div className="establishment__filter">
       {/* {JSON.stringify(list)} */}
-      <Select>
+      <Select placeholder="Selecione Aqui">
         {list.map((item) => {
           return <Select.Option value={item.code}>{item.name}</Select.Option>;
         })}
