@@ -9,11 +9,10 @@ import "./index.less";
 function EstablishmentList() {
   return (
     <Row>
-      <Col>
+      <Col className="establishmentList">
         <div className="embreve">
           <h1>Em Breve.</h1>
         </div>
-        <h1>Comércios</h1>
         <ESelect />
         <EList />
       </Col>
