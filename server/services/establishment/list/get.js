@@ -1,3 +1,11 @@
+const categoryCode = _req.getString(`categoryCode`)
+
+let filterWhere = ""
+const filterParams = _val.list()
+if (categoryCode != "" && categoryCode != "all") {
+    filterWhere = "AND establishment_category.code = $1"
+    filterParams.add(categoryCode)
+}
 
 const dbEstablishments = _db.query(`
     SELECT
@@ -16,7 +24,8 @@ const dbEstablishments = _db.query(`
     WHERE 1 = 1 
         AND establishment.active = TRUE
         AND establishment_category.active = TRUE
-`)
+        ${filterWhere}
+`, filterParams)
 
 const list = _val.list()
 

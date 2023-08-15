@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "antd";
 
-import ESelect from "./Select";
-import EList from "./List";
+import Filter from "./Filter";
+import Results from "./Results";
 
 import "./index.less";
 
 function EstablishmentList() {
+  const [categoryCode, setCategoryCode] = useState("all");
   return (
     <Row>
-      <Col>
-        <div className="embreve">
+      <Col className="establishment-list">
+        <div className="establishment-list__em-breve">
           <h1>Em Breve.</h1>
         </div>
-        <h1>Comércios</h1>
-        <ESelect />
-        <EList />
+        <Filter onCategoryChange={(code) => setCategoryCode(code)} />
+        <Results categoryCode={categoryCode} />
       </Col>
     </Row>
   );

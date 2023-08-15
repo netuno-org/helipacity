@@ -7,12 +7,13 @@ import "./index.less";
 
 const { Meta } = Card;
 
-function EList() {
+function Results({categoryCode}) {
   const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
       url: "/establishment/list",
+      data: {categoryCode},
       success: (response) => {
         setList(response.json);
       },
@@ -24,10 +25,10 @@ function EList() {
         })
       },
     });
-  }, []);
+  }, [categoryCode]);
   return (
-    <Row className="commerce__cards"
-    gutter={[20,20]}
+    <Row className="establishment-list__results"
+      gutter={[10,10]}
     >
       {list.map((item) => {
         return (
@@ -65,4 +66,4 @@ function EList() {
     </Row>
   );
 }
-export default EList;
+export default Results;
