@@ -16,7 +16,7 @@ Portal da Favela Heliópolis que fica em São Paulo, Brasil.
 ./netuno app github=netuno-org/helipacity
 ```
 
-### Sincronizar os Dados
+## Sincronizar os Dados
 
 Pode ter o ambiente local de desenvolvimento com os mesmos dados que estão online em: https://www.helipacity.com
 
@@ -26,33 +26,38 @@ Para utilizar a base de dados e as imagens que estão online, faça estes 6 pass
 
 1. Parar a execução do Netuno local.
 
-2. Remova os dados locais nas seguintes pastas:
+2. No terminal Linux entre na pasta da aplicação, exemplo:
+  - `(Netuno Root directory)/apps/helipacity/`
+
+3. Remova os dados locais nas seguintes pastas:
 ```
 rm dbs/*
 rm -rf storage/database/*
 ```
 
-3. Download dos arquivos compactados que contém os dados online:
+4. Download dos arquivos compactados que contém os dados online:
 ```
 wget https://helipacity.com/dbs.tar.gz
 wget https://helipacity.com/storage-database.tar.gz
 ```
 
-4. Extrair os arquivos compactados nas respectivas pastas de dados locais:
+5. Extrair os arquivos compactados nas respectivas pastas de dados locais:
 ```
 tar -xzf dbs.tar.gz dbs
 tar -xzf storage-database.tar.gz storage/database/
 ```
 
-5. Remover os arquivos que não são mais desnecessários.
+6. Remover os arquivos que não são mais desnecessários.
 ```
 rm dbs.tar.gz
 rm storage-database.tar.gz
 ```
 
-6. Iniciar o Netuno com a app do Helipacity.
+7. Iniciar o Netuno com a app do Helipacity.
 
-### Execução
+8. Entre na área de administração no dashboard e clique no botão `Sincronizar Website`.
+
+## Execução
 
 Inicie o servidor Netuno:
 
@@ -81,7 +86,7 @@ Então execute o comando abaixo dentro da pasta `website`:
 
 > Lembre-se de iniciar o servidor Netuno com seu novo nome de aplicativo.
 
-## Processo Manual
+## Instalação Manual (Alternativa)
 
 ### Clone e Instalação
 
@@ -109,13 +114,23 @@ Irá iniciar o servidor de backend.
 
 Depois execute no diretório `(helipacity app directory)/website/` o seguinte comando:
 
-`npm run start`
+`npm run dev`
 
 Para iniciar o servidor de frontend.
 
+### Ajustar Configuração no Container
 
-### Para rodar no container substituir na pasta _development.json linha 9 e 10 pelos seguintes endereços:
+Caso utilize um container de desenvolvimento online, ajuste o seu `config\_development.json` com os respectivos endereços, exemplo:
 
-     "services": {"api": "http://luis-mijias.dev.netuno.org:21290/services/"},
-     "url": "http://luis-mijias.dev.netuno.org:21230"
-     
+```
+  "settings": {
+    "cluar": {
+      "website": {
+        "url": "http://meu-usuario.dev.netuno.org:XYZ30",
+        "services": {"api": "http://meu-usuario.dev.netuno.org:XYZ90/services/"}
+      }
+    }
+  }
+```  
+
+> Lembre de ajustar o número das portas nos endereços.
