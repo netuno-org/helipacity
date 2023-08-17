@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
-import { Card, Row, Col, notification } from "antd";
+import { Card, Row, Col, notification, Button } from "antd";
 import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 import "./index.less";
 
@@ -57,6 +58,7 @@ function Results({categoryCode}) {
                 <a href={`https://api.whatsapp.com/send?phone=005511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
                 <a href={`tel:005511${item.contact}`}>{item.contact}</a>
               </div>
+              <Link to={`/pt/comercio/${item.uid}`}>Mais Detalhes</Link>
             </Card>
           </Col>
         );

@@ -8,6 +8,7 @@ import Builder from "./common/Builder";
 import BaseHeader from "./base/Header";
 import BaseFooter from "./base/Footer";
 import NotFound from "./pages/NotFound";
+import CommerceDetail from "./pages/CommerceDetail";
 
 import "./styles/App.less";
 
@@ -69,7 +70,8 @@ function App() {
                   }
                 />
                 {routes}
-                <Route element={<NotFound />} />
+                <Route path="/pt/comercio/:uid" element={<CommerceDetail />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </Content>
             <BaseFooter />

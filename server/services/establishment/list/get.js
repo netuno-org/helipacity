@@ -1,4 +1,9 @@
 const categoryCode = _req.getString(`categoryCode`)
+const page = _req.getInt(`page`, 1)
+let offset = (page - 1) * 6
+if (offset < 0) {
+    offset = 0
+}
 
 let filterWhere = ""
 const filterParams = _val.list()
@@ -25,6 +30,9 @@ const dbEstablishments = _db.query(`
         AND establishment.active = TRUE
         AND establishment_category.active = TRUE
         ${filterWhere}
+    ORDER BY RANDOM()
+    LIMIT 6
+    OFFSET ${offset}
 `, filterParams)
 
 const list = _val.list()
@@ -48,8 +56,4 @@ for (const dbEstablishment of dbEstablishments) {
     )
 }
 
-
-
 _out.json(list)
-
-
