@@ -16,7 +16,7 @@ Portal da Favela Heliópolis que fica em São Paulo, Brasil.
 ./netuno app github=netuno-org/helipacity
 ```
 
-### Sincronizar os Dados
+## Sincronizar os Dados
 
 Pode ter o ambiente local de desenvolvimento com os mesmos dados que estão online em: https://www.helipacity.com
 
@@ -52,7 +52,7 @@ rm storage-database.tar.gz
 
 6. Iniciar o Netuno com a app do Helipacity.
 
-### Execução
+## Execução
 
 Inicie o servidor Netuno:
 
@@ -81,7 +81,7 @@ Então execute o comando abaixo dentro da pasta `website`:
 
 > Lembre-se de iniciar o servidor Netuno com seu novo nome de aplicativo.
 
-## Processo Manual
+## Instalação Manual (Alternativa)
 
 ### Clone e Instalação
 
@@ -109,13 +109,23 @@ Irá iniciar o servidor de backend.
 
 Depois execute no diretório `(helipacity app directory)/website/` o seguinte comando:
 
-`npm run start`
+`npm run dev`
 
 Para iniciar o servidor de frontend.
 
+### Ajustar Configuração no Container
 
-### Para rodar no container substituir na pasta _development.json linha 9 e 10 pelos seguintes endereços:
+Caso utilize um container de desenvolvimento online, ajuste o seu `config\_development.json` com os respectivos endereços, exemplo:
 
-     "services": {"api": "http://luis-mijias.dev.netuno.org:21290/services/"},
-     "url": "http://luis-mijias.dev.netuno.org:21230"
-     
+```
+  "settings": {
+    "cluar": {
+      "website": {
+        "url": "http://meu-usuario.dev.netuno.org:XYZ30",
+        "services": {"api": "http://meu-usuario.dev.netuno.org:XYZ90/services/"}
+      }
+    }
+  }
+```  
+
+> Lembre de ajustar o número das portas nos endereços.
