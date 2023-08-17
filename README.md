@@ -26,31 +26,36 @@ Para utilizar a base de dados e as imagens que estão online, faça estes 6 pass
 
 1. Parar a execução do Netuno local.
 
-2. Remova os dados locais nas seguintes pastas:
+2. No terminal Linux entre na pasta da aplicação, exemplo:
+  - `(Netuno Root directory)/apps/helipacity/`
+
+3. Remova os dados locais nas seguintes pastas:
 ```
 rm dbs/*
 rm -rf storage/database/*
 ```
 
-3. Download dos arquivos compactados que contém os dados online:
+4. Download dos arquivos compactados que contém os dados online:
 ```
 wget https://helipacity.com/dbs.tar.gz
 wget https://helipacity.com/storage-database.tar.gz
 ```
 
-4. Extrair os arquivos compactados nas respectivas pastas de dados locais:
+5. Extrair os arquivos compactados nas respectivas pastas de dados locais:
 ```
 tar -xzf dbs.tar.gz dbs
 tar -xzf storage-database.tar.gz storage/database/
 ```
 
-5. Remover os arquivos que não são mais desnecessários.
+6. Remover os arquivos que não são mais desnecessários.
 ```
 rm dbs.tar.gz
 rm storage-database.tar.gz
 ```
 
-6. Iniciar o Netuno com a app do Helipacity.
+7. Iniciar o Netuno com a app do Helipacity.
+
+8. Entre na área de administração no dashboard e clique no botão `Sincronizar Website`.
 
 ## Execução
 
