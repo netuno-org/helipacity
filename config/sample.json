@@ -1,5 +1,11 @@
 {
-    "cron": {"jobs": []},
+    "cron": {
+        "jobs": [{
+            "name": "establishment-sorter",
+            "config": "0 0 1 * * ?",
+            "url": "/services/jobs/establishment-sorter"
+        }
+    ]},
     "settings": {
         "public": {},
         "cluar": {

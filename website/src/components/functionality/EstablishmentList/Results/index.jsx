@@ -11,23 +11,50 @@ const { Meta } = Card;
 function Results({categoryCode}) {
   const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
+  const [page, setPage] = useState(1);
+  const [showMore, setShowMore] = useState(true);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    if (page > 1) {
+      onLoadData({categoryCode, page, list});
+    }
+  }, [page]);
+
+  useEffect( () => {
+    onLoadData({categoryCode, page:1, list:[]});
+    return () => {
+      // cleanup...
+      setPage(1);
+      setShowMore(true);
+      setList([]);
+    }
+  }, [categoryCode]);
+
+  const onLoadData = ({categoryCode, page, list}) => {
+    setLoading(true);
     _service({
       url: "/establishment/list",
-      data: {categoryCode},
+      data: {categoryCode, page},
       success: (response) => {
-        setList(response.json);
+        if (response.json.length < 6) {
+          setShowMore(false);
+        }
+        setList([...list, ...response.json]);
+        setLoading(false);
       },
       fail: (e) => {
         console.error("Service Error", e);
         notification.error({
           message:"Falhou !!!",
           description:"Não foi possível encontrar os comércios."
-        })
+        });
+        setLoading(false);
       },
     });
-  }, [categoryCode]);
+  };
   return (
+    <>
     <Row className="establishment-list__results"
       gutter={[10,10]}
     >
@@ -63,9 +90,9 @@ function Results({categoryCode}) {
           </Col>
         );
       })}
-      <Col>
-      </Col>
     </Row>
+    { showMore && <Button loading={loading} onClick={()=> setPage(page + 1) }>Mostrar mais</Button> }
+    </> 
   );
 }
 export default Results;

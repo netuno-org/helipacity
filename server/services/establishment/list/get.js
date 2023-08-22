@@ -12,6 +12,8 @@ if (categoryCode != "" && categoryCode != "all") {
     filterParams.add(categoryCode)
 }
 
+_exec.sleep(2000)
+
 const dbEstablishments = _db.query(`
     SELECT
         establishment.uid,
@@ -30,7 +32,7 @@ const dbEstablishments = _db.query(`
         AND establishment.active = TRUE
         AND establishment_category.active = TRUE
         ${filterWhere}
-    ORDER BY RANDOM()
+    ORDER BY establishment.sorter, establishment.id
     LIMIT 6
     OFFSET ${offset}
 `, filterParams)
