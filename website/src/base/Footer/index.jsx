@@ -25,9 +25,8 @@ function BaseFooter() {
           </a>
         </div>
         <picture>
-          <source media='(min-width: 800px)' srcset='/images/footer/footer-bg1000px.svg' />
+          <source media='(min-width: 800px)' srcSet='/images/footer/footer-bg1000px.svg' />
           <img className="footersvg" src='/images/footer/footer-bg.svg' />
-
         </picture>
       </div>
     </Footer>

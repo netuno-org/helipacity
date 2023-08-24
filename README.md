@@ -78,8 +78,6 @@ Então execute o comando abaixo dentro da pasta `website`:
 
 `npm install --force`
 
-
-
 :white_check_mark: Não é obrigatório, mas é recomendado renomar a pasta da aplicação `(Netuno Root directory)/apps/helipacity/` para o nome desejado, e não esqueça do parâmetro `name` nas configurações:
 
 `config/_development.json`

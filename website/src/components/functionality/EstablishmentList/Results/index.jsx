@@ -70,7 +70,6 @@ function Results({categoryCode}) {
             <Card 
               hoverable
               style={{
-                
               }}
               cover={
                 <img
