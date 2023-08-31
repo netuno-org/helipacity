@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import _service from "@netuno/service-client";
 import { Card, Row, Col, notification, Button } from "antd";
 import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./index.less";
 
@@ -14,6 +14,7 @@ function Results({categoryCode}) {
   const [page, setPage] = useState(1);
   const [showMore, setShowMore] = useState(true);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (page > 1) {
@@ -69,22 +70,25 @@ function Results({categoryCode}) {
           >
             <Card 
               hoverable
-              style={{
-              }}
+              onClick={() => navigate(`/pt/comercio/${item.uid}`)}
               cover={
-                <img
-                  src={`${servicePrefix}/establishment/image?uid=${item.uid}`}
-                  alt="Imagem dos Comercios"
-                />
+                <>
+                  <Link to={`/pt/comercio/${item.uid}`}>
+                    <img
+                      src={`${servicePrefix}/establishment/image?uid=${item.uid}`}
+                      alt="Imagem dos Comercios"
+                    />
+                  </Link>
+                  <div className="whats">                 
+                    <a onClick={(e) => { 
+                      e.stopPropagation();
+                      window.open(`https://api.whatsapp.com/send?phone=005511${item.phone}`);                      
+                    }}><WhatsAppOutlined /></a>
+                  </div>
+                </>
               }
             >
-              <div className="shadow">Shadow</div>
-              <p><Meta title={item.name}/></p>
-              <div className="whats">
-                <a href={`https://api.whatsapp.com/send?phone=005511${item.contact}`} target="_blank"><WhatsAppOutlined /></a>
-                <a href={`tel:005511${item.contact}`}>{item.contact}</a>
-              </div>
-              <Link to={`/pt/comercio/${item.uid}`}>Mais Detalhes</Link>
+              <Meta title={<Link to={`/pt/comercio/${item.uid}`}>{item.name}</Link>}/> 
             </Card>
           </Col>
         );
