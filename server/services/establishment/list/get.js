@@ -10,9 +10,10 @@ const filterParams = _val.list()
 if (categoryCode != "" && categoryCode != "all") {
     filterWhere = "AND establishment_category.code = $1"
     filterParams.add(categoryCode)
+    _log.info("Params", filterParams)
 }
 
-_exec.sleep(2000)
+//_exec.sleep(2000)
 
 const dbEstablishments = _db.query(`
     SELECT
