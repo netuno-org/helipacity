@@ -10,6 +10,7 @@ import Listing from '../components/Listing';
 import ContactForm from '../components/functionality/ContactForm';
 import ContactMap from '../components/functionality/ContactMap';
 import EstablishmentList from '../components/functionality/EstablishmentList';
+import EventList from '../components/functionality/EventList';
 
 function Builder({ page }) {
   useEffect(() => {
@@ -35,13 +36,15 @@ function Builder({ page }) {
         components.push(<ContactMap key={uid} {...item} />);
       } else if (item.type === 'establishment-list') {
         components.push(<EstablishmentList key={uid} {...item} />);
+      } else if (item.type === 'event-list') {
+        components.push(<EventList key={uid} {...item} />);
       }
     }
   }
   return (
-    <main>
+    <>
       {components}
-    </main>
+    </>
   );
 }
 

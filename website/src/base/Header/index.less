@@ -118,13 +118,16 @@
       max-height: 100px;
     }
     @media only screen and (max-width: @header-mobile-width) {
-      transform: translateX(-50%);
+      //transform: translateX(0%);
       img {
-        width: 75%;
+        width: 80%;
         height: auto;
       }
     }
-    @media only screen and (max-width: @header-desktop-width) {    
+    @media only screen 
+      and (min-width: @header-mobile-width) 
+      and (max-width: @header-desktop-width) {
+      transform: translateX(-50%); 
       img {
         width: 200%;
         height: auto;

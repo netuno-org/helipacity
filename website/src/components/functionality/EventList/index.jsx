@@ -6,16 +6,11 @@ import Results from "./Results";
 
 import "./index.less";
 
-function EstablishmentList() {
+function EventList() {
   const [categoryCode, setCategoryCode] = useState("all");
   return (
     <Row>
-      <Col className="establishment-list">
-        {/*
-        <div className="establishment-list__em-breve">
-          <h1>Em Breve.</h1>
-        </div>
-        */}
+      <Col className="event-list">
         <Filter onCategoryChange={(code) => setCategoryCode(code)} />
         <Results categoryCode={categoryCode} />
       </Col>
@@ -23,4 +18,4 @@ function EstablishmentList() {
   );
 }
 
-export default EstablishmentList;
+export default EventList;

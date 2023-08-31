@@ -46,54 +46,60 @@
       text-shadow: 2px 2px 4px #212121;
     }
   }
-  > div > h1 {
-    width: 80%;
-    position: relative;
-    top: 150px;
-    left: 90px;
-    font-size: 49px;
-    font-weight: normal;
-    letter-spacing: 0.01em;
-    font-family: Poppins;
-    color: @primary-color;
-    text-align: left;
-    margin: 0;
-    @media only screen and (max-width: @header-mobile-width) {
+  
+  > div {
+
+    > h1 {
+      width: 80%;
       position: relative;
       top: 150px;
-      left: -60px;
-      font-size: 39px;
+      left: 90px;
+      font-size: 49px;
+      font-weight: normal;
+      letter-spacing: 0.01em;
+      font-family: Poppins;
+      color: @primary-color;
+      text-align: left;
+      margin: 0;
+      @media only screen and (max-width: @header-mobile-width) {
+        position: relative;
+        top: 150px;
+        left: -60px;
+        font-size: 39px;
+      }
+    }
+    
+    > div {
+      font-size: 1.2em;
+    }
+
+    > ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
   }
-  > div > div {
-    font-size: 1.2em;
-  }
 
-  > div > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  .text__title {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-}
-.text__title {
-  font-size: 50px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.text__title--stroke {
-  -webkit-text-stroke: 1px @primary-color;
-  -webkit-text-fill-color: white;
-}
-.carousel-slider {
-  margin-top: 0;
-}
-.axis-horizontal {
-  margin-top: 0;
-  @media only screen and (max-width: @header-mobile-width) {
-    width: @site-width!important;
-    padding: 0;
+  .text__title--stroke {
+    -webkit-text-stroke: 1px @primary-color;
+    -webkit-text-fill-color: white;
   }
-}
-.carousel-slider {
-  width: @site-width;
+  .carousel-slider {
+    margin-top: 0;
+  }
+  .axis-horizontal {
+    margin-top: 0;
+    @media only screen and (max-width: @header-mobile-width) {
+      width: @site-width!important;
+      padding: 0;
+    }
+  }
+  .carousel-slider {
+    width: @site-width;
+  }
 }
