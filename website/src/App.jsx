@@ -8,7 +8,8 @@ import Builder from "./common/Builder";
 import BaseHeader from "./base/Header";
 import BaseFooter from "./base/Footer";
 import NotFound from "./pages/NotFound";
-import CommerceDetail from "./pages/CommerceDetail";
+import EstablishmentDetail from "./pages/EstablishmentDetail";
+import EventDetail from "./pages/EventDetail";
 
 import "./styles/App.less";
 
@@ -70,7 +71,8 @@ function App() {
                   }
                 />
                 {routes}
-                <Route path="/pt/comercio/:uid" element={<CommerceDetail />} />
+                <Route path="/pt/comercio/:uid" element={<EstablishmentDetail />} />
+                <Route path="/pt/evento/:uid" element={<EventDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Content>

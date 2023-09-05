@@ -6,13 +6,7 @@
             "uid": {
                 "type": "string"
             },
-            "image": {
-                "type": "string"
-            },
             "date_time": {
-                "type": "string"
-            },
-            "description": {
                 "type": "string"
             },
             "title": {
@@ -38,9 +32,7 @@
             "title",
             "category",
             "date_time",
-            "description",
-            "instagram",
-            "image"
+            "instagram"
         ]
     }
 }

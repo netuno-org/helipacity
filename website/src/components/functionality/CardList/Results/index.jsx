@@ -3,18 +3,20 @@ import _service from "@netuno/service-client";
 import { Card, Row, Col, notification, Button } from "antd";
 import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
+import dayjs from 'dayjs';
 
 import "./index.less";
 
 const { Meta } = Card;
 
-function Results({categoryCode}) {
+function Results({listType, categoryCode}) {
   const servicePrefix = _service.config().prefix;
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [showMore, setShowMore] = useState(true);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate(); 
+  const detailPrefix = listType == 'event' ? 'evento' : 'comercio';
 
   useEffect(() => {
     if (page > 1) {
@@ -35,7 +37,7 @@ function Results({categoryCode}) {
   const onLoadData = ({categoryCode, page, list}) => {
     setLoading(true);
     _service({
-      url: "/establishment/list",
+      url: `/${listType}/list`,
       data: {categoryCode, page},
       success: (response) => {
         if (response.json.length < 6) {
@@ -56,7 +58,7 @@ function Results({categoryCode}) {
   };
   return (
     <>
-    <Row className="establishment-list__results"
+    <Row className="card-list__results"
       gutter={[10,10]}
     >
       {list.map((item) => {
@@ -70,25 +72,49 @@ function Results({categoryCode}) {
           >
             <Card 
               hoverable
-              onClick={() => navigate(`/pt/comercio/${item.uid}`)}
+              onClick={() => navigate(`/pt/${detailPrefix}/${item.uid}`)}
               cover={
                 <>
-                  <Link to={`/pt/comercio/${item.uid}`}>
+                  <Link to={`/pt/${detailPrefix}/${item.uid}`}>
                     <img
-                      src={`${servicePrefix}/establishment/image?uid=${item.uid}`}
-                      alt="Imagem dos Comercios"
+                      src={`${servicePrefix}/${listType}/image?uid=${item.uid}`}
+                      alt="Imagem"
                     />
                   </Link>
-                  <div className="whats">                 
-                    <a onClick={(e) => { 
-                      e.stopPropagation();
-                      window.open(`https://api.whatsapp.com/send?phone=005511${item.phone}`);                      
-                    }}><WhatsAppOutlined /></a>
-                  </div>
+                  {
+                   listType == 'event' 
+                   && <div className="icon icon--insta">                 
+                      <a onClick={(e) => { 
+                        e.stopPropagation();
+                        window.open(`https://www.instagram.com/${item.instagram}`);                      
+                      }}><InstagramOutlined /></a>
+                    </div>
+                  }
+                  {
+                   listType == 'establishment' 
+                   && <div className="icon icon--whats">                 
+                      <a onClick={(e) => { 
+                        e.stopPropagation();
+                        window.open(`https://api.whatsapp.com/send?phone=005511${item.phone}`);                      
+                      }}><WhatsAppOutlined /></a>
+                    </div>
+                  }
                 </>
               }
             >
-              <Meta title={<Link to={`/pt/comercio/${item.uid}`}>{item.name}</Link>}/> 
+              <Meta 
+                title={
+                  <>
+                    <Link to={`/pt/${detailPrefix}/${item.uid}`}> 
+                      {listType == 'event' ? item.title : item.name}
+                    </Link>
+                    
+                  </>
+                }
+                description= {listType == 'event' 
+                && <>{dayjs(item.date_time, 'YYYY-MM-DD HH:mm:ss.S').format('DD/MM HH:mm')}</>
+              }
+                /> 
             </Card>
           </Col>
         );

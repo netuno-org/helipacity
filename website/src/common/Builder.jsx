@@ -9,8 +9,7 @@ import Content from '../components/Content';
 import Listing from '../components/Listing';
 import ContactForm from '../components/functionality/ContactForm';
 import ContactMap from '../components/functionality/ContactMap';
-import EstablishmentList from '../components/functionality/EstablishmentList';
-import EventList from '../components/functionality/EventList';
+import CardList from '../components/functionality/CardList';
 
 function Builder({ page }) {
   useEffect(() => {
@@ -35,9 +34,9 @@ function Builder({ page }) {
       } else if (item.type === 'contact-map') {
         components.push(<ContactMap key={uid} {...item} />);
       } else if (item.type === 'establishment-list') {
-        components.push(<EstablishmentList key={uid} {...item} />);
+        components.push(<CardList key={uid} listType="establishment" {...item} />);
       } else if (item.type === 'event-list') {
-        components.push(<EventList key={uid} {...item} />);
+        components.push(<CardList key={uid} listType="event" {...item} />);
       }
     }
   }

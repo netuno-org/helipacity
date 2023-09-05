@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import _service from "@netuno/service-client";
-
-import { InstagramOutlined, WhatsAppOutlined} from "@ant-design/icons";
+import { InstagramOutlined } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import { Spin, Tag, notification } from "antd";
+import dayjs from 'dayjs';
 
 import "./index.less";
 
-function CommerceDetail() {
+function EventDetail() {
   const servicePrefix = _service.config().prefix;
   const { uid } = useParams(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     _service({
-      url: "/establishment",
+      url: "/event",
       data: { uid },
       success: (response) => {
         setData(response.json);
@@ -33,7 +33,7 @@ function CommerceDetail() {
   if (loading) {
     return (
       <section className="content">
-        <div className="commerce-detail">
+        <div className="event-detail">
           <Spin size="large"/>
         </div>
       </section>
@@ -42,7 +42,7 @@ function CommerceDetail() {
   if (data == null) {
     return (
       <section className="content">
-        <div className="commerce-detail">
+        <div className="event-detail">
           <p>N&atilde;o foi poss&iacute;vel carregar os detalhes do com&eacute;rcio.</p>
         </div>
       </section>
@@ -50,21 +50,20 @@ function CommerceDetail() {
   }
   return (
     <>
-      <section className="commerce-banner" 
-        style={{backgroundImage: `url(${servicePrefix}/establishment/image?uid=${uid})`}}>
+      <section className="event-banner" 
+        style={{backgroundImage: `url(${servicePrefix}/event/image?uid=${uid})`}}>
         <div>
-          <h1>{data.name}</h1>
+          <h1>{data.title}</h1>
           <Tag>{data.category.name}</Tag>
         </div>
       </section>
       <section className="content">
-        <div className="commerce-detail">
-          {/*{JSON.stringify(data)}*/}
-          <p>{data.description}</p>
+        <div className="event-detail">
+          <p>{dayjs(data.date_time, 'YYYY-MM-DD HH:mm:ss.S').format('DD/MM HH:mm')}</p>
           <p>{data.address}</p>
+          <p>{data.description}</p>
           <p>
-            <a href={`https://api.whatsapp.com/send?phone=005511${data.phone}`} target="_blank"><WhatsAppOutlined /></a>
-            <a href={`tel:005511${data.phone}`}>{data.phone}</a>
+            <a href={`https://www.instagram.com/${data.instagram}`} target="_blank"><InstagramOutlined /></a>
           </p>
           <p>{data.link}</p>
         </div>
@@ -73,4 +72,4 @@ function CommerceDetail() {
   );
 }
 
-export default CommerceDetail;
+export default EventDetail;

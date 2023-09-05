@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Button, Space } from "antd";
-import "./index.less";
 import _service from "@netuno/service-client";
 
-function Filter({onCategoryChange}) {
+import "./index.less";
+
+function Filter({listType, onCategoryChange}) {
   const [selected, setSelected] = useState("all");
   const [list, setList] = useState([]);
   useEffect(() => {
     _service({
-      url: "/establishment/category/list",
+      url: `/${listType}/category/list`,
       success: (response) => {
         setList(response.json);
       },
@@ -19,7 +20,7 @@ function Filter({onCategoryChange}) {
   }, []);
   
   return (
-    <div className="event-list__filter">
+    <div className="card-list__filter">
       <Space wrap>
         <Button 
           type={selected == "all" ? "primary" : "default"}

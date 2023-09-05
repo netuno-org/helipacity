@@ -6,16 +6,16 @@ import Results from "./Results";
 
 import "./index.less";
 
-function EventList() {
+function CardList({listType}) {
   const [categoryCode, setCategoryCode] = useState("all");
   return (
     <Row>
-      <Col className="event-list">
-        <Filter onCategoryChange={(code) => setCategoryCode(code)} />
-        <Results categoryCode={categoryCode} />
+      <Col className="card-list">
+        <Filter listType={listType} onCategoryChange={(code) => setCategoryCode(code)} />
+        <Results listType={listType} categoryCode={categoryCode} />
       </Col>
     </Row>
   );
 }
 
-export default EventList;
+export default CardList;
