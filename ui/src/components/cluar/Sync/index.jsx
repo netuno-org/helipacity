@@ -3,7 +3,6 @@ import { Button, notification } from 'antd';
 import _service from '@netuno/service-client';
 import "./index.less";
 
-
 function CluarSync() {
     const [ loading, setLoading ] = useState(false);
     const onClick = () => {
@@ -28,7 +27,7 @@ function CluarSync() {
             }
         });
     };
-    return <Button onClick={onClick} loading={loading}>Sincronizar com o website.</Button>
+    return (<Button onClick={onClick} loading={loading}>Sincronizar com o website.</Button>);
 }
 
 export default CluarSync;

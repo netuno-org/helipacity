@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import _service from '@netuno/service-client';
 import DashboardContainer from "./containers/DashboardContainer";
 
@@ -9,18 +9,22 @@ _service.config({
 
 const dashboardDiv = document.getElementById("app-dashboard");
 
-const dashboardContainer = dashboardDiv ? ReactDOM.render(<DashboardContainer />, dashboardDiv) : false;
+const dashboardContainer = createRoot(dashboardDiv);
+dashboardContainer.render(<DashboardContainer />);
 
 netuno.addNavigationLoad(() => {
   $('[netuno-navigation]').find('a').on('netuno:click', (e)=> {
     const link = $(e.target);
-    if (dashboardContainer && link.is('[netuno-navigation-dashboard]')) {
+    if (link.is('[netuno-navigation-dashboard]')) {
+      //dashboardContainer = dashboardDiv ? ReactDOM.render(<DashboardContainer />, dashboardDiv) : false;
       // Menu > Dashboard > Clicked!
     }
   });
 });
 
 netuno.addContentLoad((container) => {
+    //ReactDOM.unmountComponentAtNode(dashboardDiv);
+//console.log('DASHBOARD UMOUNT X')
   // When any content is loaded dinamically this is executed...
   if (container.is('[netuno-form-search="YOUR_FORM_NAME"]')) {
     // When search page is loaded...

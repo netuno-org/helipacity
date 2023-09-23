@@ -218,7 +218,7 @@ function ContactTable() {
     };
     netuno.addNavigationLoad(handleNavigationLoad);
     return () => {
-      netuno.removeNavigatoinLoad(handleNavigationLoad);
+      netuno.removeNavigationLoad(handleNavigationLoad);
     };
   }, []);
   return (
