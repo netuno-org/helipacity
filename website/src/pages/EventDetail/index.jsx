@@ -50,16 +50,14 @@ function EventDetail() {
   }
   return (
     <>
-      <section className="event-banner" 
-        style={{backgroundImage: `url(${servicePrefix}/event/image?uid=${uid})`}}>
-        <div>
-          <h1>{data.title}</h1>
-          <Tag>{data.category.name}</Tag>
+      <section className="event-detail">
+        <div className="event-detail__cover">
+          <img src={`${servicePrefix}/event/image?uid=${uid}`} width="100%"/>
         </div>
-      </section>
-      <section className="content">
-        <div className="event-detail">
+        <div className="event-detail__detail">
+          <h1>{data.title}</h1>
           <p>{dayjs(data.date_time, 'YYYY-MM-DD HH:mm:ss.S').format('DD/MM HH:mm')}</p>
+          <p><Tag>{data.category.name}</Tag></p>
           <p>{data.address}</p>
           <p>{data.description}</p>
           <p>

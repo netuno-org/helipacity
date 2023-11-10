@@ -1,4 +1,11 @@
-.event {
+@import "../../styles/variables.less";
+
+.event-detail {
+  width: 100%;
+  max-width: @site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
   &-banner {
     height: 100vh;
     background-repeat: no-repeat;
@@ -23,11 +30,15 @@
     }
   }
 
-  &-detail {
-    margin: 50px 10px 0 10px;
+  &__cover {
 
+  }
+
+  &__detail {
+    margin-left: 10px;
+    margin-right: 10px;
     > p {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     
       .anticon {
         font-size: 30px;

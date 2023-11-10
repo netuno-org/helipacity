@@ -1,5 +1,5 @@
 
-// _core : CluarCustomData
+// _core : CluarCustom
 
 class Cluar {
 
@@ -385,8 +385,8 @@ class Cluar {
         }
         data.set("pages", pages)
         
-        CluarCustomData(data)
-        
+        CluarCustom.build(settings, data)
+
         /*
          *
          *  DATA FILE

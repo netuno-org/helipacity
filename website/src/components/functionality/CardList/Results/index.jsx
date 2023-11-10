@@ -75,12 +75,10 @@ function Results({listType, categoryCode}) {
               onClick={() => navigate(`/pt/${detailPrefix}/${item.uid}`)}
               cover={
                 <>
-                  <Link to={`/pt/${detailPrefix}/${item.uid}`}>
-                    <img
-                      src={`${servicePrefix}/${listType}/image?uid=${item.uid}`}
-                      alt="Imagem"
-                    />
-                  </Link>
+                  <div className="image" style={{
+                    backgroundImage: `url(/images/event/${item.image})`
+                  }}>
+                  </div>
                   {
                    listType == 'event' 
                    && <div className="icon icon--insta">                 

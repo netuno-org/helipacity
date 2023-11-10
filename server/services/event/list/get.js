@@ -18,6 +18,7 @@ const dbEvents = _db.query(`
   SELECT
     event.uid,
     event.title,
+    event.image,
     event.date_time,
     event.instagram,
     event_category.uid AS "category_uid",
@@ -40,10 +41,13 @@ const dbEvents = _db.query(`
 const events = _val.list()
 
 for (const dbEvent of dbEvents) {
+  let imageName = dbEvent.getString("image")
+  imageName = imageName.substring(0, imageName.lastIndexOf("."))
   events.add(
     _val.map()
       .set("uid", dbEvent.getString("uid"))
       .set("title", dbEvent.getString("title"))
+      .set("image", `${imageName}.jpg`)
       .set("date_time", dbEvent.getString("date_time"))
       .set("instagram", dbEvent.getString("instagram"))
       .set(
