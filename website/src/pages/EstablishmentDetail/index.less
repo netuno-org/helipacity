@@ -1,36 +1,33 @@
-.establishment {
-  &-banner {
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    position: relative;
+@import "../../styles/variables.less";
 
-    > div {
-      position: absolute;
-      bottom: 50px;
-      left: 10px;
-      color: white;
-      text-shadow: 2px 2px 4px #212121;
-      
-      > h1 {
-        font-size: 40px;
-      }
+.establishment-detail {
+  width: 100%;
+  max-width: @site-max-width;
+  margin-left: auto;
+  margin-right: auto;
 
-      > * {
-        color: inherit;
-      }
-    }
-  }
-
-  &-detail {
-    margin: 50px 10px 0 10px;
+  &__detail {
+    margin-left: 10px;
+    margin-right: 10px;
 
     > p {
       margin-bottom: 10px;
     
       .anticon {
         font-size: 30px;
+      }
+
+      a {
+        text-decoration: none !important;
+      }
+    }
+    &__whatsapp {
+      > a {
+        color: #34af23 !important;
+
+        &:hover {
+          color: darken(#34af23, 10%) !important;
+        }
       }
     }
   }

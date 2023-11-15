@@ -49,7 +49,7 @@ for (const dbEstablishment of dbEstablishments) {
             .set('phone', dbEstablishment.getString('phone'))
             .set('description', dbEstablishment.getString('description'))
             .set('link', dbEstablishment.getString('link'))
-            .set('image', dbEstablishment.getFile('image'))
+            .set('image', dbEstablishment.getString('image'))
             .set(
                 'category',
                 _val.map()

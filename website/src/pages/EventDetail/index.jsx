@@ -49,24 +49,22 @@ function EventDetail() {
     );
   }
   return (
-    <>
-      <section className="event-detail">
-        <div className="event-detail__cover">
-          <img src={`${servicePrefix}/event/image?uid=${uid}`} width="100%"/>
-        </div>
-        <div className="event-detail__detail">
-          <h1>{data.title}</h1>
-          <p>{dayjs(data.date_time, 'YYYY-MM-DD HH:mm:ss.S').format('DD/MM HH:mm')}</p>
-          <p><Tag>{data.category.name}</Tag></p>
-          <p>{data.address}</p>
-          <p>{data.description}</p>
-          <p>
-            <a href={`https://www.instagram.com/${data.instagram}`} target="_blank"><InstagramOutlined /></a>
-          </p>
-          <p>{data.link}</p>
-        </div>
-      </section>
-    </>
+    <section className="event-detail">
+      <div className="event-detail__cover">
+        <img src={`${servicePrefix}/event/image?uid=${uid}`} width="100%"/>
+      </div>
+      <div className="event-detail__detail">
+        <h1>{data.title}</h1>
+        <p>{dayjs(data.date_time, 'YYYY-MM-DD HH:mm:ss.S').format('DD/MM HH:mm')}</p>
+        <p><Tag>{data.category.name}</Tag></p>
+        <p>{data.address}</p>
+        <p>{data.description}</p>
+        <p>
+          <a href={`https://www.instagram.com/${data.instagram}`} target="_blank"><InstagramOutlined /></a>
+        </p>
+        <p>{data.link}</p>
+      </div>
+    </section>
   );
 }
 

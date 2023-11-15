@@ -76,7 +76,7 @@ function Results({listType, categoryCode}) {
               cover={
                 <>
                   <div className="image" style={{
-                    backgroundImage: `url(/images/event/${item.image})`
+                    backgroundImage: `url(/images/${listType}/${item.image})`
                   }}>
                   </div>
                   {

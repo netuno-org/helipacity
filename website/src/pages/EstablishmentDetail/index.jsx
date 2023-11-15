@@ -49,26 +49,29 @@ function EstablishmentDetail() {
     );
   }
   return (
-    <>
-      <section className="establishment-banner" 
-        style={{backgroundImage: `url(${servicePrefix}/establishment/image?uid=${uid})`}}>
-        <div>
-          <h1>{data.name}</h1>
-          <Tag>{data.category.name}</Tag>
-        </div>
-      </section>
-      <section className="content">
-        <div className="establishment-detail">
-          <p>{data.description}</p>
-          <p>{data.address}</p>
-          <p>
-            <a href={`https://api.whatsapp.com/send?phone=005511${data.phone}`} target="_blank"><WhatsAppOutlined /></a>
-            <a href={`tel:005511${data.phone}`}>{data.phone}</a>
-          </p>
-          <p>{data.link}</p>
-        </div>
-      </section>
-    </>
+    <section className="establishment-detail">
+      <div className="establishment-detail__cover">
+        <img src={`${servicePrefix}/establishment/image?uid=${uid}`} width="100%"/>
+      </div>
+      <div className="establishment-detail__detail">
+        <h1>{data.name}</h1>
+        <p><Tag>{data.category.name}</Tag></p>
+        <p>{data.description}</p>
+        <p>{data.address}</p>
+        <p className="establishment-detail__detail__whatsapp">
+          <a href={`https://api.whatsapp.com/send?phone=005511${data.phone}`} target="_blank">
+            <WhatsAppOutlined />
+            &nbsp;
+            {data.phone}
+          </a>
+        </p>
+        {data.link != '' && <p>
+            <a href={data.link} target="_blank">
+              {data.link.substring(data.link.indexOf('//') + 2)}
+            </a>
+        </p>}
+      </div>
+    </section>
   );
 }
 

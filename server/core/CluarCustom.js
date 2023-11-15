@@ -2,19 +2,20 @@
 class CluarCustom {
     static build(settings, data) {
         if (settings.images === true) {
-            CluarCustom.publishEventImages()
+            CluarCustom.publishListImages("event")
+            CluarCustom.publishListImages("establishment")
         }
     }
 
-    static publishEventImages() {
-        const dbEvents = _db.query(`SELECT * FROM event`)   
-        const folder = _app.folder(`${Cluar.base()}/images/event`)
+    static publishListImages(listType) {
+        const dbEvents = _db.query(`SELECT * FROM ${listType}`)   
+        const folder = _app.folder(`${Cluar.base()}/images/${listType}`)
         if (!folder.exists()) {
             folder.mkdir()
         }
         for (const dbEvent of dbEvents) {
             const fileNameFull = dbEvent.getString("image")
-            const dbImageFile = _storage.database("event", "image", fileNameFull)
+            const dbImageFile = _storage.database(listType, "image", fileNameFull)
                 .file()
             const fileName = fileNameFull.substring(0, fileNameFull.lastIndexOf("."))
             const image = _image.init(dbImageFile)
@@ -24,9 +25,5 @@ class CluarCustom {
                 Math.round(image.height() * aspectRatio / image.width())
             ).save(_app.file(`${folder.path()}/${fileName}.jpg`), "jpeg")
         }
-    }
-    
-    static publishEstablishmentImages() {
-        
     }
 }

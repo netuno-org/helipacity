@@ -52,7 +52,10 @@ function App() {
         token: {
           colorPrimary: '#ff6200',
           fontSize: 16,
-          borderRadius: 20
+          borderRadius: 20,
+          Button: {
+            height: '80px'
+          }
         }
       }}
     >
