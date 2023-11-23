@@ -16,7 +16,8 @@ function Results({listType, categoryCode}) {
   const [showMore, setShowMore] = useState(true);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate(); 
-  const detailPrefix = listType == 'event' ? 'evento' : 'comercio';
+  const detailPrefix = listType == 'event' ? 'evento' : (
+    listType == 'social-action' ? 'acao-social' : 'comercio');
 
   useEffect(() => {
     if (page > 1) {

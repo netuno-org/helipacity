@@ -4,12 +4,13 @@ class CluarCustom {
         if (settings.images === true) {
             CluarCustom.publishListImages("event")
             CluarCustom.publishListImages("establishment")
+            CluarCustom.publishListImages("social_action")
         }
     }
 
     static publishListImages(listType) {
         const dbEvents = _db.query(`SELECT * FROM ${listType}`)   
-        const folder = _app.folder(`${Cluar.base()}/images/${listType}`)
+        const folder = _app.folder(`${Cluar.base()}/images/${listType.replace('_', '-')}`)
         if (!folder.exists()) {
             folder.mkdir()
         }
@@ -23,7 +24,7 @@ class CluarCustom {
             image.resize(
                 aspectRatio,
                 Math.round(image.height() * aspectRatio / image.width())
-            ).save(_app.file(`${folder.path()}/${fileName}.jpg`), "jpeg")
+            ).save(_app.file(`${folder.path()}/${fileName}.${dbImageFile.extension()}`), "jpeg")
         }
     }
 }

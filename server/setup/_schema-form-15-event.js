@@ -31,6 +31,36 @@ _form.createComponentIfNotExists(
 	"84522676-278c-44a2-ad91-1a383f204383",
 	_val.init()
 	.set("colspan", 0)
+	.set("displayname", "Endere\u00E7o")
+	.set("firebase", "")
+	.set("group_id", 0)
+	.set("height", 0)
+	.set("max", 0)
+	.set("min", 0)
+	.set("name", "address")
+	.set("notnull", false)
+	.set("primarykey", false)
+	.set("properties", "{\"MASK\":{\"default\":\"\",\"type\":\"STRING\",\"value\":\"\"},\"MASK_REVERSE\":{\"default\":\"false\",\"type\":\"BOOLEAN\",\"value\":\"false\"},\"MASK_SELECTONFOCUS\":{\"default\":\"false\",\"type\":\"BOOLEAN\",\"value\":\"false\"}}")
+	.set("rowspan", 0)
+	.set("tdheight", 0)
+	.set("tdwidth", 0)
+	.set("type", "text")
+	.set("uid", "c5c61511-4c71-4534-aa7c-533a14ff70f9")
+	.set("user_id", 0)
+	.set("whenedit", true)
+	.set("whenexport", true)
+	.set("whenfilter", true)
+	.set("whennew", true)
+	.set("whenresult", false)
+	.set("whenview", true)
+	.set("width", 0)
+	.set("x", 1)
+	.set("y", 5)
+)
+_form.createComponentIfNotExists(
+	"84522676-278c-44a2-ad91-1a383f204383",
+	_val.init()
+	.set("colspan", 0)
 	.set("description", "")
 	.set("displayname", "Categoria")
 	.set("firebase", "")
@@ -118,7 +148,7 @@ _form.createComponentIfNotExists(
 	.set("whenview", true)
 	.set("width", 0)
 	.set("x", 1)
-	.set("y", 5)
+	.set("y", 6)
 )
 _form.createComponentIfNotExists(
 	"84522676-278c-44a2-ad91-1a383f204383",
@@ -149,7 +179,7 @@ _form.createComponentIfNotExists(
 	.set("whenview", true)
 	.set("width", 0)
 	.set("x", 1)
-	.set("y", 7)
+	.set("y", 8)
 )
 _form.createComponentIfNotExists(
 	"84522676-278c-44a2-ad91-1a383f204383",
@@ -180,7 +210,7 @@ _form.createComponentIfNotExists(
 	.set("whenview", true)
 	.set("width", 0)
 	.set("x", 1)
-	.set("y", 6)
+	.set("y", 7)
 )
 _form.createComponentIfNotExists(
 	"84522676-278c-44a2-ad91-1a383f204383",

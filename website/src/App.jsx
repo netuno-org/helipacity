@@ -10,6 +10,7 @@ import BaseFooter from "./base/Footer";
 import NotFound from "./pages/NotFound";
 import EstablishmentDetail from "./pages/EstablishmentDetail";
 import EventDetail from "./pages/EventDetail";
+import SocialActionDetail from "./pages/SocialActionDetail";
 
 import "./styles/App.less";
 
@@ -76,6 +77,7 @@ function App() {
                 {routes}
                 <Route path="/pt/comercio/:uid" element={<EstablishmentDetail />} />
                 <Route path="/pt/evento/:uid" element={<EventDetail />} />
+                <Route path="/pt/acao-social/:uid" element={<SocialActionDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Content>

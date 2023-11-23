@@ -1,0 +1,34 @@
+@import "../../styles/variables.less";
+
+.social-action-detail {
+  width: 100%;
+  max-width: @site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__detail {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    > p {
+      margin-bottom: 10px;
+    
+      .anticon {
+        font-size: 30px;
+      }
+
+      a {
+        text-decoration: none !important;
+      }
+    }
+    &__whatsapp {
+      > a {
+        color: #34af23 !important;
+
+        &:hover {
+          color: darken(#34af23, 10%) !important;
+        }
+      }
+    }
+  }
+}

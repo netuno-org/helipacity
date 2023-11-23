@@ -10,6 +10,7 @@ import Listing from '../components/Listing';
 import ContactForm from '../components/functionality/ContactForm';
 import ContactMap from '../components/functionality/ContactMap';
 import CardList from '../components/functionality/CardList';
+import QuickLinks from '../components/functionality/QuickLinks';
 
 function Builder({ page }) {
   useEffect(() => {
@@ -37,6 +38,10 @@ function Builder({ page }) {
         components.push(<CardList key={uid} listType="establishment" {...item} />);
       } else if (item.type === 'event-list') {
         components.push(<CardList key={uid} listType="event" {...item} />);
+      } else if (item.type === 'social-action-list') {
+        components.push(<CardList key={uid} listType="social-action" {...item} />);
+      } else if (item.type === 'quick-links') {
+        components.push(<QuickLinks key={uid} {...item} />);
       }
     }
   }
