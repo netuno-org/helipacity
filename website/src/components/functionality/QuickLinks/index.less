@@ -5,7 +5,7 @@
     max-width: 1000px;
     margin: 0 auto;
 
-    &__title--stroke{
+    &__title--stroke {
         -webkit-text-stroke: 1px @primary-color;
         -webkit-text-fill-color: white;
     }
@@ -46,72 +46,50 @@
         }
     }
 
-    >div {
-        font-size: 1.2em;
-
-        >ul {
-            margin-left: 40px !important;
-        }
-    }
-
-    &__text2 {
-        margin-bottom: 150px;
-    }
-
-    &__divButton {
+    &__buttons {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
-        .ant-btn-primary {
-            height: 60px;
-            border-radius: 25px 0px 0px 25px;
-
-            .icons {
-                width: 35px;
-                margin-top: 5px;
-            }
-        }
+        margin-top: 40px;
 
         @media only screen and (max-width: @header-mobile-width) {
+            margin-top: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-    }
 
-    &__button1 {
-        margin-top: -17%;
-        margin-left: -5px;
-        color: @secondary-color;
-        font-family: Poppins;
-        font-size: 2rem;
-
-        @media only screen and (max-width: @header-mobile-width) {
-            margin-top: -18%;
-        }
-    }
-
-    &__button2 {
-        margin-top: -2%;
-        margin-left: -20px;
-        color: @secondary-color;
-        font-family: Poppins;
-        font-size: 20px;
-    }
-
-    >div {
-        >p {
-            margin-top: 100px;
-            margin-left: 230px;
+        > button {
+            background-color: @tertiary-color;
+            width: calc(100% - 20px);
+            max-width: 300px;
+            height: 40px;
+            text-align: center;
+            border-radius: 25px 0px 0px 25px;
+            clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
+            color: @secondary-color;
             font-family: Poppins;
-
+            font-size: 1.2em;
             @media only screen and (max-width: @header-mobile-width) {
-                margin-top: 10%;
-                margin-left: 15px;
-                margin-right: 15px;
+                margin-top: 20px;
+            }
+
+            > svg {
+                position: absolute;
+                margin-left: -30px;
+                margin-top: 4px;
+            }
+
+            &:first-child {
+                clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
+            }
+            &:nth-child(2) {
+                clip-path: polygon(0 0, 100% 0, 91% 100%, 0% 100%);
+            }
+            &:last-child {
+                clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
             }
         }
     }

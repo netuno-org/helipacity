@@ -9,15 +9,21 @@ class CluarCustom {
     }
 
     static publishListImages(listType) {
-        const dbEvents = _db.query(`SELECT * FROM ${listType}`)   
+        const dbResults = _db.query(`SELECT * FROM ${listType}`)   
         const folder = _app.folder(`${Cluar.base()}/images/${listType.replace('_', '-')}`)
         if (!folder.exists()) {
             folder.mkdir()
         }
-        for (const dbEvent of dbEvents) {
-            const fileNameFull = dbEvent.getString("image")
+        for (const dbResult of dbResults) {
+            const fileNameFull = dbResult.getString("image")
+            if (fileNameFull == '') {
+                continue;
+            }
             const dbImageFile = _storage.database(listType, "image", fileNameFull)
                 .file()
+            if (!dbImageFile.exists()) {
+                continue;
+            }
             const fileName = fileNameFull.substring(0, fileNameFull.lastIndexOf("."))
             const image = _image.init(dbImageFile)
             const aspectRatio = 300
