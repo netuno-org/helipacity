@@ -8,7 +8,6 @@
   z-index: 1000;
   bottom: 0;
   width: 100%;
-  max-width: 1950px;
   margin-left: auto;
   margin-right: auto;
   height: @header-size !important;
@@ -35,7 +34,6 @@
   }
   &__wrapper {
     display: flex;
-    position: absolute;
     width: fit-content;
     left: 0;
     bottom: 0;
@@ -78,6 +76,7 @@
       height: 14vh;
       top: 20px;
       min-height: 50px;
+      padding-right: 24px;
     }
     .ant-menu-title-content {
       //Altura do componente do menu.
@@ -103,16 +102,13 @@
   }
   .header__background {
     position: absolute;
-    width: auto;
-    height: 180px;
-    margin-top: -50px;
+    bottom: 0;
+    width: 100vw;
+    height: 100px;
     z-index: 2;
     transform: rotate(180deg);
     @media only screen and (min-width: @header-mobile-width) {
-      height: 400px;
-      margin-top: -200px;
-      margin-left: auto;
-      margin-right: auto;
+      height: 150px;
     }
   }
   .logo {
@@ -120,25 +116,22 @@
     z-index: 3;
     width: fit-content;
     img {
-      display: flex;
-      width: @logo-width;
+      position: absolute;
+      bottom: 5px;
+      width: 300px;
+      height: auto;
+      transform: translateX(-150px);
       margin-left: auto;
       margin-right: auto;
-      max-height: 100px;
-    }
-    @media only screen and (max-width: @header-mobile-width) {
-      //transform: translateX(0%);
-      img {
-        width: 80%;
-        height: auto;
+      @media only screen and (max-width: @header-mobile-width) {
+        transform: translateX(-75px); 
+        width: 150px;
       }
-    }
-    @media only screen 
-      and (min-width: @header-mobile-width) 
-      and (max-width: @header-desktop-width) {
-      transform: translateX(-50%); 
-      img {
-        width: 200%;
+      @media only screen 
+        and (min-width: @header-mobile-width) 
+        and (max-width: @header-desktop-width) {
+        transform: translateX(-100px); 
+        width: 200px;
         height: auto;
       }
     }
@@ -209,13 +202,19 @@
     position: absolute;
     width: fit-content;
     height: fit-content;
-    bottom: 5px;
-    left: 10px;
+    bottom: 10px;
+    right: 20px;
     .burger {
-      font-size: 18px;
+      font-size: 20px;
 
       @media only screen and (max-width: @header-mobile-width) {
         font-size: 14px;
+      }
+
+      .burger-lines {
+        &, &:after, &:before {
+          background-color: #8a1b23;
+        }
       }
     }
   }
