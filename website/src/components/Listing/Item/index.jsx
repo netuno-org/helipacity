@@ -26,16 +26,13 @@ function Item({
         </a>
       </Col>
     );
-  } else if (type === "carrossel_principal") {
+  } else if (type === "carrossel-principal") {
     layout = (
-      <div className="carousel__item" style={{
+      <div className={`listing__${type}__item`} style={{
         backgroundImage: `url("/images/${section}/${image}")`,
       }}>
-        <h1 className="carroussel__legend">{title}</h1>
-        <p
-            className="carroussel__legendprincipal"
-            dangerouslySetInnerHTML={{ __html: content }}
-        ></p>
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     );
   } else if (type === "carrossel") {

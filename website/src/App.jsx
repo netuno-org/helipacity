@@ -81,8 +81,8 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Content>
-            <BaseFooter />
-            {/* <BaseCookies /> */}
+            { /* <BaseFooter /> */ }
+            { /* <BaseCookies /> */ }
           </Layout>
         </div>
       </BrowserRouter>

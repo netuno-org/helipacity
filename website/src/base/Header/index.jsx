@@ -136,11 +136,7 @@ function BaseHeader() {
           onClick={() => handleMenuClick("/")}
         />
       </div>
-      <img
-        alt="bg-header"
-        className="header-bg"
-        src="/images/header/header-bg.svg"
-      ></img>
+      <img className="header__background" src='/images/header/header-bg.svg' />
       <div className="ant-layout-header__wrapper">
         <div
           className={classNames({

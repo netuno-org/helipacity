@@ -50,9 +50,9 @@ function Listing({
     );
   } else if (type === "OTHER-CUSTOM-TYPE-HERE") {
     listLayout = <Row className={`listing__${type}`}>{children}</Row>;
-  } else if (type === "carrossel_principal") {
+  } else if (type === "carrossel-principal") {
     listLayout = (
-      <Row className="listing__principal" xs={{ span: 24 }} md={{ span: 12 }}>
+      <Row className={`listing__${type}`} xs={{ span: 24 }} md={{ span: 12 }}>
         <div>
           {titleStyled && (
             <h1
@@ -74,6 +74,8 @@ function Listing({
             autoPlay
             infiniteLoop
             interval={3000}
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
           >
             {children}
           </Carousel>

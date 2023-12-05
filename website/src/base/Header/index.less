@@ -6,8 +6,11 @@
   justify-content: space-around;
   flex-direction: row;
   z-index: 1000;
-  top: 0;
+  bottom: 0;
   width: 100%;
+  max-width: 1950px;
+  margin-left: auto;
+  margin-right: auto;
   height: @header-size !important;
   line-height: @header-size !important;
   background: @header-background !important;
@@ -31,10 +34,11 @@
     line-height: calc(@header-size * 2) !important;    
   }
   &__wrapper {
-    width: 100%;
-    max-width: @site-max-width;
     display: flex;
     position: absolute;
+    width: fit-content;
+    left: 0;
+    bottom: 0;
     .anticon {
       > svg {
         width: 400%;
@@ -50,7 +54,7 @@
     width: 100vw;
     left: 0;
     background-size: 100%;
-    background-color: rgba(74, 21, 9, 0.98);
+    background-color: rgb(255,98,0);
     .log {
       display: none;
     }
@@ -97,14 +101,19 @@
       }
     }
   }
-  .header-bg {
+  .header__background {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    margin-top: 0;
-    opacity: 0.8;
+    width: auto;
+    height: 180px;
+    margin-top: -50px;
     z-index: 2;
+    transform: rotate(180deg);
+    @media only screen and (min-width: @header-mobile-width) {
+      height: 400px;
+      margin-top: -200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   .logo {
     padding-top: 10px;
@@ -198,44 +207,15 @@
   }
   .menu-burger-button {
     position: absolute;
-    width: auto;
-    height: auto;
-    top: 3vw;
+    width: fit-content;
+    height: fit-content;
+    bottom: 5px;
     left: 10px;
     .burger {
-      .burger-lines {
-        height: 0.5rem;
-        width: 4rem;
-      }
-      .burger-lines:after {
-        width: 4rem;
-        height: 0.5rem;
-        top: -1.5em;
-      }
-      .burger-lines:before {
-        width: 4rem;
-        height: 0.5rem;
-        top: 1.5em;
-        left: 0;
-      }
-    }
-  }
-  @media only screen and (max-width: @header-mobile-width) {
-    .burger {
-      font-size: 8px;
-      top: 0;
-      /*left: 5em;*/
-      .burger-lines {
-        height: 0.3rem !important;
-        width: 2.2rem !important;
-      }
-      .burger-lines:after {
-        width: 2.2rem !important;
-        height: 0.3rem !important;
-      }
-      .burger-lines:before {
-        width: 2.2rem !important;
-        height: 0.3rem !important;
+      font-size: 18px;
+
+      @media only screen and (max-width: @header-mobile-width) {
+        font-size: 14px;
       }
     }
   }
@@ -253,12 +233,10 @@
   .menu {
     display: block;
     position: fixed;
-    height: 100%;
-
-    @media only screen and (max-width: @header-mobile-width) {
-      height: calc(100% - @header-size-mobile);
-      top: @header-size-mobile;
-    }
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 .burger.burger-slip.open .burger-lines {
