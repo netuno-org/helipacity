@@ -5,6 +5,8 @@ import { WhatsAppOutlined} from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import { Spin, Tag, notification } from "antd";
 
+import Back from "../../base/Back";
+
 import "./index.less";
 
 function SocialActionDetail() {
@@ -32,24 +34,26 @@ function SocialActionDetail() {
   }, []);
   if (loading) {
     return (
-      <section className="content">
-        <div className="social-action-detail">
-          <Spin size="large"/>
+      <section className="social-action-detail">
+        <div className="social-action-detail__loading">
+          <Spin size="large"/> &nbsp; carregando...
         </div>
       </section>
     );
   }
   if (data == null) {
     return (
-      <section className="content">
-        <div className="social-action-detail">
+      <section className="social-action-detail">
+        <div className="social-action-detail__error">
           <p>N&atilde;o foi poss&iacute;vel carregar os detalhes da a&ccedil;&atilde;o social.</p>
+          <Back link />
         </div>
       </section>
     );
   }
   return (
     <section className="social-action-detail">
+      <Back topButton />
       <div className="social-action-detail__cover">
         <img src={`${servicePrefix}/social-action/image?uid=${uid}`} width="100%"/>
       </div>
@@ -70,6 +74,7 @@ function SocialActionDetail() {
               {data.link.substring(data.link.indexOf('//') + 2)}
             </a>
         </p>}
+        <Back link />
       </div>
     </section>
   );

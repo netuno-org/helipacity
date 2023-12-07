@@ -5,6 +5,8 @@ import { WhatsAppOutlined} from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import { Spin, Tag, notification } from "antd";
 
+import Back from "../../base/Back";
+
 import "./index.less";
 
 function EstablishmentDetail() {
@@ -32,24 +34,26 @@ function EstablishmentDetail() {
   }, []);
   if (loading) {
     return (
-      <section className="content">
-        <div className="establishment-detail">
-          <Spin size="large"/>
+      <section className="establishment-detail">
+        <div className="establishment-detail__loading">
+          <Spin size="large"/> &nbsp; carregando...
         </div>
       </section>
     );
   }
   if (data == null) {
     return (
-      <section className="content">
-        <div className="establishment-detail">
+      <section className="establishment-detail">
+        <div className="establishment-detail__error">
           <p>N&atilde;o foi poss&iacute;vel carregar os detalhes do com&eacute;rcio.</p>
+          <Back link />
         </div>
       </section>
     );
   }
   return (
     <section className="establishment-detail">
+      <Back topButton />
       <div className="establishment-detail__cover">
         <img src={`${servicePrefix}/establishment/image?uid=${uid}`} width="100%"/>
       </div>
@@ -70,6 +74,7 @@ function EstablishmentDetail() {
               {data.link.substring(data.link.indexOf('//') + 2)}
             </a>
         </p>}
+        <Back link />
       </div>
     </section>
   );
