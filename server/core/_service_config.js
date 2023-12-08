@@ -12,9 +12,9 @@ if (_service.path == 'samples/my-service') {
 }
 */
 
-if (_service.path.startsWith('event/') 
-    || _service.path.startsWith('establishment/') 
-    || _service.path.startsWith('social-action/') 
+if (_service.path == 'event' || _service.path.startsWith('event/') 
+    || _service.path == 'establishment' || _service.path.startsWith('establishment/') 
+    || _service.path == 'social-action' || _service.path.startsWith('social-action/') 
     || _service.path.startsWith('contact/')) {
     _service.allow()
 }
