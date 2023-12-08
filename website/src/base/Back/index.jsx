@@ -12,7 +12,7 @@ function Back({ topButton, link }) {
     if (topButton) {
         return (
             <div className="back--top-button">
-                <div className="icon icon--back">                 
+                <div className="icon icon--back">
                     <Link onClick={() => navigate(-1)}>
                         <LeftOutlined />
                     </Link>
